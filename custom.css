@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+:root {
+	--r-background-color: #fff;
+	--r-main-font: Raleway, sans-serif;
+	--r-main-font-size: 22px;
+	--r-main-color: #3d3d3d;
+	--r-block-margin: 10px;
+	--r-heading-margin: 0px 10px 10px 0px;
+	--r-heading-font: Roboto, sans-serif;
+	--r-heading-color: #222;
+	--r-heading-line-height: 1.2;
+	--r-heading-letter-spacing: normal;
+	--r-heading-text-transform: none;
+	--r-heading-text-shadow: none;
+	--r-heading-font-weight: 600;
+	--r-heading1-text-shadow: none;
+	--r-heading1-size: 2.5em;
+	--r-heading2-size: 1.6em;
+	--r-heading3-size: 1.3em;
+	--r-heading4-size: 1em;
+	--r-code-font: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+	--r-link-color: #2a76dd;
+	--r-link-color-dark: #1a53a1;
+	--r-link-color-hover: #5692e4;
+	--r-selection-background-color: #98bdef;
+	--r-selection-color: #fff;
+}
+
+.reveal .slides {
+	text-align: justify;
+}
+
+.reveal ol, .reveal dl, .reveal ul {
+	display: inline-block;
+	text-align: justify;
+	margin: 10 0 0 0;
+}
+
+.emphasized {
+  font-family: inherit;
+  color: #EE5A24;
+  font-weight: bold;
+}
+.reveal pre.sourceCode code {
+	font-size: 18px;
+	max-height: 700px;
+}
+.reveal pre.cell-output {
+	font-size: 18px;
+}
