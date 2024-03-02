@@ -36,17 +36,17 @@ chalkboard: true
 
 Як завжди одним з перших місць для пошуку інформації є офіційні мануали:
 
-* [R FAQ — Frequently Asked Questions on R](https://cran.r-project.org/doc/FAQ/R-FAQ.html) 
-* [An Introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html)
+-   [R FAQ — Frequently Asked Questions on R](https://cran.r-project.org/doc/FAQ/R-FAQ.html)
+-   [An Introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html)
 
 А також:
 
-* [Advanced R, Second Edition (Hadley Wickham, 2019)](https://adv-r.hadley.nz/index.html) — я дуже раджу спробувати прочитати розділ Foundations, або хоча б глави з другої (Names and values) по четверту (Subsetting)
+-   [Advanced R, Second Edition (Hadley Wickham, 2019)](https://adv-r.hadley.nz/index.html) — я дуже раджу спробувати прочитати розділ Foundations, або хоча б глави з другої (Names and values) по четверту (Subsetting)
 
 Усяке різне:
 
-* [What every computer scientist should know about floating-point arithmetic (David Goldberg, 1991)](https://dl.acm.org/doi/10.1145/103162.103163) — лонгрід про особливості арифметичних операції з плаваючою комою
-* [Structure and Interpretation of Computer Programs, second edition (Harold Abelson, Gerald Jay Sussman and Julie Sussman, 1996)](https://web.mit.edu/6.001/6.037/sicp.pdf) — якщо Ви зацікавтеся програмуванням, то завжди можете спробувати прочитати оцей класичний трактат на 800 сторінок задля інтересу
+-   [What every computer scientist should know about floating-point arithmetic (David Goldberg, 1991)](https://dl.acm.org/doi/10.1145/103162.103163) — лонгрід про особливості арифметичних операції з плаваючою комою
+-   [Structure and Interpretation of Computer Programs, second edition (Harold Abelson, Gerald Jay Sussman and Julie Sussman, 1996)](https://web.mit.edu/6.001/6.037/sicp.pdf) — якщо Ви зацікавтеся програмуванням, то завжди можете спробувати прочитати оцей класичний трактат на 800 сторінок задля інтересу
 
 ### Бібліотеки
 
@@ -210,7 +210,7 @@ print(y) # все ще містить первісне значення
 Що вважається за "літери" насправді визначається вашою локальною машиною, що дозволяє мені зробити наприклад так:
 
 ```{r}
-"єґї" <- "hi from Ukraine"
+єґї <- "hi from Ukraine"
 print(єґї)
 ```
 
@@ -656,6 +656,6 @@ x <- c(1, 2, 3, 4)
 y <- c(1, 0) 
 x * y # імпліцитно y буде перероблено як (1, 0, 1, 0)
 
-y <- c(1, 0, 1) 
-x * y # імпліцитно y буде перероблено як (1, 0, 1, 1), попередження у консолі 
+y <- c(1, 0, 2) 
+x * y # імпліцитно y буде перероблено як (1, 0, 2, 1), попередження у консолі 
 ```
