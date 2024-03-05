@@ -1,0 +1,273 @@
+---
+title: "Tidy Intro"
+format: 
+  revealjs:
+    css: custom.css
+    slide-level: 3
+    slide-number: c/t
+    progress: false
+    fig-format: svg
+    fig-width: 6
+    code-copy: true
+execute: 
+  echo: true
+highlight-style: pygments
+knitr: 
+  opts_chunk:
+    comment: "#>"
+    collapse: true
+link-external-icon: true
+---
+
+### Рідлист
+
+-   [R Cookbook, 2e (James (JD) Long and my_variable \<- 10Paul Teetor)](https://rc2e.com/) — коли немає часу розбиратися з документацією, окрім прикладів базового R інкорпорує у себе також приклади роботи з `tidyverse`
+-   [R for Data Science, 2e (Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund)](https://r4ds.hadley.nz/) — всі основи (та більше) маніпуляції / візуалізації даних з `tidyverse`
+
+Також можете спробувати [Statistical Inference via Data Science: A ModernDive into R and the Tidyverse! (Chester Ismay and Albert Y. Kim)](https://moderndive.com/preface.html), що окрім декількох коротких розділів про `tidyverse` пропонує **дуже м'яке** та візуально підкріплене ознайомлення з низкою статистичних концептів
+
+### Tidyverse as is
+
+Екосистема [tidyverse](https://www.tidyverse.org/packages/) представляє собою набір бібліотек, що покликані уніфікувати процес роботи з даними за допомогою R, усі пакети `tidyverse` мають спільну філософію дизайну та граматику. Остання на момент створення цієї презентації версія `tidyverse 2.0.0` включає у себе 31 пакет. Ядро `tidyverse` для щоденного використання включає у себе 8 пакетів, які одночасно можливо завантажити викликом `library(tidyverse)`:
+
+-   `ggplot2` — декларативна система створення графіки, основана на філософії представленій у The Grammar of Graphics (Leland Wilkinson, 1999)
+-   `dplyr` — універсифікована та послідовна граматика маніпуляції з даними
+-   `tidyr` — набір функцій для "очищення" даних та приведення їх до загальної форми
+-   `readr` — покращений імпорт даних прямокутного формату
+-   `purr` — тулкіт для функціонального програмування з R
+-   `tibble` — інтродукує новий клас формату даних аналогічний до `data.frame` — `tbl_df`
+-   `stingr` — пакет для маніпуляції з текстовими даними
+-   `forcats` — пакет для маніпуляції з факторами
+
+Також існує безліч бібліотек, які хоча і не є офіційно частиною `tidyverse`, слідують тим же принципам дизайну і є сумісними з ними. Окрім лінку наданого вище, CheatSheets до пакетів `tidyverse` та суміжних бібліотек можуть бути знайдені [тут](https://rstudio.github.io/cheatsheets/) та [тут](https://github.com/rstudio/cheatsheets/tree/main)
+
+```{r}
+#| include: false
+library(tidyverse)
+```
+
+### Tibble
+
+Як `data.frame`, як написано у документації — "Tibbles are data.frames that are lazy and surly: they do less and complain more". На відміну від стандартних кадрів даних tibbles:
+
+-   При створенні не перетворюють текстовий вектор на фактор та не змінюють не-синтактичні імена колонок
+-   Не схвалюють присутність назв рядків
+-   Створення є послідовним, по колонкам, тому є можливість звертатися до колонок безпосередньо при створенні об'єкту
+-   При заповнені колонки ресайклінгу підлягають лише вектори довжиною `1`
+-   Сабсетинг через `[` по замовчуванню повертає об'єкт типу `tbl_df`
+-   Сабсетинг через `$` не дозволяє часткового метчингу імені
+
+Tibble не є заміною класу кадру даних, вони є *підкласом* даного класу. У цьому можна впевнитися перевіривши атрибути `tbl_df` об'єкту
+
+```{r}
+library(palmerpenguins)
+class(penguins)
+```
+
+### Tibble
+
+Створюються так само як звичайні кадри даних
+
+```{r}
+tibb <- tibble(
+  a = runif(3),
+  b = rnorm(3),
+  prod = a * b,    # рефернсинг до попередніх колонок у процесі створення
+  let = letters[1:3])
+tibb
+```
+
+Також можливм є варіант створення "по рядках", що інколи є зручним для маленьких наборів даних
+
+```{r}
+tribb <- tribble(
+  ~spec, ~val,  ~sex,
+  "a",   0.12,   "M",
+  "a",   14,     "F",
+  "b",   0.123,  "I")
+tribb
+```
+
+### Функціональні еквіваленти
+
+Пакет dplyr містить набір функцій низка з яких є аналогічними або ідентичними базовим функціям R, але на відміну від них мають більш зрозумілий та послідовний синтаксис, більш передбачувану поведінку, з самого початку розроблялися для комбінування з pipe-оператором та групованими даними. Більш повна таблиця порівняння з прикладами [тут](https://dplyr.tidyverse.org/articles/base.html)
+
+| dplyr verb                            | base R verb                                                |
+|---------------------------------------|------------------------------------------------------------|
+| `arrange(df, x)`                      | `order(x)` , `df[!duplicated(x), , drop = F]`              |
+| `distinct(df, x)`                     | `unique()`                                                 |
+| `filter(df, x)`                       | `subset()` or `df[which(x), , drop = F]`                   |
+| `pull(df, 1)` , `pull(df, x)`         | `df[[1]]`, `df$x`                                          |
+| `rename(df, y = x)` , `rename_with()` | `names()` or `stats::setNames()`                           |
+| `mutate(x = y + z)`                   | `df$x <- df$y + df$z`, `transform()`                       |
+| `select(df, x, y)`                    | `subset()` or `df[c("x", "y")]`                            |
+| `summarise(df, fun(x))`               | `tapply()` , `aggregate()`, `by()`                         |
+| `slice(df, c(1, 2, 5))`               | `df[c(1, 2, 5), , drop = FALSE]`, also partialy `sample()` |
+| `*_join()`\`                          | `merge()`                                                  |
+
+Окрім цього `purrr::map()` та `purrr::map2()`, а також у певному сенсі `dplyr::across()`, є функціональними аналогами `lapply()`
+
+### Tidy data
+Філософія екосистеми tidyverse передбачає роботу з даними у "чистому" або "довгому" форматі. Дані у довгому форматі напротивагу широкому формату передбачають, що:
+
+* кожна колонка відповідає одній змінній 
+* кожен рядок відповідає одному спостереженню
+* кожна комірка відповідає одному значенню
+
+```{r}
+#| include: false
+wide_exaple <- tibble(
+  ID = c(1, 2, 3),
+  Name = c("Subj A", "Subj B", "Subj X"),
+  Drug_A = c(85, 72, 90),
+  Drug_B = c(78, 80, 88),
+  Placebo = c(95, 88, 84)
+)
+```
+
+Для конверсії одного формату до іншого існують функції `pivot_wider()` та `pivot_longer()` відповідно. Широкий формат виглядає так:
+```{r}
+wide_exaple
+```
+
+Варіант треба перевести з широкого у довгий зустрічається частіше, варіант з прикладу вище
+```{r}
+long_example <- wide_exaple |> 
+  pivot_longer(
+    cols = 3:5,
+    names_to = "Treatment",
+    values_to = "Score"
+  )
+```
+
+### Tidy data
+Довгий формат виглядає так:
+```{r}
+long_example
+```
+\
+
+Зворотно у широкий формат
+```{r}
+#| eval: false
+wide_example <- long_example |> 
+  pivot_wider(
+    names_from = Treatment,
+    values_from = Score
+  )
+```
+
+### Функції для рядків
+Функція `filter()`, що повертає рядки кадру даних, що задовольняють певну логічну умову
+```{r}
+iris |> filter(Sepal.Length > 6.5 & Petal.Length < 4.5)
+```
+
+Функція `arrange()`, що упорядковує дані від меншого до більшого по обраних змінних
+```{r}
+iris |> arrange(Sepal.Length, Petal.Length) |> head(4)
+```
+
+Функція `distinct()` повертає усі унікальні значення
+```{r}
+iris |> distinct(Species)
+```
+
+### Функції для колонок
+Функція `mutate()`, що дозволяє створити нову колонку з розрахунками, що виконані на основі даних з інших колонок
+```{r}
+iris |> mutate(Petal.lw.ratio = Petal.Length / Petal.Width) |> head(2)
+```
+
+Функція `relocate()`, що дозволяє перемістити колонку 
+```{r}
+iris |> relocate(Species, .before = everything()) |> head(2)
+```
+
+Функція `rename()`, що дозволяє переіменовувати колонки
+```{r}
+iris |> rename(Plant.Species = Species) |> head(2)
+```
+
+Та функція `select()`, що дозволяє вибрати конкретну колонку (або колонки) з кадру
+```{r}
+iris |> select(Sepal.Length, Petal.Length) |> head(2)
+```
+
+### Групування даних
+Функція `group_by()`, як очевидно з назви, створює групи даних, що відображується у метаданих кадру
+```{r}
+iris |> group_by(Species) |> head(3)
+```
+Функції `summarise()`, `reframe()` та `count()` дозволяють застосувати дескриптивні статистичні функції до груп даних
+```{r}
+iris |> 
+  group_by(Species) |> 
+  summarise(mean_sepal_len = mean(Sepal.Length), n = n())
+```
+
+### Ітерації 
+Ітеративне застосування певної функції до декількох колонок усередині `mutate()` або `summarise()` може бути досягнуто за використання `across()`
+```{r}
+iris |> 
+  group_by(Species) |> 
+  summarise(across(where(is.numeric), mean), n = n())
+```
+\
+
+Разом з `filter()` можуть бути застосовані `if_all()` та `if_any`
+```{r}
+penguins |> filter(if_all(3:6, is.na))
+```
+
+### Ітерації
+Пакет `purrr` має аналог базового `lapply` під назвою `map()` (точніше ціле сімейство `map`, див. [документацію](https://purrr.tidyverse.org/reference/map.html)), що картує функцію до кожного елементу листа або атомарного вектор. Зручно при ітеративному процесі завантаження даних та при роботі з моделями, коли сет даних попередньо розбивається на листи за певним рівнем фактора
+```{r}
+#| eval: false
+# Тест Шапіро-Уілка на нормальність розподілу для кожного рівня фактору group
+PlantGrowth |> 
+    split(PlantGrowth$group) |> 
+    map(\(df) shapiro.test(df$weight))
+```
+\
+Також існує `map2`, що може виконувати ітерацію двох аргументів одночасно, зручно для використання при ітеративному збереженні даних або графіків 
+
+### Найпростіший графік с ggplot2
+Базовий синтаксис ggplot2 має вигляд
+```{r}
+#| eval: false
+ggplot(data, aes(x, y)) + # дані та осі
+  geom()                  # одна з доступних геометрій
+```
+Де `ggplot()` створює об'єкт класу `gg` на який надалі за допомогою оператору `+` накладаються нові шари специфікації того, що у термінології `ggplot2` буквально називається естетикою 
+```{r}
+penguins |> 
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point()
+```
+
+::: {.column .absolute width="50%" top="300" right="20" height="700"}
+Низка інших геометрій
+
+* `geom_jitter`
+* `geom_bar`, `geom_col`
+* `geom_histogram`, `geom_desity`
+* `geom_boxplot`, `geom_violin`
+* `geom_line`, `geom_smooth`
+* `geom_errorbar`
+* `stat_summary`
+
+:::
+
+### Найпростіший графік с ggplot2
+```{r}
+penguins |> 
+  ggplot(aes(bill_length_mm, bill_depth_mm, color = species)) + # ще одна естетика
+  geom_point(alpha = .75) +   
+  geom_smooth(method = lm, se = F) + # додаткова геометрія
+  labs(x = "bill depth", y = "bill length", title = "Bill depth-size correlation",
+       subtitle = "from dataset 'Palmerpenguins'") +
+  scale_color_brewer(palette = "Set2") +
+  theme_minimal()
+```
+

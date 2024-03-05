@@ -11,13 +11,12 @@ format:
     code-copy: true
 execute: 
   echo: true
-highlight-style: breezedark
+highlight-style: pygments
 knitr: 
   opts_chunk:
     comment: "#>"
     collapse: true
 link-external-icon: true
-chalkboard: true
 ---
 ### Рідлист
 
@@ -959,4 +958,6 @@ library(magrittr)
 crabs %>% subset(sex == "M" ) %>% aggregate(FL ~ sp, mean)
 ```
 
-Конкретна зручність використання `|>` або `⁠%>%`при роботі з даними починає відчуватися при роботі з системою бібліотек `tidyverse`
+Конкретна зручність використання `|>` або `⁠%>%` при роботі з даними починає відчуватися при роботі з системою бібліотек `tidyverse`
+
+Про різницю між нативним pipe-оператором та оператором magrittr можна прочитати [тут](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/)

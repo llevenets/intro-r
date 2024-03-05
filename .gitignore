@@ -35,3 +35,4 @@
 # R Environment Variables
 .Renviron
 
+*_temp.*

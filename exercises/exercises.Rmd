@@ -1,0 +1,138 @@
+---
+title: "examples"
+output: 
+  html_notebook: 
+    code_folding: hide
+    highlight: pygments
+---
+## BASE R
+### Сабсетинг кадрів даних
+
+1. Подивіться як виглядає останній рядок датасету `crabs` не використовуючи явних чисельних значень у `[`
+
+```{r}
+data("crabs", package = "MASS")
+crabs[nrow(crabs),]
+```
+
+2. Пересуньте колонку `index` на першу позицію
+
+```{r}
+(crabs <- cbind(crabs[3], crabs[-3])) # додаткові дужки щоб одразу побачити результат
+```
+
+3. Використавши сабсетинг кадру та необхідну статистичну функцію визначте максимальне та мінімальне значення параметру BD лише для чоловічих осіб оранжевого кольору
+
+```{r}
+range(crabs[crabs$sp == "O" & crabs$sex == "M", 8])
+```
+
+4. Відсортуйте кадр даних за змінною `crabs$FL` від найбільшого до найменшого значення
+
+```{r}
+crabs[order(c(crabs$FL), decreasing = TRUE), ]
+```
+
+5. Одночасно перетасуйте рядки та колонки кадру даних
+
+```{r}
+crabs[sample(nrow(crabs)), sample(ncol(crabs))]
+```
+
+### Фактори
+
+1. Поміняйте порядок рівнів у колонці `crabs$sex`, подивіться як це відобразилося на структурі фактору командою `str()` або `unclass()`, або `levels()`, подивіться на сам кадр даних через `View()`. Чи змінилося щось?
+
+```{r}
+# crabs$sex <- factor(crabs$sex, levels = c("M", "F"))
+# або більш натуральний варіант
+crabs$sex <- relevel(crabs$sex, "M")
+crabs
+```
+
+2. Перейменуйте "М" та "F" у "male" та "female"
+
+```{r}
+levels(crabs$sex) <- c("male", "female")
+crabs[sample(200, 6), ] # шість випадкових рядків
+```
+
+3. Конвертуйте колонку `crabs$sp` у текстовий вектор та подивіться як змінилася структура кадру
+
+```{r}
+crabs$sp <- as.character(crabs$sp)
+str(crabs)
+```
+
+4. Конвертуйте колонку `crabs$sp` зворотно у фактор, одночасно перейменуйте рівні "B" та "O" на "Blue" та "Orange" відповідно
+
+```{r}
+crabs$sp <- factor(crabs$sp, levels = c("B", "O"), labels = c("Blue", "Orange"))
+crabs[sample(200, 6), ]
+```
+
+5. Замініть значення будь-якого одного елементу у `crabs$sp` на `Green`
+
+```{r}
+levels(crabs$sp) <- c(levels(crabs$sp), "Green")
+crabs$sp[15] <- "Green"
+crabs[crabs$sp == "Green",]
+```
+
+5. Використайте `table()` аби переглянути кількість крабів кожного кольору та статі
+
+```{r}
+table(crabs$sp, crabs$sex)
+```
+
+6. Завантажте датасет `iris` та реорганізуйте рівні фактору `iris$Species` на основі середньої довжини `iris$Petal.Width`, від більшого до меншого
+
+```{r}
+levels(iris$Species) # setosa перша
+iris$Species <- reorder(iris$Species, iris$Petal.Width, decreasing = T)
+levels(iris$Species) # virginica має бути першою
+```
+
+Додатково (Приклад з Advanced R, 2ed): Використавши набір `letters` виконайте наступні дії та порівняйте результат викликавши кожен зі створених об'єктів окремо
+
+```{r}
+f1 <- factor(letters)
+f2 <- rev(factor(letters))
+f3 <- factor(letters, levels = rev(letters))
+
+f4 <- f1
+levels(f4) <- rev(levels(f4))
+```
+
+### Функції
+
+1. Напишіть функцію `mean_sd()` яка буде приймати чисельний вектор x і повертати середнє значення та стандартне відхилення даного вектору. Аби спростити собі життя, використайте нативні функції R `mean()` та `sd()`, зверніть увагу, що ці функції мають додатковий аргумент na.rm, яке дозволяє опціонально ігнорувати наявність NA у вашому векторі
+
+```{r}
+mean_sd <- function(x, na.rm = FALSE) {
+    mean <- mean(x, na.rm = na.rm)
+    sd <- sd(x, na.rm = na.rm)
+    return(c(mean = mean, sd = sd)) 
+}                                   
+```
+
+2. Напишіть функцію `mean_cl()` яка буде приймати чисельний вектор x і повертати середнє значення, нижчу та вищу межу середнього значення на основі інтервалу достовірності та стандартну похибку. Ваша функція має мати обов'язкові аргументи x - чисельний вектор та a - значення альфа (p-value). Для розрахунку інтервалів достовірності середнього Вам необхідно буде використати розподіл Стьюдента
+
+```{r}
+mean_cl <- function(x, a, na.rm = FALSE) {
+  mean <- mean(x, na.rm = na.rm)
+  se <- sd(x, na.rm = na.rm)/sqrt(length(x))
+  cl <- qt(a/2, df = length(x) - 1, lower.tail = F) * se
+  return(c(mean = mean, 
+           lower.bound = mean - cl,
+           upper.bound = mean + cl,
+           se = se))
+}
+```
+
+
+Silly lifehack: Ви можете перевірити себе та визначити інтервали достовірності середнього через виклик лінійної регресії з формулою типу `lm(y ~ 1)` та наступним застосуванням функції `confint()` до неї
+```{r}
+mean_cl(crabs$FL, 0.05)
+confint(lm(crabs$FL ~ 1), level = 0.95)
+```
