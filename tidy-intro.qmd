@@ -93,7 +93,7 @@ tribb
 Пакет dplyr містить набір функцій низка з яких є аналогічними або ідентичними базовим функціям R, але на відміну від них мають більш зрозумілий та послідовний синтаксис, більш передбачувану поведінку, з самого початку розроблялися для комбінування з pipe-оператором та групованими даними. Більш повна таблиця порівняння з прикладами [тут](https://dplyr.tidyverse.org/articles/base.html)
 
 | dplyr verb                            | base R verb                                                |
-|---------------------------------------|------------------------------------------------------------|
+|-----------------------------|-------------------------------------------|
 | `arrange(df, x)`                      | `order(x)` , `df[!duplicated(x), , drop = F]`              |
 | `distinct(df, x)`                     | `unique()`                                                 |
 | `filter(df, x)`                       | `subset()` or `df[which(x), , drop = F]`                   |
@@ -108,11 +108,12 @@ tribb
 Окрім цього `purrr::map()` та `purrr::map2()`, а також у певному сенсі `dplyr::across()`, є функціональними аналогами `lapply()`
 
 ### Tidy data
+
 Філософія екосистеми tidyverse передбачає роботу з даними у "чистому" або "довгому" форматі. Дані у довгому форматі напротивагу широкому формату передбачають, що:
 
-* кожна колонка відповідає одній змінній 
-* кожен рядок відповідає одному спостереженню
-* кожна комірка відповідає одному значенню
+-   кожна колонка відповідає одній змінній
+-   кожен рядок відповідає одному спостереженню
+-   кожна комірка відповідає одному значенню
 
 ```{r}
 #| include: false
@@ -126,11 +127,13 @@ wide_exaple <- tibble(
 ```
 
 Для конверсії одного формату до іншого існують функції `pivot_wider()` та `pivot_longer()` відповідно. Широкий формат виглядає так:
+
 ```{r}
 wide_exaple
 ```
 
-Варіант треба перевести з широкого у довгий зустрічається частіше, варіант з прикладу вище
+Варіант коли треба перевести з широкого у довгий зустрічається частіше
+
 ```{r}
 long_example <- wide_exaple |> 
   pivot_longer(
@@ -141,13 +144,17 @@ long_example <- wide_exaple |>
 ```
 
 ### Tidy data
+
 Довгий формат виглядає так:
+
 ```{r}
 long_example
 ```
+
 \
 
 Зворотно у широкий формат
+
 ```{r}
 #| eval: false
 wide_example <- long_example |> 
@@ -158,88 +165,120 @@ wide_example <- long_example |>
 ```
 
 ### Функції для рядків
+
 Функція `filter()`, що повертає рядки кадру даних, що задовольняють певну логічну умову
+
 ```{r}
 iris |> filter(Sepal.Length > 6.5 & Petal.Length < 4.5)
 ```
 
 Функція `arrange()`, що упорядковує дані від меншого до більшого по обраних змінних
+
 ```{r}
 iris |> arrange(Sepal.Length, Petal.Length) |> head(4)
 ```
 
 Функція `distinct()` повертає усі унікальні значення
+
 ```{r}
 iris |> distinct(Species)
 ```
 
 ### Функції для колонок
+
 Функція `mutate()`, що дозволяє створити нову колонку з розрахунками, що виконані на основі даних з інших колонок
+
 ```{r}
 iris |> mutate(Petal.lw.ratio = Petal.Length / Petal.Width) |> head(2)
 ```
 
-Функція `relocate()`, що дозволяє перемістити колонку 
+Функція `relocate()`, що дозволяє перемістити колонку
+
 ```{r}
 iris |> relocate(Species, .before = everything()) |> head(2)
 ```
 
 Функція `rename()`, що дозволяє переіменовувати колонки
+
 ```{r}
 iris |> rename(Plant.Species = Species) |> head(2)
 ```
 
 Та функція `select()`, що дозволяє вибрати конкретну колонку (або колонки) з кадру
+
 ```{r}
 iris |> select(Sepal.Length, Petal.Length) |> head(2)
 ```
 
 ### Групування даних
+
 Функція `group_by()`, як очевидно з назви, створює групи даних, що відображується у метаданих кадру
+
 ```{r}
 iris |> group_by(Species) |> head(3)
 ```
+
 Функції `summarise()`, `reframe()` та `count()` дозволяють застосувати дескриптивні статистичні функції до груп даних
+
 ```{r}
 iris |> 
   group_by(Species) |> 
   summarise(mean_sepal_len = mean(Sepal.Length), n = n())
 ```
 
-### Ітерації 
+### Ітерації
+
 Ітеративне застосування певної функції до декількох колонок усередині `mutate()` або `summarise()` може бути досягнуто за використання `across()`
+
 ```{r}
 iris |> 
   group_by(Species) |> 
   summarise(across(where(is.numeric), mean), n = n())
 ```
+
 \
 
 Разом з `filter()` можуть бути застосовані `if_all()` та `if_any`
+
 ```{r}
 penguins |> filter(if_all(3:6, is.na))
 ```
 
 ### Ітерації
-Пакет `purrr` має аналог базового `lapply` під назвою `map()` (точніше ціле сімейство `map`, див. [документацію](https://purrr.tidyverse.org/reference/map.html)), що картує функцію до кожного елементу листа або атомарного вектор. Зручно при ітеративному процесі завантаження даних та при роботі з моделями, коли сет даних попередньо розбивається на листи за певним рівнем фактора
+
+Пакет `purrr` має аналог базового `lapply` під назвою `map()` (точніше ціле сімейство `map`, див. [документацію](https://purrr.tidyverse.org/reference/map.html)), що картує функцію до кожного елементу листа або атомарного вектор.
+
+```{r}
+# базовий варіант map() є функціонально ідентичним lapply() 
+str(lapply(1:3, function(x) rnorm(x)))
+str(map(1:3, function(x) rnorm(x)))
+```
+
+Функція `map` як `lapply` може приймати скорочений варіант звернення до анонімної функції, а також має свій власний варіант синтаксису
+
 ```{r}
 #| eval: false
-# Тест Шапіро-Уілка на нормальність розподілу для кожного рівня фактору group
-PlantGrowth |> 
-    split(PlantGrowth$group) |> 
-    map(\(df) shapiro.test(df$weight))
+map(1:3, function(x) rnorm(x))
+# теж саме що і
+map(1:3, \(x) rnorm(x))
+# теж саме що і purr-стиль звернення до функції
+map(1:3, ~rnorm(.x))
 ```
-\
-Також існує `map2`, що може виконувати ітерацію двох аргументів одночасно, зручно для використання при ітеративному збереженні даних або графіків 
+
+Також існує `map2`, що може виконувати ітерацію двох аргументів одночасно, зручно для використання при ітеративному збереженні даних або графіків
 
 ### Найпростіший графік с ggplot2
+
 Базовий синтаксис ggplot2 має вигляд
+
 ```{r}
 #| eval: false
 ggplot(data, aes(x, y)) + # дані та осі
   geom()                  # одна з доступних геометрій
 ```
-Де `ggplot()` створює об'єкт класу `gg` на який надалі за допомогою оператору `+` накладаються нові шари специфікації того, що у термінології `ggplot2` буквально називається естетикою 
+
+Де `ggplot()` створює об'єкт класу `gg` на який надалі за допомогою оператору `+` накладаються нові шари специфікації того, що у термінології `ggplot2` буквально називається естетикою
+
 ```{r}
 penguins |> 
   ggplot(aes(x = bill_length_mm, y = bill_depth_mm)) +
@@ -249,25 +288,38 @@ penguins |>
 ::: {.column .absolute width="50%" top="300" right="20" height="700"}
 Низка інших геометрій
 
-* `geom_jitter`
-* `geom_bar`, `geom_col`
-* `geom_histogram`, `geom_desity`
-* `geom_boxplot`, `geom_violin`
-* `geom_line`, `geom_smooth`
-* `geom_errorbar`
-* `stat_summary`
-
+-   `geom_jitter`
+-   `geom_bar`, `geom_col`
+-   `geom_histogram`, `geom_desity`
+-   `geom_boxplot`, `geom_violin`
+-   `geom_line`, `geom_smooth`
+-   `geom_errorbar`
+-   `stat_summary`
 :::
 
 ### Найпростіший графік с ggplot2
+
 ```{r}
 penguins |> 
   ggplot(aes(bill_length_mm, bill_depth_mm, color = species)) + # ще одна естетика
   geom_point(alpha = .75) +   
   geom_smooth(method = lm, se = F) + # додаткова геометрія
-  labs(x = "bill depth", y = "bill length", title = "Bill depth-size correlation",
+  labs(x = "bill length", y = "bill depth", title = "Bill depth-size correlation",
        subtitle = "from dataset 'Palmerpenguins'") +
   scale_color_brewer(palette = "Set2") +
   theme_minimal()
 ```
 
+### P.S. реальні дані з реального життя
+
+Очевидно неповний список лінків звідки можливо дістати реальні набори даних відносно великих розмірів аби попрактикуватися у візуалізації даних, а також статистичному моделюванні та машинному навчанні
+
+-   [R4DS Online Learning Community (2023). Tidy Tuesday: A weekly social data project.](https://github.com/rfordatascience/tidytuesday) — GitHub репозиторій проєкту TidyTuesday, новий датасет кожен понеділок 
+-   [Awesome public datasets core](https://github.com/awesomedata/apd-core/tree/master/core) — GitHub репозиторій, що колекціонує лінки на публічні датасети, по категоріям
+-   [Архів проєкту Inter-university Consortium for Political and Social Research (ICPSR)](https://www.icpsr.umich.edu/web/pages/ICPSR/index.html)
+-   [Гарвардський Dataverse архів](https://dataverse.harvard.edu/)
+-   [UC Irvine Machine Learning Repository](https://archive.ics.uci.edu/) 
+-   [Papers With Code](https://paperswithcode.com/datasets) (ці більше спрямовані конкретно на машинне навчання)
+-   Мультидисциплінарний open-access журнал [Data in Brief](https://www.data-in-brief.com/)
+-   [GitHub репозиторій з колекцією журналів, які спеціалізуються на публікації наборів даних](https://github.com/MaxiKi/data-journals)
+-   Пакети наборів даних, що є додатками до книг серії [OpenIntro](https://openintrostat.github.io/openintro/) та [ISLR2](https://cran.rstudio.com/web/packages/ISLR2/index.html)
