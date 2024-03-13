@@ -24,27 +24,91 @@ link-external-icon: true
 -   [R Cookbook, 2e (James (JD) Long and Paul Teetor)](https://rc2e.com/) — коли немає часу розбиратися з документацією, окрім прикладів базового R інкорпорує у себе також приклади роботи з `tidyverse`
 -   [R for Data Science, 2e (Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund)](https://r4ds.hadley.nz/) — всі основи (та більше) маніпуляції / візуалізації даних з `tidyverse`
 
-Також можете спробувати [Statistical Inference via Data Science: A ModernDive into R and the Tidyverse! (Chester Ismay and Albert Y. Kim)](https://moderndive.com/preface.html), що окрім декількох коротких розділів про `tidyverse` пропонує **дуже м'яке** та візуально підкріплене ознайомлення з низкою статистичних концептів
+Також можете спробувати [Statistical Inference via Data Science: A ModernDive into R and the Tidyverse! (Chester Ismay and Albert Y. Kim)](https://moderndive.com/preface.html), що окрім декількох коротких розділів про `tidyverse` пропонує дуже м'яке та візуально підкріплене ознайомлення з низкою статистичних концептів
 
 ### Tidyverse as is
 
 Екосистема [tidyverse](https://www.tidyverse.org/packages/) представляє собою набір бібліотек, що покликані уніфікувати процес роботи з даними за допомогою R, усі пакети `tidyverse` мають спільну філософію дизайну та граматику. Остання, на момент створення цієї презентації, версія `tidyverse 2.0.0` включає у себе 31 пакет. Ядро `tidyverse` для щоденного використання включає у себе 8 пакетів, які одночасно можливо завантажити викликом `library(tidyverse)`:
 
+-   `tibble` — інтродукує новий клас формату даних аналогічний до `data.frame` — `tbl_df`
 -   `ggplot2` — декларативна система створення графіки, основана на філософії представленій у The Grammar of Graphics (Leland Wilkinson, 2005)
 -   `dplyr` — універсифікована та послідовна граматика маніпуляції з даними
 -   `tidyr` — набір функцій для "очищення" даних та приведення їх до загальної форми
 -   `readr` — покращений імпорт даних прямокутного формату
--   `purr` — тулкіт для функціонального програмування з R
--   `tibble` — інтродукує новий клас формату даних аналогічний до `data.frame` — `tbl_df`
 -   `stingr` — пакет для маніпуляції з текстовими даними
 -   `forcats` — пакет для маніпуляції з факторами
+-   `purr` — тулкіт для функціонального програмування з R
 
-Також існує безліч бібліотек, які хоча і не є офіційно частиною `tidyverse`, слідують тим же принципам дизайну і є сумісними з ними. Фактично близько 40% бібліотек, що наразі хостить CRAN, мають у своїх залежностях одну та більше бібліотек `tidyverse`. Окрім лінку наданого вище, CheatSheets до пакетів `tidyverse` та суміжних бібліотек можуть бути знайдені [тут](https://rstudio.github.io/cheatsheets/) та [тут](https://github.com/rstudio/cheatsheets/tree/main)
+Також існує безліч бібліотек, які хоча і не є офіційно частиною `tidyverse`, слідують тим же принципам дизайну і є сумісними з ними. Фактично близько 40% бібліотек^[дані звідси](https://lrdegeest.github.io/blog/totalverse)^, що наразі хостить CRAN, мають у своїх залежностях одну та більше бібліотек `tidyverse`. Окрім лінку наданого вище, CheatSheets до пакетів `tidyverse` та суміжних бібліотек можуть бути знайдені [тут](https://rstudio.github.io/cheatsheets/) та [тут](https://github.com/rstudio/cheatsheets/tree/main)
 
 ```{r}
 #| include: false
 library(tidyverse)
 ```
+
+### Читання та запис даних
+
+Пакет `readr` надає аналоги базових команд для завантаження текстових даних прямокутного формату. Команди для читання даних з диску виглядають як `read_*()`, зворотній варіант для запису даних на диск виглядає як `write_*()`
+
+```{r}
+#| eval: false
+my_data <- read_csv("path/to/file.csv")
+write_csv(my_data, "path/to/my_data.csv")
+```
+
+\
+Окрім `read_csv("file.csv")` наявні:
+
+-   `read_csv2("file.csv")` — дані розділені через `;`
+-   `read_tsv("file.tsv")` — дані розділені через `Tab`
+-   `read_fwf("file.tsv", fwf_widths())` — дані фіксованої ширини
+-   `read_delim("file.txt", delim = " ")` — узагальнений варіант формату з розділенням
+-   `read_lines("file.txt")` — текстові дані, по рядках
+-   `read_log("file.log")` — файли формату `.log`
+
+Файли з розширенням `.gz`, `.bz2`, `.xz` або `.zip` будуть автоматично розпаковані, файли, що починаються з `http://`, `https://`, `ftp://` або `ftps://`, будуть автоматично завантажені
+
+### Читання та запис даних
+
+Подавши вектор з текстових значень у якості першого аргументу, можливо прочитати декілька файлів у один спільний кадр
+
+```{r}
+#| eval: false
+my_data <- read_csv(c("data1.csv", "data2.csv", "data3.csv"), id = "orig_file")
+```
+
+Тут аргумент `id` створить додаткову колону з відповідною назвою (у випадку вище з назвою orig_file), що буде містити шлях до одного з відповідних файлів, з яких були прочитані дані
+
+Низка інших опціональних аргументів функції сімейства `read_*()` включає у себе:
+
+-   `col_names` — якщо логічне значення то вказує чи має перший рядок розглядатися як імена колонок, якщо вектор текстових значень то використовується як user-supplied імена колонок (перший рядок тоді считується як частина кадру даних)
+-   `col_types` — тип даних у колонках, може бути наданий у вигляді листа значень через `list()` або `cols()`, де кожній колонці відповідає певна специфікація, або у вигляді компактної буквеної репрезентації, де кожна літера відповідає типу колонки. Якщо значення `NULL`, функція буде намагатися визначити тип даних у колонках шляхом оцінки перших 1000 рядків
+-   `na` — текстовий вектор, що позначає які значення мають бути інтерпретовані як `NA`
+-   `skip` — вказує кількість рядків, які будуть пропущені перед тим як дані будуть прочитані
+-   `comment` — текстовий знак, що має ідентифікувати коментарі у даних (текст, що ідентифіковано як коментар буде проігноровано при читанні даних)
+
+### Читання та запис даних
+
+Пакет `readxl` (що поставляється як частина `tidyverse`, але не входить до ядра) дозволяє зчитувати дані у форматі `.xls` та `.xlsx`
+
+```{r}
+#| eval: false
+data_xlsx <- readxl::read_xlsx("file.xlsx")
+data_xls <- readxl::read_xls("file.xls")
+data_exel <- readxl::read_exel("file.*") # автоматично вибирає між .xls та .xlsx форматом
+```
+
+Функції для читання файлів формату `.xls/xlsx` окрім іншого мають опціональні аргументи `sheet` для вказання з кого конкретно листа електронної таблиці імпортувати дані та `range` для вказання з якої конкретно області листа (комірки від і до, наприклад "A1:D25") імпортувати дані
+
+**Бібліотеки для імпорту/експорту інших форматів:**
+
+-   [`googlesheets4`](https://googlesheets4.tidyverse.org/) — для гугл-таблиць (поставляється у комплекті `tidyverse`)
+-   [`haven`](https://haven.tidyverse.org/) — для імпорту даних з SAS, SPSS та Stata (поставляється у комплекті `tidyverse`)
+-   [`DBI`](https://dbi.r-dbi.org/) — для конекту R до Систем Управління Базами Даних
+-   [`jsonlite`](https://CRAN.R-project.org/package=jsonlite) — для формату `json`
+-   [`xml2`](https://xml2.r-lib.org/) — для `XML`
+-   [`httr2`](https://httr2.r-lib.org/) — для роботи з веб-APIs
+-   [`rvest`](https://rvest.tidyverse.org/) — для `HTML` та веб-скрапінгу (поставляється у комплекті `tidyverse`)
 
 ### Tibble
 
@@ -88,28 +152,9 @@ tribb <- tribble(
 tribb
 ```
 
-### Функціональні еквіваленти
-
-Пакет dplyr містить набір функцій низка з яких є аналогічними або ідентичними базовим функціям R, але на відміну від них мають більш зрозумілий та послідовний синтаксис, більш передбачувану поведінку, з самого початку розроблялися для комбінування з pipe-оператором та групованими даними. Більш повна таблиця порівняння з прикладами [тут](https://dplyr.tidyverse.org/articles/base.html)
-
-| dplyr verb                            | base R verb                                                |
-|-----------------------------|-------------------------------------------|
-| `arrange(df, x)`                      | `order(x)` , `df[!duplicated(x), , drop = F]`              |
-| `distinct(df, x)`                     | `unique()`                                                 |
-| `filter(df, x)`                       | `subset()` or `df[which(x), , drop = F]`                   |
-| `pull(df, 1)` , `pull(df, x)`         | `df[[1]]`, `df$x`                                          |
-| `rename(df, y = x)` , `rename_with()` | `names()` or `stats::setNames()`                           |
-| `mutate(x = y + z)`                   | `df$x <- df$y + df$z`, `transform()`                       |
-| `select(df, x, y)`                    | `subset()` or `df[c("x", "y")]`                            |
-| `summarise(df, fun(x))`               | `tapply()` , `aggregate()`, `by()`                         |
-| `slice(df, c(1, 2, 5))`               | `df[c(1, 2, 5), , drop = FALSE]`, also partialy `sample()` |
-| `*_join()`\`                          | `merge()`                                                  |
-
-Окрім цього `purrr::map()` та `purrr::map2()`, а також у певному сенсі `dplyr::across()`, є функціональними аналогами `lapply()`
-
 ### Tidy data
 
-Філософія екосистеми tidyverse передбачає роботу з даними у "чистому" або "довгому" форматі. Дані у довгому форматі напротивагу широкому формату передбачають, що:
+Філософія екосистеми tidyverse передбачає роботу з даними у "чистому" або "довгому" форматі. Дані у довгому форматі на противагу широкому формату передбачають, що:
 
 -   кожна колонка відповідає одній змінній
 -   кожен рядок відповідає одному спостереженню
@@ -117,7 +162,7 @@ tribb
 
 ```{r}
 #| include: false
-wide_exaple <- tibble(
+wide_example <- tibble(
   ID = c(1, 2, 3),
   Name = c("Subj A", "Subj B", "Subj X"),
   Drug_A = c(85, 72, 90),
@@ -129,13 +174,13 @@ wide_exaple <- tibble(
 Для конверсії одного формату до іншого існують функції `pivot_wider()` та `pivot_longer()` відповідно. Широкий формат виглядає так:
 
 ```{r}
-wide_exaple
+wide_example
 ```
 
 Варіант коли треба перевести з широкого у довгий зустрічається частіше
 
 ```{r}
-long_example <- wide_exaple |> 
+long_example <- wide_example |> 
   pivot_longer(
     cols = 3:5,
     names_to = "Treatment",
@@ -163,6 +208,25 @@ wide_example <- long_example |>
     values_from = Score
   )
 ```
+
+### Функціональні еквіваленти
+
+Пакет dplyr містить набір функцій низка з яких є аналогічними або ідентичними базовим функціям R, але на відміну від них часто мають (на мою думку) більш зрозумілий та послідовний синтаксис, більш передбачувану поведінку, з самого початку розроблялися для комбінування з pipe-оператором та групованими даними. Більш повна таблиця порівняння з прикладами [тут](https://dplyr.tidyverse.org/articles/base.html)
+
+| dplyr verb                           | base R verb                                                |
+|-----------------------------|-------------------------------------------|
+| `filter(df, x)`                      | `subset()` or `df[which(x), , drop = F]`                   |
+| `arrange(df, x)`                     | `order()`, `df[!duplicated(x), , drop = F]`                |
+| `distinct(df, x)`                    | `unique()`                                                 |
+| `rename(df, y = x)`, `rename_with()` | `names()` or `stats::setNames()`                           |
+| `mutate(x = y + z)`                  | `df$x <- df$y + df$z`, `transform()`                       |
+| `select(df, x, y)`                   | `subset()` or `df[c("x", "y")]`                            |
+| `summarise(df, fun(x))`              | `tapply()`, `aggregate()`, `by()`                          |
+| `pull(df, 1)`, `pull(df, x)`         | `df[[1]]`, `df$x`                                          |
+| `slice(df, c(1, 2, 5))`              | `df[c(1, 2, 5), , drop = FALSE]`, also partialy `sample()` |
+| `*_join()`                           | `merge()`                                                  |
+
+Окрім цього `purrr::map()` та `purrr::map2()`, а також у певному сенсі `dplyr::across()`, є функціональними аналогами `lapply()`
 
 ### Функції для рядків
 
@@ -198,7 +262,7 @@ iris |> mutate(Petal.lw.ratio = Petal.Length / Petal.Width) |> head(2)
 iris |> relocate(Species, .before = everything()) |> head(2)
 ```
 
-Функція `rename()`, що дозволяє переіменовувати колонки
+Функція `rename()`, що дозволяє перейменовувати колонки
 
 ```{r}
 iris |> rename(Plant.Species = Species) |> head(2)
@@ -265,7 +329,186 @@ map(1:3, \(x) rnorm(x))
 map(1:3, ~ rnorm(.x))
 ```
 
-Також існує `map2`, що може виконувати ітерацію двох аргументів одночасно, зручно для використання при ітеративному збереженні даних або графіків
+Також існує `map2`, що може виконувати ітерацію двох аргументів одночасно
+
+### Selector helpers
+
+`tidyselect` надає низку "допоміжних" функцій, що можуть бути використані усередині таких команд як `select`, `rename`, `relocate` та `across` та деяких інших для вибору колонок, що задовольняють певні умови. Приклади використання деяких допоміжних функцій вже були на минулих слайдах.
+
+Селекція за певним патерном:
+
+-   `starts_with("a")` — усі змінні, чиє ім'я починається з певного префіксу
+-   `ends_with("z")` — усі змінні, чиє ім'я закінчується певним суфіксом 
+-   `contains("abc")` — усі змінні, що містять певну послідовність літер у назві
+-   `matches("a.c")` — усі змінні, що містять певний RegEx патерн у назві
+-   `num_range("wk", 1:3)` — усі змінні, що містять певний патерн з числами, e.g. wk1, wk2, wk3
+
+Селекція за певною умовою:
+
+* `where(is.numeric)` — усі змінні, що задовольняють логічну умову (is.numeric, is.character т.д.)
+* `everything()` — просто усі змінні 
+* `last_col()` — остання змінна 
+
+
+### `*_join`
+
+```{r}
+#| include: false
+library(kableExtra)
+obs_species <- tibble(
+  species = c("Liparis loeselii", "Asclepias syriaca", "Ballota nigra", "Galanthus nivalis"),
+  n_obs = c(1, 28, 15, 2)
+)
+rare_species <- tibble(
+  species = c("Galanthus nivalis", "Liparis loeselii", "Frittilaria meleagris", "Stipa borysthenica"),
+  protection = c("red book", "red book & BERN", "red book", "red book")
+)
+```
+
+Сімейство функцій аналогів базового `merge()`, що покликані виконувати операцію об'єднання двох кадрів даних у один. Два іграшкових набори даних для прикладу
+
+::: columns
+::: {.column width="50%"}
+```{r}
+kbl(rare_species)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+kbl(obs_species)
+```
+:::
+:::
+
+\
+`dplyr` має шість варіантів функції `*_join`: `left_join()`, `right_join()`, `inner_join()`, `semi_join()`, `anti_join()` та `full_join()`. Усі вони приймають два кадри даних (`x` та `y`) та повертають один кадр даних, об'єднаний на основі пар ключів. *Первинний ключ* це змінна (або змінні), що є унікальним ідентифікатором для кожного рядка спостереження. У прикладі вище `rare_species$species` є *первинним ключем*, що унікально ідентифікує певний вид рослини, що є захищеним у рамках того чи іншого документу. Для об'єднання первинний ключ `rare_species$species` буде порівнюватися з *зовнішнім ключем* `obs_species$species`. Ключі можуть складатися з однієї змінної, як у прикладі вище, або з декількох змінних (складені ключі)
+
+### `left_join` та `right_join`
+
+Функція `left_join(x, y)` створює новий кадр, який містить у собі усі рядки з кадру `x`
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: false
+kbl(rare_species) |> 
+  column_spec(1:2, color = "#EA2027")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+kbl(obs_species) |> 
+  row_spec(c(1, 4), color = "#EA2027") 
+```
+:::
+:::
+
+\
+
+```{r}
+#| eval: false
+left_join(rare_species, obs_species)
+```
+
+\
+
+```{r}
+#| echo: false
+kbl(left_join(rare_species, obs_species))
+```
+
+### `left_join` та `right_join`
+
+Функція `right_join(x, y)` створює новий кадр, який містить у собі усі рядки з кадру `y`
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: false
+kbl(rare_species) |> 
+  row_spec(1:2, color = "#EA2027")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+kbl(obs_species) |> 
+  column_spec(1:2, color = "#EA2027") 
+```
+:::
+:::
+
+\
+
+```{r}
+#| eval: false
+right_join(rare_species, obs_species)
+```
+
+\
+
+```{r}
+#| echo: false
+kbl(right_join(rare_species, obs_species))
+```
+
+### `inner_join` та `full_join`
+
+Функція `inner_join(x, y)` повертає лише ті значення, що одночасно є у кадрі `x` та у кадрі `y`
+
+```{r}
+#| eval: false
+inner_join(rare_species, obs_species)
+```
+
+```{r}
+#| echo: false
+kbl(inner_join(rare_species, obs_species))
+```
+
+\
+Функція `full_join(x, y)` повертає об'єднання між `x` та `y`
+
+```{r}
+#| eval: false
+full_join(rare_species, obs_species)
+```
+
+```{r}
+#| echo: false
+kbl(full_join(rare_species, obs_species))
+```
+
+### `semi_join` та `anti_join`
+
+Функція `semi_join(x, y)` повертає усі рядки з `x` які мають пару у `y`
+
+```{r}
+#| eval: false
+semi_join(rare_species, obs_species)
+```
+
+```{r}
+#| echo: false
+kbl(semi_join(rare_species, obs_species))
+```
+
+\
+Функція `anti_join(x, y)` повертає усі рядки з `x` до яких немає пари у `y`
+
+```{r}
+#| eval: false
+anti_join(rare_species, obs_species)
+```
+
+```{r}
+#| echo: false
+kbl(anti_join(rare_species, obs_species))
+```
 
 ### Найпростіший графік с ggplot2
 
@@ -314,11 +557,12 @@ penguins |>
 
 Очевидно неповний список лінків звідки можливо дістати реальні набори даних відносно великих розмірів аби попрактикуватися у візуалізації даних, а також статистичному моделюванні та машинному навчанні
 
--   [R4DS Online Learning Community (2023). Tidy Tuesday: A weekly social data project.](https://github.com/rfordatascience/tidytuesday) — GitHub репозиторій проєкту TidyTuesday, новий датасет кожен понеділок 
+-   [R4DS Online Learning Community (2023). Tidy Tuesday: A weekly social data project.](https://github.com/rfordatascience/tidytuesday) — GitHub репозиторій проєкту TidyTuesday, новий датасет кожен понеділок
 -   [Awesome public datasets core](https://github.com/awesomedata/apd-core/tree/master/core) — GitHub репозиторій, що колекціонує лінки на публічні датасети, по категоріям
 -   [Архів проєкту Inter-university Consortium for Political and Social Research (ICPSR)](https://www.icpsr.umich.edu/web/pages/ICPSR/index.html)
 -   [Гарвардський Dataverse архів](https://dataverse.harvard.edu/)
--   [UC Irvine Machine Learning Repository](https://archive.ics.uci.edu/) 
+-   [UC Irvine Machine Learning Repository](https://archive.ics.uci.edu/)
+-   [European Data Portal](https://data.europa.eu/data/datasets?locale=en) — портал-каталог даних з країн Європи 
 -   [Papers With Code](https://paperswithcode.com/datasets) (ці більше спрямовані конкретно на машинне навчання)
 -   Мультидисциплінарний open-access журнал [Data in Brief](https://www.data-in-brief.com/)
 -   [GitHub репозиторій з колекцією журналів, які спеціалізуються на публікації наборів даних](https://github.com/MaxiKi/data-journals)

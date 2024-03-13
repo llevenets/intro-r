@@ -11,7 +11,7 @@
 
 
 
-<title>examples</title>
+<title>Якісь приклади і т.д.</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1829,14 +1829,41 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">examples</h1>
+<h1 class="title toc-ignore">Якісь приклади і т.д.</h1>
 
 </div>
 
+<div id="TOC">
+<ul>
+<li><a href="#base-r" id="toc-base-r">BASE R</a>
+<ul>
+<li><a href="#сабсетинг-кадрів-даних" id="toc-сабсетинг-кадрів-даних">Сабсетинг кадрів даних</a></li>
+<li><a href="#фактори" id="toc-фактори">Фактори</a></li>
+<li><a href="#функції" id="toc-функції">Функції</a></li>
+</ul></li>
+<li><a href="#tidyverse-intro" id="toc-tidyverse-intro">TIDYVERSE
+INTRO</a>
+<ul>
+<li><a href="#функції-для-рядочків" id="toc-функції-для-рядочків">Функції для рядочків</a></li>
+<li><a href="#функції-для-колонок" id="toc-функції-для-колонок">Функції
+для колонок</a></li>
+<li><a href="#груповані-дані" id="toc-груповані-дані">Груповані
+дані</a></li>
+<li><a href="#ітерації" id="toc-ітерації">Ітерації</a></li>
+</ul></li>
+</ul>
+</div>
 
 <!-- rnb-text-begin -->
 <div id="base-r" class="section level2">
 <h2>BASE R</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YShcImNyYWJzXCIsIHBhY2thZ2UgPSBcIk1BU1NcIikgIyDQv9GA0L7RgdGC0L4g0LTQsNGC0LDRgdC10YIg0LTQu9GPINC00LXQvNC+0L3RgdGC0YDQsNGG0ZbRlyDQv9GA0LjQutC70LDQtNGW0LJcbmBgYCJ9 -->
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;crabs&quot;</span>, <span class="at">package =</span> <span class="st">&quot;MASS&quot;</span>) <span class="co"># просто датасет для демонстрації прикладів</span></span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <div id="сабсетинг-кадрів-даних" class="section level3">
 <h3>Сабсетинг кадрів даних</h3>
 <ol style="list-style-type: decimal">
@@ -1845,9 +1872,8 @@ display: none;
 </ol>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YShcImNyYWJzXCIsIHBhY2thZ2UgPSBcIk1BU1NcIilcbmNyYWJzW25yb3coY3JhYnMpLF1cbmBgYCJ9 -->
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;crabs&quot;</span>, <span class="at">package =</span> <span class="st">&quot;MASS&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>crabs[<span class="fu">nrow</span>(crabs),]</span></code></pre></div>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3JhYnNbbnJvdyhjcmFicyksXVxuYGBgIn0= -->
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>crabs[<span class="fu">nrow</span>(crabs),]</span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1857,7 +1883,7 @@ display: none;
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuKGNyYWJzIDwtIGNiaW5kKGNyYWJzWzNdLCBjcmFic1stM10pKSAjINC00L7QtNCw0YLQutC+0LLRliDQtNGD0LbQutC4INGJ0L7QsSDQvtC00YDQsNC30YMg0L/QvtCx0LDRh9C40YLQuCDRgNC10LfRg9C70YzRgtCw0YJcbmBgYCJ9 -->
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>(crabs <span class="ot">&lt;-</span> <span class="fu">cbind</span>(crabs[<span class="dv">3</span>], crabs[<span class="sc">-</span><span class="dv">3</span>])) <span class="co"># додаткові дужки щоб одразу побачити результат</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>(crabs <span class="ot">&lt;-</span> <span class="fu">cbind</span>(crabs[<span class="dv">3</span>], crabs[<span class="sc">-</span><span class="dv">3</span>])) <span class="co"># додаткові дужки щоб одразу побачити результат</span></span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1869,7 +1895,7 @@ display: none;
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmFuZ2UoY3JhYnNbY3JhYnMkc3AgPT0gXCJPXCIgJiBjcmFicyRzZXggPT0gXCJNXCIsIDhdKVxuYGBgIn0= -->
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">range</span>(crabs[crabs<span class="sc">$</span>sp <span class="sc">==</span> <span class="st">&quot;O&quot;</span> <span class="sc">&amp;</span> crabs<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">&quot;M&quot;</span>, <span class="dv">8</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">range</span>(crabs[crabs<span class="sc">$</span>sp <span class="sc">==</span> <span class="st">&quot;O&quot;</span> <span class="sc">&amp;</span> crabs<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">&quot;M&quot;</span>, <span class="dv">8</span>])</span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1880,7 +1906,7 @@ display: none;
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3JhYnNbb3JkZXIoYyhjcmFicyRGTCksIGRlY3JlYXNpbmcgPSBUUlVFKSwgXVxuYGBgIn0= -->
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>crabs[<span class="fu">order</span>(<span class="fu">c</span>(crabs<span class="sc">$</span>FL), <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>crabs[<span class="fu">order</span>(<span class="fu">c</span>(crabs<span class="sc">$</span>FL), <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1890,7 +1916,7 @@ display: none;
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3JhYnNbc2FtcGxlKG5yb3coY3JhYnMpKSwgc2FtcGxlKG5jb2woY3JhYnMpKV1cbmBgYCJ9 -->
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>crabs[<span class="fu">sample</span>(<span class="fu">nrow</span>(crabs)), <span class="fu">sample</span>(<span class="fu">ncol</span>(crabs))]</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>crabs[<span class="fu">sample</span>(<span class="fu">nrow</span>(crabs)), <span class="fu">sample</span>(<span class="fu">ncol</span>(crabs))]</span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1907,10 +1933,10 @@ display: none;
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjcmFicyRzZXggPC0gZmFjdG9yKGNyYWJzJHNleCwgbGV2ZWxzID0gYyhcIk1cIiwgXCJGXCIpKVxuIyDQsNCx0L4g0LHRltC70YzRiCDQvdCw0YLRg9GA0LDQu9GM0L3QuNC5INCy0LDRgNGW0LDQvdGCXG5jcmFicyRzZXggPC0gcmVsZXZlbChjcmFicyRzZXgsIFwiTVwiKVxuY3JhYnNcbmBgYCJ9 -->
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># crabs$sex &lt;- factor(crabs$sex, levels = c(&quot;M&quot;, &quot;F&quot;))</span></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="co"># або більш натуральний варіант</span></span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>crabs<span class="sc">$</span>sex <span class="ot">&lt;-</span> <span class="fu">relevel</span>(crabs<span class="sc">$</span>sex, <span class="st">&quot;M&quot;</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>crabs</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># crabs$sex &lt;- factor(crabs$sex, levels = c(&quot;M&quot;, &quot;F&quot;))</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="co"># або більш натуральний варіант</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>crabs<span class="sc">$</span>sex <span class="ot">&lt;-</span> <span class="fu">relevel</span>(crabs<span class="sc">$</span>sex, <span class="st">&quot;M&quot;</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>crabs</span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1920,8 +1946,8 @@ display: none;
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGV2ZWxzKGNyYWJzJHNleCkgPC0gYyhcIm1hbGVcIiwgXCJmZW1hbGVcIilcbmNyYWJzW3NhbXBsZSgyMDAsIDYpLCBdICMg0YjRltGB0YLRjCDQstC40L/QsNC00LrQvtCy0LjRhSDRgNGP0LTQutGW0LJcbmBgYCJ9 -->
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">levels</span>(crabs<span class="sc">$</span>sex) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>crabs[<span class="fu">sample</span>(<span class="dv">200</span>, <span class="dv">6</span>), ] <span class="co"># шість випадкових рядків</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">levels</span>(crabs<span class="sc">$</span>sex) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>crabs[<span class="fu">sample</span>(<span class="dv">200</span>, <span class="dv">6</span>), ] <span class="co"># шість випадкових рядків</span></span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1932,8 +1958,8 @@ display: none;
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3JhYnMkc3AgPC0gYXMuY2hhcmFjdGVyKGNyYWJzJHNwKVxuc3RyKGNyYWJzKVxuYGBgIn0= -->
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>crabs<span class="sc">$</span>sp <span class="ot">&lt;-</span> <span class="fu">as.character</span>(crabs<span class="sc">$</span>sp)</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="fu">str</span>(crabs)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>crabs<span class="sc">$</span>sp <span class="ot">&lt;-</span> <span class="fu">as.character</span>(crabs<span class="sc">$</span>sp)</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="fu">str</span>(crabs)</span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1945,8 +1971,8 @@ display: none;
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3JhYnMkc3AgPC0gZmFjdG9yKGNyYWJzJHNwLCBsZXZlbHMgPSBjKFwiQlwiLCBcIk9cIiksIGxhYmVscyA9IGMoXCJCbHVlXCIsIFwiT3JhbmdlXCIpKVxuY3JhYnNbc2FtcGxlKDIwMCwgNiksIF1cbmBgYCJ9 -->
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>crabs<span class="sc">$</span>sp <span class="ot">&lt;-</span> <span class="fu">factor</span>(crabs<span class="sc">$</span>sp, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;B&quot;</span>, <span class="st">&quot;O&quot;</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Blue&quot;</span>, <span class="st">&quot;Orange&quot;</span>))</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>crabs[<span class="fu">sample</span>(<span class="dv">200</span>, <span class="dv">6</span>), ]</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>crabs<span class="sc">$</span>sp <span class="ot">&lt;-</span> <span class="fu">factor</span>(crabs<span class="sc">$</span>sp, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;B&quot;</span>, <span class="st">&quot;O&quot;</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Blue&quot;</span>, <span class="st">&quot;Orange&quot;</span>))</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>crabs[<span class="fu">sample</span>(<span class="dv">200</span>, <span class="dv">6</span>), ]</span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1957,9 +1983,9 @@ display: none;
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGV2ZWxzKGNyYWJzJHNwKSA8LSBjKGxldmVscyhjcmFicyRzcCksIFwiR3JlZW5cIilcbmNyYWJzJHNwWzE1XSA8LSBcIkdyZWVuXCJcbmNyYWJzW2NyYWJzJHNwID09IFwiR3JlZW5cIixdXG5gYGAifQ== -->
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">levels</span>(crabs<span class="sc">$</span>sp) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">levels</span>(crabs<span class="sc">$</span>sp), <span class="st">&quot;Green&quot;</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>crabs<span class="sc">$</span>sp[<span class="dv">15</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Green&quot;</span></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>crabs[crabs<span class="sc">$</span>sp <span class="sc">==</span> <span class="st">&quot;Green&quot;</span>,]</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">levels</span>(crabs<span class="sc">$</span>sp) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">levels</span>(crabs<span class="sc">$</span>sp), <span class="st">&quot;Green&quot;</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>crabs<span class="sc">$</span>sp[<span class="dv">15</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Green&quot;</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>crabs[crabs<span class="sc">$</span>sp <span class="sc">==</span> <span class="st">&quot;Green&quot;</span>,]</span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1970,7 +1996,7 @@ display: none;
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGFibGUoY3JhYnMkc3AsIGNyYWJzJHNleClcbmBgYCJ9 -->
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">table</span>(crabs<span class="sc">$</span>sp, crabs<span class="sc">$</span>sex)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">table</span>(crabs<span class="sc">$</span>sp, crabs<span class="sc">$</span>sex)</span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1982,9 +2008,9 @@ display: none;
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGV2ZWxzKGlyaXMkU3BlY2llcykgIyBzZXRvc2Eg0L/QtdGA0YjQsFxuaXJpcyRTcGVjaWVzIDwtIHJlb3JkZXIoaXJpcyRTcGVjaWVzLCBpcmlzJFBldGFsLldpZHRoLCBkZWNyZWFzaW5nID0gVClcbmxldmVscyhpcmlzJFNwZWNpZXMpICMgdmlyZ2luaWNhINC80LDRlCDQsdGD0YLQuCDQv9C10YDRiNC+0Y5cbmBgYCJ9 -->
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">levels</span>(iris<span class="sc">$</span>Species) <span class="co"># setosa перша</span></span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>iris<span class="sc">$</span>Species <span class="ot">&lt;-</span> <span class="fu">reorder</span>(iris<span class="sc">$</span>Species, iris<span class="sc">$</span>Petal.Width, <span class="at">decreasing =</span> T)</span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="fu">levels</span>(iris<span class="sc">$</span>Species) <span class="co"># virginica має бути першою</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">levels</span>(iris<span class="sc">$</span>Species) <span class="co"># setosa перша</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>iris<span class="sc">$</span>Species <span class="ot">&lt;-</span> <span class="fu">reorder</span>(iris<span class="sc">$</span>Species, iris<span class="sc">$</span>Petal.Width, <span class="at">decreasing =</span> T)</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="fu">levels</span>(iris<span class="sc">$</span>Species) <span class="co"># virginica має бути першою</span></span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1994,12 +2020,12 @@ display: none;
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZjEgPC0gZmFjdG9yKGxldHRlcnMpXG5mMiA8LSByZXYoZmFjdG9yKGxldHRlcnMpKVxuZjMgPC0gZmFjdG9yKGxldHRlcnMsIGxldmVscyA9IHJldihsZXR0ZXJzKSlcblxuZjQgPC0gZjFcbmxldmVscyhmNCkgPC0gcmV2KGxldmVscyhmNCkpXG5gYGAifQ== -->
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="fu">factor</span>(letters)</span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="fu">rev</span>(<span class="fu">factor</span>(letters))</span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>f3 <span class="ot">&lt;-</span> <span class="fu">factor</span>(letters, <span class="at">levels =</span> <span class="fu">rev</span>(letters))</span>
-<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>f4 <span class="ot">&lt;-</span> f1</span>
-<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="fu">levels</span>(f4) <span class="ot">&lt;-</span> <span class="fu">rev</span>(<span class="fu">levels</span>(f4))</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="fu">factor</span>(letters)</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="fu">rev</span>(<span class="fu">factor</span>(letters))</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>f3 <span class="ot">&lt;-</span> <span class="fu">factor</span>(letters, <span class="at">levels =</span> <span class="fu">rev</span>(letters))</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>f4 <span class="ot">&lt;-</span> f1</span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="fu">levels</span>(f4) <span class="ot">&lt;-</span> <span class="fu">rev</span>(<span class="fu">levels</span>(f4))</span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -2016,12 +2042,13 @@ display: none;
 </ol>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWVhbl9zZCA8LSBmdW5jdGlvbih4LCBuYS5ybSA9IEZBTFNFKSB7XG4gICAgbWVhbiA8LSBtZWFuKHgsIG5hLnJtID0gbmEucm0pXG4gICAgc2QgPC0gc2QoeCwgbmEucm0gPSBuYS5ybSlcbiAgICByZXR1cm4oYyhtZWFuID0gbWVhbiwgc2QgPSBzZCkpIFxufSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG5gYGAifQ== -->
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>mean_sd <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">FALSE</span>) {</span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>    mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(x, <span class="at">na.rm =</span> na.rm)</span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>    sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(x, <span class="at">na.rm =</span> na.rm)</span>
-<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">c</span>(<span class="at">mean =</span> mean, <span class="at">sd =</span> sd)) </span>
-<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>}                                   </span></code></pre></div>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWVhbl9zZCA8LSBmdW5jdGlvbih4LCBuYS5ybSA9IEZBTFNFKSB7XG4gICAgbWVhbiA8LSBtZWFuKHgsIG5hLnJtID0gbmEucm0pXG4gICAgc2QgPC0gc2QoeCwgbmEucm0gPSBuYS5ybSlcbiAgICByZXR1cm4oYyhtZWFuID0gbWVhbiwgc2QgPSBzZCkpICMg0ZbQtNC10L3RgtC40YfQvdC+INC/0YDQvtGB0YLQviBjKG1lYW4gPSBtZWFuLCBzZCA9IHNkKSDRgyDQvtGB0YLQsNC90L3RltC5INC00ZbRl1xufSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyDQv9GA0L7RgdGC0L4g0Y8g0LLQstCw0LbQsNGOLCDRidC+INCy0LjQutC70LjQuiByZXR1cm4oKSDQsdGW0LvRjNGIINC+0YfQtdCy0LjQtNC90L5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMg0LLQutCw0LfRg9GULCDRidC+INGG0LUg0LLQuNGF0ZbQtNC90LUg0LfQvdCw0YfQtdC90L3RjyDRhNGD0L3QutGG0ZbRl1xuYGBgIn0= -->
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>mean_sd <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>    mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(x, <span class="at">na.rm =</span> na.rm)</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>    sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(x, <span class="at">na.rm =</span> na.rm)</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">c</span>(<span class="at">mean =</span> mean, <span class="at">sd =</span> sd)) <span class="co"># ідентично просто c(mean = mean, sd = sd) у останній дії</span></span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>}                                   <span class="co"># просто я вважаю, що виклик return() більш очевидно</span></span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a>                                    <span class="co"># вказує, що це вихідне значення функції</span></span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -2036,15 +2063,15 @@ display: none;
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWVhbl9jbCA8LSBmdW5jdGlvbih4LCBhLCBuYS5ybSA9IEZBTFNFKSB7XG4gIG1lYW4gPC0gbWVhbih4LCBuYS5ybSA9IG5hLnJtKVxuICBzZSA8LSBzZCh4LCBuYS5ybSA9IG5hLnJtKS9zcXJ0KGxlbmd0aCh4KSlcbiAgY2wgPC0gcXQoYS8yLCBkZiA9IGxlbmd0aCh4KSAtIDEsIGxvd2VyLnRhaWwgPSBGKSAqIHNlXG4gIHJldHVybihjKG1lYW4gPSBtZWFuLCBcbiAgICAgICAgICAgbG93ZXIuYm91bmQgPSBtZWFuIC0gY2wsXG4gICAgICAgICAgIHVwcGVyLmJvdW5kID0gbWVhbiArIGNsLFxuICAgICAgICAgICBzZSA9IHNlKSlcbn1cbmBgYCJ9 -->
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>mean_cl <span class="ot">&lt;-</span> <span class="cf">function</span>(x, a, <span class="at">na.rm =</span> <span class="cn">FALSE</span>) {</span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>  mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(x, <span class="at">na.rm =</span> na.rm)</span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>  se <span class="ot">&lt;-</span> <span class="fu">sd</span>(x, <span class="at">na.rm =</span> na.rm)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(x))</span>
-<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> <span class="fu">qt</span>(a<span class="sc">/</span><span class="dv">2</span>, <span class="at">df =</span> <span class="fu">length</span>(x) <span class="sc">-</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> F) <span class="sc">*</span> se</span>
-<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">c</span>(<span class="at">mean =</span> mean, </span>
-<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a>           <span class="at">lower.bound =</span> mean <span class="sc">-</span> cl,</span>
-<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a>           <span class="at">upper.bound =</span> mean <span class="sc">+</span> cl,</span>
-<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a>           <span class="at">se =</span> se))</span>
-<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>mean_cl <span class="ot">&lt;-</span> <span class="cf">function</span>(x, a, <span class="at">na.rm =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>  mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(x, <span class="at">na.rm =</span> na.rm)</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>  se <span class="ot">&lt;-</span> <span class="fu">sd</span>(x, <span class="at">na.rm =</span> na.rm)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(x))</span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> <span class="fu">qt</span>(a<span class="sc">/</span><span class="dv">2</span>, <span class="at">df =</span> <span class="fu">length</span>(x) <span class="sc">-</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> F) <span class="sc">*</span> se</span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">c</span>(<span class="at">mean =</span> mean, </span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>           <span class="at">lower.bound =</span> mean <span class="sc">-</span> cl,</span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a>           <span class="at">upper.bound =</span> mean <span class="sc">+</span> cl,</span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a>           <span class="at">se =</span> se))</span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a>}</span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -2055,14 +2082,313 @@ display: none;
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWVhbl9jbChjcmFicyRGTCwgMC4wNSlcbmNvbmZpbnQobG0oY3JhYnMkRkwgfiAxKSwgbGV2ZWwgPSAwLjk1KVxuYGBgIn0= -->
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">mean_cl</span>(crabs<span class="sc">$</span>FL, <span class="fl">0.05</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="fu">confint</span>(<span class="fu">lm</span>(crabs<span class="sc">$</span>FL <span class="sc">~</span> <span class="dv">1</span>), <span class="at">level =</span> <span class="fl">0.95</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">mean_cl</span>(crabs<span class="sc">$</span>FL, <span class="fl">0.05</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="fu">confint</span>(<span class="fu">lm</span>(crabs<span class="sc">$</span>FL <span class="sc">~</span> <span class="dv">1</span>), <span class="at">level =</span> <span class="fl">0.95</span>)</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="3" style="list-style-type: decimal">
+<li>Модифікуйте Вашу функцію <code>mean_sd()</code> так, аби вона
+приймала лише вектор з чисельних або логічних значень, і у інакшому
+випадку видавала помилку з текстовим повідомленням що “x can’t be
+treated as a number”</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyDRlCDQvdC40LfQutCwINGA0ZbQt9C90LjRhSDQstCw0YDRltCw0L3RgtGW0LIsINGP0Log0YHQsNC80LUg0YbQtSDQvdCw0L/QuNGB0LDRgtC4XG4jINC00LXQutGW0LvRjNC60LAg0LTQu9GPINC/0YDQuNC60LvQsNC00YMsINGA0LXQt9GD0LvRjNGC0LDRgiDQvtC00LjQvSDRliDRgtC+0Lkg0YHQsNC80LjQuVxuXG5tZWFuX3NkIDwtIGZ1bmN0aW9uKHgsIG5hLnJtID0gRkFMU0UpIHtcbiAgICBpZiAoaXMubnVtZXJpYyh4KSB8fCBpcy5sb2dpY2FsKHgpKSB7XG4gICAgbWVhbiA8LSBtZWFuKHgsIG5hLnJtID0gbmEucm0pXG4gICAgc2QgPC0gc2QoeCwgbmEucm0gPSBuYS5ybSlcbiAgICByZXR1cm4oYyhtZWFuID0gbWVhbiwgc2QgPSBzZCkpXG4gICAgfSBlbHNlIHtcbiAgICAgIHN0b3AoXCJ4IGNhbid0IGJlIHRyZWF0ZWQgYXMgYSBudW1iZXJcIilcbiAgICB9XG59XG5cbm1lYW5fc2QgPC0gZnVuY3Rpb24oeCwgbmEucm0gPSBGQUxTRSkge1xuICAgIGlmIChjKGlzLm51bWVyaWMoeCkgfHwgaXMubG9naWNhbCh4KSkgIT0gVFJVRSkge1xuICAgICAgc3RvcChcInggY2FuJ3QgYmUgdHJlYXRlZCBhcyBhIG51bWJlclwiKVxuICAgIH1cbiAgICBtZWFuIDwtIG1lYW4oeCwgbmEucm0gPSBuYS5ybSlcbiAgICBzZCA8LSBzZCh4LCBuYS5ybSA9IG5hLnJtKVxuICAgIHJldHVybihjKG1lYW4gPSBtZWFuLCBzZCA9IHNkKSlcbn1cblxubWVhbl9zZCA8LSBmdW5jdGlvbih4LCBuYS5ybSA9IEZBTFNFKSB7XG4gICAgc3RvcGlmbm90KFwieCBjYW4ndCBiZSB0cmVhdGVkIGFzIGEgbnVtYmVyXCIgPSBpcy5udW1lcmljKHgpIHx8IGlzLmxvZ2ljYWwoeCkpXG4gICAgbWVhbiA8LSBtZWFuKHgsIG5hLnJtID0gbmEucm0pXG4gICAgc2QgPC0gc2QoeCwgbmEucm0gPSBuYS5ybSlcbiAgICByZXR1cm4oYyhtZWFuID0gbWVhbiwgc2QgPSBzZCkpXG59XG5gYGAifQ== -->
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co"># є низка різних варіантів, як саме це написати</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="co"># декілька для прикладу, результат один і той самий</span></span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>mean_sd <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">is.numeric</span>(x) <span class="sc">||</span> <span class="fu">is.logical</span>(x)) {</span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a>    mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(x, <span class="at">na.rm =</span> na.rm)</span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a>    sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(x, <span class="at">na.rm =</span> na.rm)</span>
+<span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">c</span>(<span class="at">mean =</span> mean, <span class="at">sd =</span> sd))</span>
+<span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a>      <span class="fu">stop</span>(<span class="st">&quot;x can&#39;t be treated as a number&quot;</span>)</span>
+<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a>    }</span>
+<span id="cb18-12"><a href="#cb18-12" tabindex="-1"></a>}</span>
+<span id="cb18-13"><a href="#cb18-13" tabindex="-1"></a></span>
+<span id="cb18-14"><a href="#cb18-14" tabindex="-1"></a>mean_sd <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb18-15"><a href="#cb18-15" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">c</span>(<span class="fu">is.numeric</span>(x) <span class="sc">||</span> <span class="fu">is.logical</span>(x)) <span class="sc">!=</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb18-16"><a href="#cb18-16" tabindex="-1"></a>      <span class="fu">stop</span>(<span class="st">&quot;x can&#39;t be treated as a number&quot;</span>)</span>
+<span id="cb18-17"><a href="#cb18-17" tabindex="-1"></a>    }</span>
+<span id="cb18-18"><a href="#cb18-18" tabindex="-1"></a>    mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(x, <span class="at">na.rm =</span> na.rm)</span>
+<span id="cb18-19"><a href="#cb18-19" tabindex="-1"></a>    sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(x, <span class="at">na.rm =</span> na.rm)</span>
+<span id="cb18-20"><a href="#cb18-20" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">c</span>(<span class="at">mean =</span> mean, <span class="at">sd =</span> sd))</span>
+<span id="cb18-21"><a href="#cb18-21" tabindex="-1"></a>}</span>
+<span id="cb18-22"><a href="#cb18-22" tabindex="-1"></a></span>
+<span id="cb18-23"><a href="#cb18-23" tabindex="-1"></a>mean_sd <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb18-24"><a href="#cb18-24" tabindex="-1"></a>    <span class="fu">stopifnot</span>(<span class="st">&quot;x can&#39;t be treated as a number&quot;</span> <span class="ot">=</span> <span class="fu">is.numeric</span>(x) <span class="sc">||</span> <span class="fu">is.logical</span>(x))</span>
+<span id="cb18-25"><a href="#cb18-25" tabindex="-1"></a>    mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(x, <span class="at">na.rm =</span> na.rm)</span>
+<span id="cb18-26"><a href="#cb18-26" tabindex="-1"></a>    sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(x, <span class="at">na.rm =</span> na.rm)</span>
+<span id="cb18-27"><a href="#cb18-27" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">c</span>(<span class="at">mean =</span> mean, <span class="at">sd =</span> sd))</span>
+<span id="cb18-28"><a href="#cb18-28" tabindex="-1"></a>}</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="5" style="list-style-type: decimal">
+<li>Використавши <code>for</code> конструкцію напишіть функцію, що буде
+генерувати кадр даних або матрицю розміром n на m. Кожна з n колонок
+кадру має містити вибірку з нормальним розподілом довжиною m.</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyDQvdC10L/RgNCw0LLQuNC70YzQvdC40Lkg0LLQsNGA0ZbQsNC90YIsINC/0YDQuNC30LLQtdC00LUg0LTQviDRgdGC0LLQvtGA0LXQvdC90Y8g0LrQvtC/0ZbRlyDQvtCxJ9GU0LrRgtGDINC90LAg0LrQvtC20L3RltC5INGW0YLQtdGA0LDRhtGW0Zcg0YbQuNC60LvRg1xubm9ybV9kYXRhX2JhZCA8LSBmdW5jdGlvbihuLCBtKSB7XG4gIGRmIDwtIHZlY3RvcigpXG4gICAgZm9yIChpIGluIDE6bikge1xuICAgICAgZGYgPC0gcmJpbmQoZGYsIHJub3JtKG0pKVxuICAgIH1cbiAgcmV0dXJuKGRmKVxufVxuXG4jINC/0YDQsNCy0LjQu9GM0L3QuNC5INCy0LDRgNGW0LDQvdGCLCDQv9C10YDRiNCwINC00ZbRjyDQvtC00YDQsNC30YMg0LLQuNC00ZbQu9GP0ZQg0L/QtdCy0L3QuNC5INC+0LEn0ZTQvCDQv9Cw0Lwn0Y/RgtGWINC/0ZbQtCDQvtCxJ9GU0LrRglxubm9ybV9kYXRhX2dvb2QgPC0gZnVuY3Rpb24obiwgbSkge1xuICBkZiA8LSB2ZWN0b3IoXCJsaXN0XCIsIG4pXG4gIGZvciAoaSBpbiAxOm4pIHtcbiAgICBkZltbaV1dIDwtIHJub3JtKG0pXG4gIH1cbiAgZG8uY2FsbChcImNiaW5kXCIsIGRmKSAjINGG0LUg0L/QvtCy0LXRgNGC0LDRlCDQvNCw0YLRgNC40YbRjiwg0LzQvtC20L3QsCDQstC40LrQu9C40LrQsNGC0LggZGF0YS5mcmFtZSgpINGJ0L7QsSDQv9C+0LLQtdGA0YLQsNC70L4g0LrQsNC00YBcbn1cbmBgYCJ9 -->
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="co"># неправильний варіант, призведе до створення копії об&#39;єкту на кожній ітерації циклу</span></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>norm_data_bad <span class="ot">&lt;-</span> <span class="cf">function</span>(n, m) {</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">vector</span>()</span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a>      df <span class="ot">&lt;-</span> <span class="fu">rbind</span>(df, <span class="fu">rnorm</span>(m))</span>
+<span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a>    }</span>
+<span id="cb19-7"><a href="#cb19-7" tabindex="-1"></a>  <span class="fu">return</span>(df)</span>
+<span id="cb19-8"><a href="#cb19-8" tabindex="-1"></a>}</span>
+<span id="cb19-9"><a href="#cb19-9" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" tabindex="-1"></a><span class="co"># правильний варіант, перша дія одразу виділяє певний об&#39;єм пам&#39;яті під об&#39;єкт</span></span>
+<span id="cb19-11"><a href="#cb19-11" tabindex="-1"></a>norm_data_good <span class="ot">&lt;-</span> <span class="cf">function</span>(n, m) {</span>
+<span id="cb19-12"><a href="#cb19-12" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">&quot;list&quot;</span>, n)</span>
+<span id="cb19-13"><a href="#cb19-13" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
+<span id="cb19-14"><a href="#cb19-14" tabindex="-1"></a>    df[[i]] <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(m)</span>
+<span id="cb19-15"><a href="#cb19-15" tabindex="-1"></a>  }</span>
+<span id="cb19-16"><a href="#cb19-16" tabindex="-1"></a>  <span class="fu">do.call</span>(<span class="st">&quot;cbind&quot;</span>, df) <span class="co"># це повертає матрицю, можна викликати data.frame() щоб повертало кадр</span></span>
+<span id="cb19-17"><a href="#cb19-17" tabindex="-1"></a>}</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="6" style="list-style-type: decimal">
+<li>Теж саме, але використавши <code>lapply()</code></li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubm9ybV9kYXRhX2xhcHBseSA8LSBmdW5jdGlvbihuLCBtKSB7XG4gIGRvLmNhbGwoXCJjYmluZFwiLCBsYXBwbHkoMTpuLCBmdW5jdGlvbih4KSBybm9ybShtKSkpXG59XG5gYGAifQ== -->
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>norm_data_lapply <span class="ot">&lt;-</span> <span class="cf">function</span>(n, m) {</span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>  <span class="fu">do.call</span>(<span class="st">&quot;cbind&quot;</span>, <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span>n, <span class="cf">function</span>(x) <span class="fu">rnorm</span>(m)))</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>}</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="7" style="list-style-type: decimal">
+<li>Створіть кадр даних або матрицю розміром 2 на 10к. Напишіть простий
+цикл який дозволить побудувати декілька графіків, що будуть
+демонструвати як змінюється розподіл у залежності від розміру
+вибірки</li>
+</ol>
+<p>Для демонстрації розподілу двох змінних можна використати
+<code>plot</code>, <code>qqplot</code> та <code>smoothScatter</code>,
+для демонстрації розподілу однієї змінної можна використати
+<code>hist</code> або <code>qqnorm</code></p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGYgPC1kby5jYWxsKFwiY2JpbmRcIiwgbGFwcGx5KDE6MiwgXFwoeCkgcm5vcm0oMTAwMDApKSkgIyDRgdCw0LzQsCDQvNCw0YLRgNC40YbRjyDQtNCw0L3QuNGFXG54IDwtIGMoMywgMTAsIDEwMCwgNTAwLCAxMDAwLCAxMDAwMCkgIyBuINCy0LjQsdGW0YDQutC4LCDQvNC+0LbQvdCwINCx0YPQtNGMLdGP0LrRliDRltC90YjRliDQstC60LDQt9Cw0YLQuCBcblxuIyDRidC+0LEg0YDQvtC30LzRltGB0YLQuNGC0Lgg0LTQtdC60ZbQu9GM0LrQsCDQs9GA0LDRhNGW0LrRltCyINC90LAg0L7QtNC90L7QvNGDIFwi0LvQuNGB0YLRllwiLCDQtNCy0ZYg0LrQvtC70L7QvdC60Lgg0YLQsCDRgtGA0Lgg0YDRj9C00LrQuFxuIyDQv9GA0LDRhtGO0ZQg0YLRltC70YzQutC4INC/0YDQuCDQstC40LrQvtC90LDQvdC90ZYg0LrQvtC80LDQvdC0INGDINC60L7QvdGB0L7Qu9GMXG5wYXIobWZyb3cgPSBjKDMsIDIpKSBcblxuZm9yIChpIGluIHNlcV9hbG9uZyh4KSkge1xuICAgIHNtb290aFNjYXR0ZXIoZGZbMTp4W2ldLCAxXSwgZGZbMTp4W2ldLCAyXSwgbWFpbiA9IHBhc3RlKFwic2FtcGxlIG9mXCIsIHhbaV0pKVxufVxuXG5mb3IgKGkgaW4gc2VxX2Fsb25nKHgpKSB7XG4gICAgcXFwbG90KGRmWzE6eFtpXSwgMV0sIGRmWzE6eFtpXSwgMl0sIG1haW4gPSBwYXN0ZShcInNhbXBsZSBvZlwiLCB4W2ldKSlcbn1cblxuZm9yIChpIGluIHNlcV9hbG9uZyh4KSkge1xuICAgIGhpc3QoZGZbMTp4W2ldLCAxXSwgbWFpbiA9IHBhc3RlKFwic2FtcGxlIG9mXCIsIHhbaV0pKVxufVxuXG4jINCy0LDRgNGW0LDQvdGCINC3INCy0LjQutC+0YDQuNGB0YLQsNC90L3Rj9C8INGE0YPQvdC60YbRltGXIHNhbXBsZSgpLCDRgNCw0L3QtNC+0LzRltC30L7QstCw0L3QsCDQstC40LHRltGA0LrQsCDRgNC+0LfQvNGW0YDQvtC8IG4gIFxuIyDQtyDQv9C+0L/QtdGA0LXQtNC90YzQviDRgdGC0LLQvtGA0LXQvdC+0Zcg0LzQsNGC0YDQuNGG0ZYg0LLQuNGJ0LUgXG5mb3IgKGkgaW4gc2VxX2Fsb25nKHgpKSB7XG4gIGhpc3Qoc2FtcGxlKGRmLCB4W2ldKSwgbWFpbiA9IHBhc3RlKFwic2FtcGxlIG9mXCIsIHhbaV0pKSBcbn1cbmBgYCJ9 -->
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">do.call</span>(<span class="st">&quot;cbind&quot;</span>, <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, \(x) <span class="fu">rnorm</span>(<span class="dv">10000</span>))) <span class="co"># сама матриця даних</span></span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">500</span>, <span class="dv">1000</span>, <span class="dv">10000</span>) <span class="co"># n вибірки, можна будь-які інші вказати </span></span>
+<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" tabindex="-1"></a><span class="co"># щоб розмістити декілька графіків на одному &quot;листі&quot;, дві колонки та три рядки</span></span>
+<span id="cb21-5"><a href="#cb21-5" tabindex="-1"></a><span class="co"># працює тільки при виконанні команд у консоль</span></span>
+<span id="cb21-6"><a href="#cb21-6" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">2</span>)) </span>
+<span id="cb21-7"><a href="#cb21-7" tabindex="-1"></a></span>
+<span id="cb21-8"><a href="#cb21-8" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(x)) {</span>
+<span id="cb21-9"><a href="#cb21-9" tabindex="-1"></a>    <span class="fu">smoothScatter</span>(df[<span class="dv">1</span><span class="sc">:</span>x[i], <span class="dv">1</span>], df[<span class="dv">1</span><span class="sc">:</span>x[i], <span class="dv">2</span>], <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">&quot;sample of&quot;</span>, x[i]))</span>
+<span id="cb21-10"><a href="#cb21-10" tabindex="-1"></a>}</span>
+<span id="cb21-11"><a href="#cb21-11" tabindex="-1"></a></span>
+<span id="cb21-12"><a href="#cb21-12" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(x)) {</span>
+<span id="cb21-13"><a href="#cb21-13" tabindex="-1"></a>    <span class="fu">qqplot</span>(df[<span class="dv">1</span><span class="sc">:</span>x[i], <span class="dv">1</span>], df[<span class="dv">1</span><span class="sc">:</span>x[i], <span class="dv">2</span>], <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">&quot;sample of&quot;</span>, x[i]))</span>
+<span id="cb21-14"><a href="#cb21-14" tabindex="-1"></a>}</span>
+<span id="cb21-15"><a href="#cb21-15" tabindex="-1"></a></span>
+<span id="cb21-16"><a href="#cb21-16" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(x)) {</span>
+<span id="cb21-17"><a href="#cb21-17" tabindex="-1"></a>    <span class="fu">hist</span>(df[<span class="dv">1</span><span class="sc">:</span>x[i], <span class="dv">1</span>], <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">&quot;sample of&quot;</span>, x[i]))</span>
+<span id="cb21-18"><a href="#cb21-18" tabindex="-1"></a>}</span>
+<span id="cb21-19"><a href="#cb21-19" tabindex="-1"></a></span>
+<span id="cb21-20"><a href="#cb21-20" tabindex="-1"></a><span class="co"># варіант з використанням функції sample(), рандомізована вибірка розміром n  </span></span>
+<span id="cb21-21"><a href="#cb21-21" tabindex="-1"></a><span class="co"># з попередньо створеної матриці вище </span></span>
+<span id="cb21-22"><a href="#cb21-22" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(x)) {</span>
+<span id="cb21-23"><a href="#cb21-23" tabindex="-1"></a>  <span class="fu">hist</span>(<span class="fu">sample</span>(df, x[i]), <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">&quot;sample of&quot;</span>, x[i])) </span>
+<span id="cb21-24"><a href="#cb21-24" tabindex="-1"></a>}</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+<div id="tidyverse-intro" class="section level2">
+<h2>TIDYVERSE INTRO</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KHBhbG1lcnBlbmd1aW5zKVxuYGBgIn0= -->
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<div id="функції-для-рядочків" class="section level3">
+<h3>Функції для рядочків</h3>
+<ol style="list-style-type: decimal">
+<li>Використавши датасет <code>starwars</code> виберіть усіх персонажів
+що мають зріст 160 см та вище, є родом з Татуїну або Набу та не є
+людьми</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RhcndhcnMgfD4gXG4gIGZpbHRlcihcbiAgICBoZWlnaHQgPj0gMTYwICYgYyhob21ld29ybGQgPT0gXCJUYXRvb2luZVwiIHwgaG9tZXdvcmxkID09IFwiTmFib29cIikgJiBzcGVjaWVzICE9IFwiSHVtYW5cIlxuICApXG5cbiMg0YLQtdC2INGB0LDQvNC1LCDQstCw0YDRltCw0L3RgiDQtyDQstC40LrQvtGA0LjRgdGC0LDQvdC90Y/QvCAlaW4lXG5cbnN0YXJ3YXJzIHw+IFxuICBmaWx0ZXIoXG4gICAgaGVpZ2h0ID49IDE2MCAmIGhvbWV3b3JsZCAlaW4lIGMoXCJUYXRvb2luZVwiLCBcIk5hYm9vXCIpICYgc3BlY2llcyAhPSBcIkh1bWFuXCJcbiAgKVxuYGBgIn0= -->
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>starwars <span class="sc">|&gt;</span> </span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a>    height <span class="sc">&gt;=</span> <span class="dv">160</span> <span class="sc">&amp;</span> <span class="fu">c</span>(homeworld <span class="sc">==</span> <span class="st">&quot;Tatooine&quot;</span> <span class="sc">|</span> homeworld <span class="sc">==</span> <span class="st">&quot;Naboo&quot;</span>) <span class="sc">&amp;</span> species <span class="sc">!=</span> <span class="st">&quot;Human&quot;</span></span>
+<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a>  )</span>
+<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="#cb23-6" tabindex="-1"></a><span class="co"># теж саме, варіант з використанням %in%</span></span>
+<span id="cb23-7"><a href="#cb23-7" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="#cb23-8" tabindex="-1"></a>starwars <span class="sc">|&gt;</span> </span>
+<span id="cb23-9"><a href="#cb23-9" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb23-10"><a href="#cb23-10" tabindex="-1"></a>    height <span class="sc">&gt;=</span> <span class="dv">160</span> <span class="sc">&amp;</span> homeworld <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Tatooine&quot;</span>, <span class="st">&quot;Naboo&quot;</span>) <span class="sc">&amp;</span> species <span class="sc">!=</span> <span class="st">&quot;Human&quot;</span></span>
+<span id="cb23-11"><a href="#cb23-11" tabindex="-1"></a>  )</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="2" style="list-style-type: decimal">
+<li>Відсортуйте пінгвінів з датасету <code>penguins</code> за вагою та
+довжиною плавців від найбільшого до найменшого. Якою є довжина плавця
+найважчого пінгвіна та третього найважчого пінгвіна?</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGVuZ3VpbnMgfD4gXG4gIGFycmFuZ2UoXG4gICAgZGVzYyhib2R5X21hc3NfZyksXG4gICAgZGVzYyhmbGlwcGVyX2xlbmd0aF9tbSlcbiAgKSB8PiBcbiAgaGVhZCg1KVxuYGBgIn0= -->
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a>  <span class="fu">arrange</span>(</span>
+<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a>    <span class="fu">desc</span>(body_mass_g),</span>
+<span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a>    <span class="fu">desc</span>(flipper_length_mm)</span>
+<span id="cb24-5"><a href="#cb24-5" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb24-6"><a href="#cb24-6" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="3" style="list-style-type: decimal">
+<li>Використавши датасет <code>msleep</code> з’ясуйте які унікальні роди
+представлено для кожного порядку тварин. Скільки родів представлено для
+порядку Artiodactyla?</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXNsZWVwIHw+IFxuICBkaXN0aW5jdChnZW51cywgb3JkZXIpIHw+IFxuICBhcnJhbmdlKG9yZGVyKSB8PiBcbiAgbnJvdygpXG5cbm1zbGVlcCB8PiBcbiAgZGlzdGluY3QoZ2VudXMsIG9yZGVyKSB8PiBcbiAgYXJyYW5nZShvcmRlcilcblxuYGBgIn0= -->
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a>msleep <span class="sc">|&gt;</span> </span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>  <span class="fu">distinct</span>(genus, order) <span class="sc">|&gt;</span> </span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a>  <span class="fu">arrange</span>(order) <span class="sc">|&gt;</span> </span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a>  <span class="fu">nrow</span>()</span>
+<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a>msleep <span class="sc">|&gt;</span> </span>
+<span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a>  <span class="fu">distinct</span>(genus, order) <span class="sc">|&gt;</span> </span>
+<span id="cb25-8"><a href="#cb25-8" tabindex="-1"></a>  <span class="fu">arrange</span>(order)</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="функції-для-колонок" class="section level3">
+<h3>Функції для колонок</h3>
+<ol style="list-style-type: decimal">
+<li>У датасеті пінгвінів пересуньте колонки “sex” та “year” так, щоб
+вони стояли перед першою колонкою з чисельними значеннями</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGVuZ3VpbnMgfD4gXG4gIHJlbG9jYXRlKGMoXCJzZXhcIiwgXCJ5ZWFyXCIpLCAuYmVmb3JlID0gYmlsbF9sZW5ndGhfbW0pXG5cbnBlbmd1aW5zIHw+IFxuICByZWxvY2F0ZShjKFwic2V4XCIsIFwieWVhclwiKSwgLmJlZm9yZSA9IHdoZXJlKGlzLm51bWVyaWMpKVxuYGBgIn0= -->
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a>  <span class="fu">relocate</span>(<span class="fu">c</span>(<span class="st">&quot;sex&quot;</span>, <span class="st">&quot;year&quot;</span>), <span class="at">.before =</span> bill_length_mm)</span>
+<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a>  <span class="fu">relocate</span>(<span class="fu">c</span>(<span class="st">&quot;sex&quot;</span>, <span class="st">&quot;year&quot;</span>), <span class="at">.before =</span> <span class="fu">where</span>(is.numeric))</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="2" style="list-style-type: decimal">
+<li>У датасеті пінгвінів створіть колонку з назвою ratio значення якої є
+співвідношенням bill_depth_mm до bill_length_mm, створіть ще одну
+колонку значення якої буде 1, якщо співвідношення є &gt; 0.5 та 0 у
+іншому випадку. Помістіть обидві колонки перед flipper_length</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5wZW5ndWlucyB8PiBcbiAgbXV0YXRlKFxuICAgIHJhdGlvID0gYmlsbF9kZXB0aF9tbSAvIGJpbGxfbGVuZ3RoX21tLFxuICAgIG1vcmVfdGhhbl8wNSA9IGlmX2Vsc2UocmF0aW8gPiAuNSwgMSwgMCksXG4gICAgLmJlZm9yZSA9IGZsaXBwZXJfbGVuZ3RoX21tXG4gIClcbmBgYCJ9 -->
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a></span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>    <span class="at">ratio =</span> bill_depth_mm <span class="sc">/</span> bill_length_mm,</span>
+<span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a>    <span class="at">more_than_05 =</span> <span class="fu">if_else</span>(ratio <span class="sc">&gt;</span> .<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb27-6"><a href="#cb27-6" tabindex="-1"></a>    <span class="at">.before =</span> flipper_length_mm</span>
+<span id="cb27-7"><a href="#cb27-7" tabindex="-1"></a>  )</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="3" style="list-style-type: decimal">
+<li>У датасеті <code>msleep</code> виберіть усі колонки, що містять
+слово sleep</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXNsZWVwIHw+IHNlbGVjdChjb250YWlucyhcInNsZWVwXCIpKVxuYGBgIn0= -->
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a>msleep <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">&quot;sleep&quot;</span>))</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="груповані-дані" class="section level3">
+<h3>Груповані дані</h3>
+<ol style="list-style-type: decimal">
+<li>Взявши датасет пінгвінів визначне середнє значення та стандартну
+похибку для ваги пінгвіну у залежності від його виду та статі</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGVuZ3VpbnMgfD4gXG4gIGZpbHRlcighaXMubmEoc2V4KSkgfD4gXG4gIGdyb3VwX2J5KHNwZWNpZXMsIHNleCkgfD4gXG4gIHN1bW1hcmlzZShcbiAgICBtZWFuID0gbWVhbihib2R5X21hc3NfZyksXG4gICAgc2UgPSBzZChib2R5X21hc3NfZykgLyBuKCleMC41LFxuICAgIG4gPSBuKClcbiAgKVxuYGBgIn0= -->
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(sex)) <span class="sc">|&gt;</span> </span>
+<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span> </span>
+<span id="cb29-4"><a href="#cb29-4" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb29-5"><a href="#cb29-5" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(body_mass_g),</span>
+<span id="cb29-6"><a href="#cb29-6" tabindex="-1"></a>    <span class="at">se =</span> <span class="fu">sd</span>(body_mass_g) <span class="sc">/</span> <span class="fu">n</span>()<span class="sc">^</span><span class="fl">0.5</span>,</span>
+<span id="cb29-7"><a href="#cb29-7" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
+<span id="cb29-8"><a href="#cb29-8" tabindex="-1"></a>  )</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="2" style="list-style-type: decimal">
+<li>Використавши датасет <code>msleep</code> визначте який порядок
+тварин є найбільш представленим у датасеті</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXNsZWVwIHw+IFxuICBncm91cF9ieShvcmRlcikgfD4gXG4gIGNvdW50KCkgfD4gXG4gIGFycmFuZ2UoZGVzYyhuKSlcbmBgYCJ9 -->
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a>msleep <span class="sc">|&gt;</span> </span>
+<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a>  <span class="fu">group_by</span>(order) <span class="sc">|&gt;</span> </span>
+<span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a>  <span class="fu">count</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb30-4"><a href="#cb30-4" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="ітерації" class="section level3">
+<h3>Ітерації</h3>
+<ol style="list-style-type: decimal">
+<li>Згрупуйте пінгвінів за видом, визначте середнє та медіану для
+колонок bill_length_mm, bill_depth_mm та flipper_length_mm</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGVuZ3VpbnMgfD4gXG4gIGdyb3VwX2J5KHNwZWNpZXMpIHw+IFxuICBzdW1tYXJpc2UoXG4gICAgYWNyb3NzKFxuICAgICAgY29udGFpbnMoXCJtbVwiKSxcbiAgICAgIGxpc3QoXG4gICAgICAgIG1lYW4gPSBcXCh4KSBtZWFuKHgsIG5hLnJtID0gVCksXG4gICAgICAgIG1lZGlhbiA9IFxcKHgpIG1lZGlhbih4LCBuYS5ybSA9IFRSVUUpXG4gICAgICApXG4gICAgKVxuICApXG5gYGAifQ== -->
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
+<span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb31-4"><a href="#cb31-4" tabindex="-1"></a>    <span class="fu">across</span>(</span>
+<span id="cb31-5"><a href="#cb31-5" tabindex="-1"></a>      <span class="fu">contains</span>(<span class="st">&quot;mm&quot;</span>),</span>
+<span id="cb31-6"><a href="#cb31-6" tabindex="-1"></a>      <span class="fu">list</span>(</span>
+<span id="cb31-7"><a href="#cb31-7" tabindex="-1"></a>        <span class="at">mean =</span> \(x) <span class="fu">mean</span>(x, <span class="at">na.rm =</span> T),</span>
+<span id="cb31-8"><a href="#cb31-8" tabindex="-1"></a>        <span class="at">median =</span> \(x) <span class="fu">median</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb31-9"><a href="#cb31-9" tabindex="-1"></a>      )</span>
+<span id="cb31-10"><a href="#cb31-10" tabindex="-1"></a>    )</span>
+<span id="cb31-11"><a href="#cb31-11" tabindex="-1"></a>  )</span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogImV4YW1wbGVzIg0Kb3V0cHV0OiANCiAgaHRtbF9ub3RlYm9vazogDQogICAgY29kZV9mb2xkaW5nOiBoaWRlDQogICAgaGlnaGxpZ2h0OiBweWdtZW50cw0KLS0tDQojIyBCQVNFIFINCiMjIyDQodCw0LHRgdC10YLQuNC90LMg0LrQsNC00YDRltCyINC00LDQvdC40YUNCg0KMS4g0J/QvtC00LjQstGW0YLRjNGB0Y8g0Y/QuiDQstC40LPQu9GP0LTQsNGUINC+0YHRgtCw0L3QvdGW0Lkg0YDRj9C00L7QuiDQtNCw0YLQsNGB0LXRgtGDIGBjcmFic2Ag0L3QtSDQstC40LrQvtGA0LjRgdGC0L7QstGD0Y7Rh9C4INGP0LLQvdC40YUg0YfQuNGB0LXQu9GM0L3QuNGFINC30L3QsNGH0LXQvdGMINGDIGBbYA0KDQpgYGB7cn0NCmRhdGEoImNyYWJzIiwgcGFja2FnZSA9ICJNQVNTIikNCmNyYWJzW25yb3coY3JhYnMpLF0NCmBgYA0KDQoyLiDQn9C10YDQtdGB0YPQvdGM0YLQtSDQutC+0LvQvtC90LrRgyBgaW5kZXhgINC90LAg0L/QtdGA0YjRgyDQv9C+0LfQuNGG0ZbRjg0KDQpgYGB7cn0NCihjcmFicyA8LSBjYmluZChjcmFic1szXSwgY3JhYnNbLTNdKSkgIyDQtNC+0LTQsNGC0LrQvtCy0ZYg0LTRg9C20LrQuCDRidC+0LEg0L7QtNGA0LDQt9GDINC/0L7QsdCw0YfQuNGC0Lgg0YDQtdC30YPQu9GM0YLQsNGCDQpgYGANCg0KMy4g0JLQuNC60L7RgNC40YHRgtCw0LLRiNC4INGB0LDQsdGB0LXRgtC40L3QsyDQutCw0LTRgNGDINGC0LAg0L3QtdC+0LHRhdGW0LTQvdGDINGB0YLQsNGC0LjRgdGC0LjRh9C90YMg0YTRg9C90LrRhtGW0Y4g0LLQuNC30L3QsNGH0YLQtSDQvNCw0LrRgdC40LzQsNC70YzQvdC1INGC0LAg0LzRltC90ZbQvNCw0LvRjNC90LUg0LfQvdCw0YfQtdC90L3RjyDQv9Cw0YDQsNC80LXRgtGA0YMgQkQg0LvQuNGI0LUg0LTQu9GPINGH0L7Qu9C+0LLRltGH0LjRhSDQvtGB0ZbQsSDQvtGA0LDQvdC20LXQstC+0LPQviDQutC+0LvRjNC+0YDRgw0KDQpgYGB7cn0NCnJhbmdlKGNyYWJzW2NyYWJzJHNwID09ICJPIiAmIGNyYWJzJHNleCA9PSAiTSIsIDhdKQ0KYGBgDQoNCjQuINCS0ZbQtNGB0L7RgNGC0YPQudGC0LUg0LrQsNC00YAg0LTQsNC90LjRhSDQt9CwINC30LzRltC90L3QvtGOIGBjcmFicyRGTGAg0LLRltC0INC90LDQudCx0ZbQu9GM0YjQvtCz0L4g0LTQviDQvdCw0LnQvNC10L3RiNC+0LPQviDQt9C90LDRh9C10L3QvdGPDQoNCmBgYHtyfQ0KY3JhYnNbb3JkZXIoYyhjcmFicyRGTCksIGRlY3JlYXNpbmcgPSBUUlVFKSwgXQ0KYGBgDQoNCjUuINCe0LTQvdC+0YfQsNGB0L3QviDQv9C10YDQtdGC0LDRgdGD0LnRgtC1INGA0Y/QtNC60Lgg0YLQsCDQutC+0LvQvtC90LrQuCDQutCw0LTRgNGDINC00LDQvdC40YUNCg0KYGBge3J9DQpjcmFic1tzYW1wbGUobnJvdyhjcmFicykpLCBzYW1wbGUobmNvbChjcmFicykpXQ0KYGBgDQoNCiMjIyDQpNCw0LrRgtC+0YDQuA0KDQoxLiDQn9C+0LzRltC90Y/QudGC0LUg0L/QvtGA0Y/QtNC+0Log0YDRltCy0L3RltCyINGDINC60L7Qu9C+0L3RhtGWIGBjcmFicyRzZXhgLCDQv9C+0LTQuNCy0ZbRgtGM0YHRjyDRj9C6INGG0LUg0LLRltC00L7QsdGA0LDQt9C40LvQvtGB0Y8g0L3QsCDRgdGC0YDRg9C60YLRg9GA0ZYg0YTQsNC60YLQvtGA0YMg0LrQvtC80LDQvdC00L7RjiBgc3RyKClgINCw0LHQviBgdW5jbGFzcygpYCwg0LDQsdC+IGBsZXZlbHMoKWAsINC/0L7QtNC40LLRltGC0YzRgdGPINC90LAg0YHQsNC8INC60LDQtNGAINC00LDQvdC40YUg0YfQtdGA0LXQtyBgVmlldygpYC4g0KfQuCDQt9C80ZbQvdC40LvQvtGB0Y8g0YnQvtGB0Yw/DQoNCmBgYHtyfQ0KIyBjcmFicyRzZXggPC0gZmFjdG9yKGNyYWJzJHNleCwgbGV2ZWxzID0gYygiTSIsICJGIikpDQojINCw0LHQviDQsdGW0LvRjNGIINC90LDRgtGD0YDQsNC70YzQvdC40Lkg0LLQsNGA0ZbQsNC90YINCmNyYWJzJHNleCA8LSByZWxldmVsKGNyYWJzJHNleCwgIk0iKQ0KY3JhYnMNCmBgYA0KDQoyLiDQn9C10YDQtdC50LzQtdC90YPQudGC0LUgItCcIiDRgtCwICJGIiDRgyAibWFsZSIg0YLQsCAiZmVtYWxlIg0KDQpgYGB7cn0NCmxldmVscyhjcmFicyRzZXgpIDwtIGMoIm1hbGUiLCAiZmVtYWxlIikNCmNyYWJzW3NhbXBsZSgyMDAsIDYpLCBdICMg0YjRltGB0YLRjCDQstC40L/QsNC00LrQvtCy0LjRhSDRgNGP0LTQutGW0LINCmBgYA0KDQozLiDQmtC+0L3QstC10YDRgtGD0LnRgtC1INC60L7Qu9C+0L3QutGDIGBjcmFicyRzcGAg0YMg0YLQtdC60YHRgtC+0LLQuNC5INCy0LXQutGC0L7RgCDRgtCwINC/0L7QtNC40LLRltGC0YzRgdGPINGP0Log0LfQvNGW0L3QuNC70LDRgdGPINGB0YLRgNGD0LrRgtGD0YDQsCDQutCw0LTRgNGDDQoNCmBgYHtyfQ0KY3JhYnMkc3AgPC0gYXMuY2hhcmFjdGVyKGNyYWJzJHNwKQ0Kc3RyKGNyYWJzKQ0KYGBgDQoNCjQuINCa0L7QvdCy0LXRgNGC0YPQudGC0LUg0LrQvtC70L7QvdC60YMgYGNyYWJzJHNwYCDQt9Cy0L7RgNC+0YLQvdC+INGDINGE0LDQutGC0L7RgCwg0L7QtNC90L7Rh9Cw0YHQvdC+INC/0LXRgNC10LnQvNC10L3Rg9C50YLQtSDRgNGW0LLQvdGWICJCIiDRgtCwICJPIiDQvdCwICJCbHVlIiDRgtCwICJPcmFuZ2UiINCy0ZbQtNC/0L7QstGW0LTQvdC+DQoNCmBgYHtyfQ0KY3JhYnMkc3AgPC0gZmFjdG9yKGNyYWJzJHNwLCBsZXZlbHMgPSBjKCJCIiwgIk8iKSwgbGFiZWxzID0gYygiQmx1ZSIsICJPcmFuZ2UiKSkNCmNyYWJzW3NhbXBsZSgyMDAsIDYpLCBdDQpgYGANCg0KNS4g0JfQsNC80ZbQvdGW0YLRjCDQt9C90LDRh9C10L3QvdGPINCx0YPQtNGMLdGP0LrQvtCz0L4g0L7QtNC90L7Qs9C+INC10LvQtdC80LXQvdGC0YMg0YMgYGNyYWJzJHNwYCDQvdCwIGBHcmVlbmANCg0KYGBge3J9DQpsZXZlbHMoY3JhYnMkc3ApIDwtIGMobGV2ZWxzKGNyYWJzJHNwKSwgIkdyZWVuIikNCmNyYWJzJHNwWzE1XSA8LSAiR3JlZW4iDQpjcmFic1tjcmFicyRzcCA9PSAiR3JlZW4iLF0NCmBgYA0KDQo1LiDQktC40LrQvtGA0LjRgdGC0LDQudGC0LUgYHRhYmxlKClgINCw0LHQuCDQv9C10YDQtdCz0LvRj9C90YPRgtC4INC60ZbQu9GM0LrRltGB0YLRjCDQutGA0LDQsdGW0LIg0LrQvtC20L3QvtCz0L4g0LrQvtC70YzQvtGA0YMg0YLQsCDRgdGC0LDRgtGWDQoNCmBgYHtyfQ0KdGFibGUoY3JhYnMkc3AsIGNyYWJzJHNleCkNCmBgYA0KDQo2LiDQl9Cw0LLQsNC90YLQsNC20YLQtSDQtNCw0YLQsNGB0LXRgiBgaXJpc2Ag0YLQsCDRgNC10L7RgNCz0LDQvdGW0LfRg9C50YLQtSDRgNGW0LLQvdGWINGE0LDQutGC0L7RgNGDIGBpcmlzJFNwZWNpZXNgINC90LAg0L7RgdC90L7QstGWINGB0LXRgNC10LTQvdGM0L7RlyDQtNC+0LLQttC40L3QuCBgaXJpcyRQZXRhbC5XaWR0aGAsINCy0ZbQtCDQsdGW0LvRjNGI0L7Qs9C+INC00L4g0LzQtdC90YjQvtCz0L4NCg0KYGBge3J9DQpsZXZlbHMoaXJpcyRTcGVjaWVzKSAjIHNldG9zYSDQv9C10YDRiNCwDQppcmlzJFNwZWNpZXMgPC0gcmVvcmRlcihpcmlzJFNwZWNpZXMsIGlyaXMkUGV0YWwuV2lkdGgsIGRlY3JlYXNpbmcgPSBUKQ0KbGV2ZWxzKGlyaXMkU3BlY2llcykgIyB2aXJnaW5pY2Eg0LzQsNGUINCx0YPRgtC4INC/0LXRgNGI0L7Rjg0KYGBgDQoNCtCU0L7QtNCw0YLQutC+0LLQviAo0J/RgNC40LrQu9Cw0LQg0LcgQWR2YW5jZWQgUiwgMmVkKTog0JLQuNC60L7RgNC40YHRgtCw0LLRiNC4INC90LDQsdGW0YAgYGxldHRlcnNgINCy0LjQutC+0L3QsNC50YLQtSDQvdCw0YHRgtGD0L/QvdGWINC00ZbRlyDRgtCwINC/0L7RgNGW0LLQvdGP0LnRgtC1INGA0LXQt9GD0LvRjNGC0LDRgiDQstC40LrQu9C40LrQsNCy0YjQuCDQutC+0LbQtdC9INC30ZYg0YHRgtCy0L7RgNC10L3QuNGFINC+0LEn0ZTQutGC0ZbQsiDQvtC60YDQtdC80L4NCg0KYGBge3J9DQpmMSA8LSBmYWN0b3IobGV0dGVycykNCmYyIDwtIHJldihmYWN0b3IobGV0dGVycykpDQpmMyA8LSBmYWN0b3IobGV0dGVycywgbGV2ZWxzID0gcmV2KGxldHRlcnMpKQ0KDQpmNCA8LSBmMQ0KbGV2ZWxzKGY0KSA8LSByZXYobGV2ZWxzKGY0KSkNCmBgYA0KDQojIyMg0KTRg9C90LrRhtGW0ZcNCg0KMS4g0J3QsNC/0LjRiNGW0YLRjCDRhNGD0L3QutGG0ZbRjiBgbWVhbl9zZCgpYCDRj9C60LAg0LHRg9C00LUg0L/RgNC40LnQvNCw0YLQuCDRh9C40YHQtdC70YzQvdC40Lkg0LLQtdC60YLQvtGAIHgg0ZYg0L/QvtCy0LXRgNGC0LDRgtC4INGB0LXRgNC10LTQvdGUINC30L3QsNGH0LXQvdC90Y8g0YLQsCDRgdGC0LDQvdC00LDRgNGC0L3QtSDQstGW0LTRhdC40LvQtdC90L3RjyDQtNCw0L3QvtCz0L4g0LLQtdC60YLQvtGA0YMuINCQ0LHQuCDRgdC/0YDQvtGB0YLQuNGC0Lgg0YHQvtCx0ZYg0LbQuNGC0YLRjywg0LLQuNC60L7RgNC40YHRgtCw0LnRgtC1INC90LDRgtC40LLQvdGWINGE0YPQvdC60YbRltGXIFIgYG1lYW4oKWAg0YLQsCBgc2QoKWAsINC30LLQtdGA0L3RltGC0Ywg0YPQstCw0LPRgywg0YnQviDRhtGWINGE0YPQvdC60YbRltGXINC80LDRjtGC0Ywg0LTQvtC00LDRgtC60L7QstC40Lkg0LDRgNCz0YPQvNC10L3RgiBuYS5ybSwg0Y/QutC1INC00L7Qt9Cy0L7Qu9GP0ZQg0L7Qv9GG0ZbQvtC90LDQu9GM0L3QviDRltCz0L3QvtGA0YPQstCw0YLQuCDQvdCw0Y/QstC90ZbRgdGC0YwgTkEg0YMg0LLQsNGI0L7QvNGDINCy0LXQutGC0L7RgNGWDQoNCmBgYHtyfQ0KbWVhbl9zZCA8LSBmdW5jdGlvbih4LCBuYS5ybSA9IEZBTFNFKSB7DQogICAgbWVhbiA8LSBtZWFuKHgsIG5hLnJtID0gbmEucm0pDQogICAgc2QgPC0gc2QoeCwgbmEucm0gPSBuYS5ybSkNCiAgICByZXR1cm4oYyhtZWFuID0gbWVhbiwgc2QgPSBzZCkpIA0KfSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgDQpgYGANCg0KMi4g0J3QsNC/0LjRiNGW0YLRjCDRhNGD0L3QutGG0ZbRjiBgbWVhbl9jbCgpYCDRj9C60LAg0LHRg9C00LUg0L/RgNC40LnQvNCw0YLQuCDRh9C40YHQtdC70YzQvdC40Lkg0LLQtdC60YLQvtGAIHgg0ZYg0L/QvtCy0LXRgNGC0LDRgtC4INGB0LXRgNC10LTQvdGUINC30L3QsNGH0LXQvdC90Y8sINC90LjQttGH0YMg0YLQsCDQstC40YnRgyDQvNC10LbRgyDRgdC10YDQtdC00L3RjNC+0LPQviDQt9C90LDRh9C10L3QvdGPINC90LAg0L7RgdC90L7QstGWINGW0L3RgtC10YDQstCw0LvRgyDQtNC+0YHRgtC+0LLRltGA0L3QvtGB0YLRliDRgtCwINGB0YLQsNC90LTQsNGA0YLQvdGDINC/0L7RhdC40LHQutGDLiDQktCw0YjQsCDRhNGD0L3QutGG0ZbRjyDQvNCw0ZQg0LzQsNGC0Lgg0L7QsdC+0LIn0Y/Qt9C60L7QstGWINCw0YDQs9GD0LzQtdC90YLQuCB4IC0g0YfQuNGB0LXQu9GM0L3QuNC5INCy0LXQutGC0L7RgCDRgtCwIGEgLSDQt9C90LDRh9C10L3QvdGPINCw0LvRjNGE0LAgKHAtdmFsdWUpLiDQlNC70Y8g0YDQvtC30YDQsNGF0YPQvdC60YMg0ZbQvdGC0LXRgNCy0LDQu9GW0LIg0LTQvtGB0YLQvtCy0ZbRgNC90L7RgdGC0ZYg0YHQtdGA0LXQtNC90YzQvtCz0L4g0JLQsNC8INC90LXQvtCx0YXRltC00L3QviDQsdGD0LTQtSDQstC40LrQvtGA0LjRgdGC0LDRgtC4INGA0L7Qt9C/0L7QtNGW0Lsg0KHRgtGM0Y7QtNC10L3RgtCwDQoNCmBgYHtyfQ0KbWVhbl9jbCA8LSBmdW5jdGlvbih4LCBhLCBuYS5ybSA9IEZBTFNFKSB7DQogIG1lYW4gPC0gbWVhbih4LCBuYS5ybSA9IG5hLnJtKQ0KICBzZSA8LSBzZCh4LCBuYS5ybSA9IG5hLnJtKS9zcXJ0KGxlbmd0aCh4KSkNCiAgY2wgPC0gcXQoYS8yLCBkZiA9IGxlbmd0aCh4KSAtIDEsIGxvd2VyLnRhaWwgPSBGKSAqIHNlDQogIHJldHVybihjKG1lYW4gPSBtZWFuLCANCiAgICAgICAgICAgbG93ZXIuYm91bmQgPSBtZWFuIC0gY2wsDQogICAgICAgICAgIHVwcGVyLmJvdW5kID0gbWVhbiArIGNsLA0KICAgICAgICAgICBzZSA9IHNlKSkNCn0NCmBgYA0KDQoNClNpbGx5IGxpZmVoYWNrOiDQktC4INC80L7QttC10YLQtSDQv9C10YDQtdCy0ZbRgNC40YLQuCDRgdC10LHQtSDRgtCwINCy0LjQt9C90LDRh9C40YLQuCDRltC90YLQtdGA0LLQsNC70Lgg0LTQvtGB0YLQvtCy0ZbRgNC90L7RgdGC0ZYg0YHQtdGA0LXQtNC90YzQvtCz0L4g0YfQtdGA0LXQtyDQstC40LrQu9C40Log0LvRltC90ZbQudC90L7RlyDRgNC10LPRgNC10YHRltGXINC3INGE0L7RgNC80YPQu9C+0Y4g0YLQuNC/0YMgYGxtKHkgfiAxKWAg0YLQsCDQvdCw0YHRgtGD0L/QvdC40Lwg0LfQsNGB0YLQvtGB0YPQstCw0L3QvdGP0Lwg0YTRg9C90LrRhtGW0ZcgYGNvbmZpbnQoKWAg0LTQviDQvdC10ZcNCmBgYHtyfQ0KbWVhbl9jbChjcmFicyRGTCwgMC4wNSkNCmNvbmZpbnQobG0oY3JhYnMkRkwgfiAxKSwgbGV2ZWwgPSAwLjk1KQ0KYGBgDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogItCv0LrRltGB0Ywg0L/RgNC40LrQu9Cw0LTQuCDRliDRgi7QtC4iDQpvdXRwdXQ6IA0KICBodG1sX25vdGVib29rOiANCiAgICBoaWdobGlnaHQ6IHB5Z21lbnRzDQogICAgdG9jOiB0cnVlDQplZGl0b3Jfb3B0aW9uczogDQogIGNodW5rX291dHB1dF90eXBlOiBjb25zb2xlDQotLS0NCg0KIyMgQkFTRSBSDQoNCmBgYHtyfQ0KZGF0YSgiY3JhYnMiLCBwYWNrYWdlID0gIk1BU1MiKSAjINC/0YDQvtGB0YLQviDQtNCw0YLQsNGB0LXRgiDQtNC70Y8g0LTQtdC80L7QvdGB0YLRgNCw0YbRltGXINC/0YDQuNC60LvQsNC00ZbQsg0KYGBgDQoNCiMjIyDQodCw0LHRgdC10YLQuNC90LMg0LrQsNC00YDRltCyINC00LDQvdC40YUNCg0KMS4gINCf0L7QtNC40LLRltGC0YzRgdGPINGP0Log0LLQuNCz0LvRj9C00LDRlCDQvtGB0YLQsNC90L3RltC5INGA0Y/QtNC+0Log0LTQsNGC0LDRgdC10YLRgyBgY3JhYnNgINC90LUg0LLQuNC60L7RgNC40YHRgtC+0LLRg9GO0YfQuCDRj9Cy0L3QuNGFINGH0LjRgdC10LvRjNC90LjRhSDQt9C90LDRh9C10L3RjCDRgyBgW2ANCg0KYGBge3J9DQpjcmFic1tucm93KGNyYWJzKSxdDQpgYGANCg0KMi4gINCf0LXRgNC10YHRg9C90YzRgtC1INC60L7Qu9C+0L3QutGDIGBpbmRleGAg0L3QsCDQv9C10YDRiNGDINC/0L7Qt9C40YbRltGODQoNCmBgYHtyfQ0KKGNyYWJzIDwtIGNiaW5kKGNyYWJzWzNdLCBjcmFic1stM10pKSAjINC00L7QtNCw0YLQutC+0LLRliDQtNGD0LbQutC4INGJ0L7QsSDQvtC00YDQsNC30YMg0L/QvtCx0LDRh9C40YLQuCDRgNC10LfRg9C70YzRgtCw0YINCmBgYA0KDQozLiAg0JLQuNC60L7RgNC40YHRgtCw0LLRiNC4INGB0LDQsdGB0LXRgtC40L3QsyDQutCw0LTRgNGDINGC0LAg0L3QtdC+0LHRhdGW0LTQvdGDINGB0YLQsNGC0LjRgdGC0LjRh9C90YMg0YTRg9C90LrRhtGW0Y4g0LLQuNC30L3QsNGH0YLQtSDQvNCw0LrRgdC40LzQsNC70YzQvdC1INGC0LAg0LzRltC90ZbQvNCw0LvRjNC90LUg0LfQvdCw0YfQtdC90L3RjyDQv9Cw0YDQsNC80LXRgtGA0YMgQkQg0LvQuNGI0LUg0LTQu9GPINGH0L7Qu9C+0LLRltGH0LjRhSDQvtGB0ZbQsSDQvtGA0LDQvdC20LXQstC+0LPQviDQutC+0LvRjNC+0YDRgw0KDQpgYGB7cn0NCnJhbmdlKGNyYWJzW2NyYWJzJHNwID09ICJPIiAmIGNyYWJzJHNleCA9PSAiTSIsIDhdKQ0KYGBgDQoNCjQuICDQktGW0LTRgdC+0YDRgtGD0LnRgtC1INC60LDQtNGAINC00LDQvdC40YUg0LfQsCDQt9C80ZbQvdC90L7RjiBgY3JhYnMkRkxgINCy0ZbQtCDQvdCw0LnQsdGW0LvRjNGI0L7Qs9C+INC00L4g0L3QsNC50LzQtdC90YjQvtCz0L4g0LfQvdCw0YfQtdC90L3Rjw0KDQpgYGB7cn0NCmNyYWJzW29yZGVyKGMoY3JhYnMkRkwpLCBkZWNyZWFzaW5nID0gVFJVRSksIF0NCmBgYA0KDQo1LiAg0J7QtNC90L7Rh9Cw0YHQvdC+INC/0LXRgNC10YLQsNGB0YPQudGC0LUg0YDRj9C00LrQuCDRgtCwINC60L7Qu9C+0L3QutC4INC60LDQtNGA0YMg0LTQsNC90LjRhQ0KDQpgYGB7cn0NCmNyYWJzW3NhbXBsZShucm93KGNyYWJzKSksIHNhbXBsZShuY29sKGNyYWJzKSldDQpgYGANCg0KIyMjINCk0LDQutGC0L7RgNC4DQoNCjEuICDQn9C+0LzRltC90Y/QudGC0LUg0L/QvtGA0Y/QtNC+0Log0YDRltCy0L3RltCyINGDINC60L7Qu9C+0L3RhtGWIGBjcmFicyRzZXhgLCDQv9C+0LTQuNCy0ZbRgtGM0YHRjyDRj9C6INGG0LUg0LLRltC00L7QsdGA0LDQt9C40LvQvtGB0Y8g0L3QsCDRgdGC0YDRg9C60YLRg9GA0ZYg0YTQsNC60YLQvtGA0YMg0LrQvtC80LDQvdC00L7RjiBgc3RyKClgINCw0LHQviBgdW5jbGFzcygpYCwg0LDQsdC+IGBsZXZlbHMoKWAsINC/0L7QtNC40LLRltGC0YzRgdGPINC90LAg0YHQsNC8INC60LDQtNGAINC00LDQvdC40YUg0YfQtdGA0LXQtyBgVmlldygpYC4g0KfQuCDQt9C80ZbQvdC40LvQvtGB0Y8g0YnQvtGB0Yw/DQoNCmBgYHtyfQ0KIyBjcmFicyRzZXggPC0gZmFjdG9yKGNyYWJzJHNleCwgbGV2ZWxzID0gYygiTSIsICJGIikpDQojINCw0LHQviDQsdGW0LvRjNGIINC90LDRgtGD0YDQsNC70YzQvdC40Lkg0LLQsNGA0ZbQsNC90YINCmNyYWJzJHNleCA8LSByZWxldmVsKGNyYWJzJHNleCwgIk0iKQ0KY3JhYnMNCmBgYA0KDQoyLiAg0J/QtdGA0LXQudC80LXQvdGD0LnRgtC1ICLQnCIg0YLQsCAiRiIg0YMgIm1hbGUiINGC0LAgImZlbWFsZSINCg0KYGBge3J9DQpsZXZlbHMoY3JhYnMkc2V4KSA8LSBjKCJtYWxlIiwgImZlbWFsZSIpDQpjcmFic1tzYW1wbGUoMjAwLCA2KSwgXSAjINGI0ZbRgdGC0Ywg0LLQuNC/0LDQtNC60L7QstC40YUg0YDRj9C00LrRltCyDQpgYGANCg0KMy4gINCa0L7QvdCy0LXRgNGC0YPQudGC0LUg0LrQvtC70L7QvdC60YMgYGNyYWJzJHNwYCDRgyDRgtC10LrRgdGC0L7QstC40Lkg0LLQtdC60YLQvtGAINGC0LAg0L/QvtC00LjQstGW0YLRjNGB0Y8g0Y/QuiDQt9C80ZbQvdC40LvQsNGB0Y8g0YHRgtGA0YPQutGC0YPRgNCwINC60LDQtNGA0YMNCg0KYGBge3J9DQpjcmFicyRzcCA8LSBhcy5jaGFyYWN0ZXIoY3JhYnMkc3ApDQpzdHIoY3JhYnMpDQpgYGANCg0KNC4gINCa0L7QvdCy0LXRgNGC0YPQudGC0LUg0LrQvtC70L7QvdC60YMgYGNyYWJzJHNwYCDQt9Cy0L7RgNC+0YLQvdC+INGDINGE0LDQutGC0L7RgCwg0L7QtNC90L7Rh9Cw0YHQvdC+INC/0LXRgNC10LnQvNC10L3Rg9C50YLQtSDRgNGW0LLQvdGWICJCIiDRgtCwICJPIiDQvdCwICJCbHVlIiDRgtCwICJPcmFuZ2UiINCy0ZbQtNC/0L7QstGW0LTQvdC+DQoNCmBgYHtyfQ0KY3JhYnMkc3AgPC0gZmFjdG9yKGNyYWJzJHNwLCBsZXZlbHMgPSBjKCJCIiwgIk8iKSwgbGFiZWxzID0gYygiQmx1ZSIsICJPcmFuZ2UiKSkNCmNyYWJzW3NhbXBsZSgyMDAsIDYpLCBdDQpgYGANCg0KNS4gINCX0LDQvNGW0L3RltGC0Ywg0LfQvdCw0YfQtdC90L3RjyDQsdGD0LTRjC3Rj9C60L7Qs9C+INC+0LTQvdC+0LPQviDQtdC70LXQvNC10L3RgtGDINGDIGBjcmFicyRzcGAg0L3QsCBgR3JlZW5gDQoNCmBgYHtyfQ0KbGV2ZWxzKGNyYWJzJHNwKSA8LSBjKGxldmVscyhjcmFicyRzcCksICJHcmVlbiIpDQpjcmFicyRzcFsxNV0gPC0gIkdyZWVuIg0KY3JhYnNbY3JhYnMkc3AgPT0gIkdyZWVuIixdDQpgYGANCg0KNS4gINCS0LjQutC+0YDQuNGB0YLQsNC50YLQtSBgdGFibGUoKWAg0LDQsdC4INC/0LXRgNC10LPQu9GP0L3Rg9GC0Lgg0LrRltC70YzQutGW0YHRgtGMINC60YDQsNCx0ZbQsiDQutC+0LbQvdC+0LPQviDQutC+0LvRjNC+0YDRgyDRgtCwINGB0YLQsNGC0ZYNCg0KYGBge3J9DQp0YWJsZShjcmFicyRzcCwgY3JhYnMkc2V4KQ0KYGBgDQoNCjYuICDQl9Cw0LLQsNC90YLQsNC20YLQtSDQtNCw0YLQsNGB0LXRgiBgaXJpc2Ag0YLQsCDRgNC10L7RgNCz0LDQvdGW0LfRg9C50YLQtSDRgNGW0LLQvdGWINGE0LDQutGC0L7RgNGDIGBpcmlzJFNwZWNpZXNgINC90LAg0L7RgdC90L7QstGWINGB0LXRgNC10LTQvdGM0L7RlyDQtNC+0LLQttC40L3QuCBgaXJpcyRQZXRhbC5XaWR0aGAsINCy0ZbQtCDQsdGW0LvRjNGI0L7Qs9C+INC00L4g0LzQtdC90YjQvtCz0L4NCg0KYGBge3J9DQpsZXZlbHMoaXJpcyRTcGVjaWVzKSAjIHNldG9zYSDQv9C10YDRiNCwDQppcmlzJFNwZWNpZXMgPC0gcmVvcmRlcihpcmlzJFNwZWNpZXMsIGlyaXMkUGV0YWwuV2lkdGgsIGRlY3JlYXNpbmcgPSBUKQ0KbGV2ZWxzKGlyaXMkU3BlY2llcykgIyB2aXJnaW5pY2Eg0LzQsNGUINCx0YPRgtC4INC/0LXRgNGI0L7Rjg0KYGBgDQoNCtCU0L7QtNCw0YLQutC+0LLQviAo0J/RgNC40LrQu9Cw0LQg0LcgQWR2YW5jZWQgUiwgMmVkKTog0JLQuNC60L7RgNC40YHRgtCw0LLRiNC4INC90LDQsdGW0YAgYGxldHRlcnNgINCy0LjQutC+0L3QsNC50YLQtSDQvdCw0YHRgtGD0L/QvdGWINC00ZbRlyDRgtCwINC/0L7RgNGW0LLQvdGP0LnRgtC1INGA0LXQt9GD0LvRjNGC0LDRgiDQstC40LrQu9C40LrQsNCy0YjQuCDQutC+0LbQtdC9INC30ZYg0YHRgtCy0L7RgNC10L3QuNGFINC+0LEn0ZTQutGC0ZbQsiDQvtC60YDQtdC80L4NCg0KYGBge3J9DQpmMSA8LSBmYWN0b3IobGV0dGVycykNCmYyIDwtIHJldihmYWN0b3IobGV0dGVycykpDQpmMyA8LSBmYWN0b3IobGV0dGVycywgbGV2ZWxzID0gcmV2KGxldHRlcnMpKQ0KDQpmNCA8LSBmMQ0KbGV2ZWxzKGY0KSA8LSByZXYobGV2ZWxzKGY0KSkNCmBgYA0KDQojIyMg0KTRg9C90LrRhtGW0ZcNCg0KMS4gINCd0LDQv9C40YjRltGC0Ywg0YTRg9C90LrRhtGW0Y4gYG1lYW5fc2QoKWAg0Y/QutCwINCx0YPQtNC1INC/0YDQuNC50LzQsNGC0Lgg0YfQuNGB0LXQu9GM0L3QuNC5INCy0LXQutGC0L7RgCB4INGWINC/0L7QstC10YDRgtCw0YLQuCDRgdC10YDQtdC00L3RlCDQt9C90LDRh9C10L3QvdGPINGC0LAg0YHRgtCw0L3QtNCw0YDRgtC90LUg0LLRltC00YXQuNC70LXQvdC90Y8g0LTQsNC90L7Qs9C+INCy0LXQutGC0L7RgNGDLiDQkNCx0Lgg0YHQv9GA0L7RgdGC0LjRgtC4INGB0L7QsdGWINC20LjRgtGC0Y8sINCy0LjQutC+0YDQuNGB0YLQsNC50YLQtSDQvdCw0YLQuNCy0L3RliDRhNGD0L3QutGG0ZbRlyBSIGBtZWFuKClgINGC0LAgYHNkKClgLCDQt9Cy0LXRgNC90ZbRgtGMINGD0LLQsNCz0YMsINGJ0L4g0YbRliDRhNGD0L3QutGG0ZbRlyDQvNCw0Y7RgtGMINC00L7QtNCw0YLQutC+0LLQuNC5INCw0YDQs9GD0LzQtdC90YIgbmEucm0sINGP0LrQtSDQtNC+0LfQstC+0LvRj9GUINC+0L/RhtGW0L7QvdCw0LvRjNC90L4g0ZbQs9C90L7RgNGD0LLQsNGC0Lgg0L3QsNGP0LLQvdGW0YHRgtGMIE5BINGDINCy0LDRiNC+0LzRgyDQstC10LrRgtC+0YDRlg0KDQpgYGB7cn0NCm1lYW5fc2QgPC0gZnVuY3Rpb24oeCwgbmEucm0gPSBGQUxTRSkgew0KICAgIG1lYW4gPC0gbWVhbih4LCBuYS5ybSA9IG5hLnJtKQ0KICAgIHNkIDwtIHNkKHgsIG5hLnJtID0gbmEucm0pDQogICAgcmV0dXJuKGMobWVhbiA9IG1lYW4sIHNkID0gc2QpKSAjINGW0LTQtdC90YLQuNGH0L3QviDQv9GA0L7RgdGC0L4gYyhtZWFuID0gbWVhbiwgc2QgPSBzZCkg0YMg0L7RgdGC0LDQvdC90ZbQuSDQtNGW0ZcNCn0gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMg0L/RgNC+0YHRgtC+INGPINCy0LLQsNC20LDRjiwg0YnQviDQstC40LrQu9C40LogcmV0dXJuKCkg0LHRltC70YzRiCDQvtGH0LXQstC40LTQvdC+DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjINCy0LrQsNC30YPRlCwg0YnQviDRhtC1INCy0LjRhdGW0LTQvdC1INC30L3QsNGH0LXQvdC90Y8g0YTRg9C90LrRhtGW0ZcNCmBgYA0KDQoyLiAg0J3QsNC/0LjRiNGW0YLRjCDRhNGD0L3QutGG0ZbRjiBgbWVhbl9jbCgpYCDRj9C60LAg0LHRg9C00LUg0L/RgNC40LnQvNCw0YLQuCDRh9C40YHQtdC70YzQvdC40Lkg0LLQtdC60YLQvtGAIHgg0ZYg0L/QvtCy0LXRgNGC0LDRgtC4INGB0LXRgNC10LTQvdGUINC30L3QsNGH0LXQvdC90Y8sINC90LjQttGH0YMg0YLQsCDQstC40YnRgyDQvNC10LbRgyDRgdC10YDQtdC00L3RjNC+0LPQviDQt9C90LDRh9C10L3QvdGPINC90LAg0L7RgdC90L7QstGWINGW0L3RgtC10YDQstCw0LvRgyDQtNC+0YHRgtC+0LLRltGA0L3QvtGB0YLRliDRgtCwINGB0YLQsNC90LTQsNGA0YLQvdGDINC/0L7RhdC40LHQutGDLiDQktCw0YjQsCDRhNGD0L3QutGG0ZbRjyDQvNCw0ZQg0LzQsNGC0Lgg0L7QsdC+0LIn0Y/Qt9C60L7QstGWINCw0YDQs9GD0LzQtdC90YLQuCB4IC0g0YfQuNGB0LXQu9GM0L3QuNC5INCy0LXQutGC0L7RgCDRgtCwIGEgLSDQt9C90LDRh9C10L3QvdGPINCw0LvRjNGE0LAgKHAtdmFsdWUpLiDQlNC70Y8g0YDQvtC30YDQsNGF0YPQvdC60YMg0ZbQvdGC0LXRgNCy0LDQu9GW0LIg0LTQvtGB0YLQvtCy0ZbRgNC90L7RgdGC0ZYg0YHQtdGA0LXQtNC90YzQvtCz0L4g0JLQsNC8INC90LXQvtCx0YXRltC00L3QviDQsdGD0LTQtSDQstC40LrQvtGA0LjRgdGC0LDRgtC4INGA0L7Qt9C/0L7QtNGW0Lsg0KHRgtGM0Y7QtNC10L3RgtCwDQoNCmBgYHtyfQ0KbWVhbl9jbCA8LSBmdW5jdGlvbih4LCBhLCBuYS5ybSA9IEZBTFNFKSB7DQogIG1lYW4gPC0gbWVhbih4LCBuYS5ybSA9IG5hLnJtKQ0KICBzZSA8LSBzZCh4LCBuYS5ybSA9IG5hLnJtKS9zcXJ0KGxlbmd0aCh4KSkNCiAgY2wgPC0gcXQoYS8yLCBkZiA9IGxlbmd0aCh4KSAtIDEsIGxvd2VyLnRhaWwgPSBGKSAqIHNlDQogIHJldHVybihjKG1lYW4gPSBtZWFuLCANCiAgICAgICAgICAgbG93ZXIuYm91bmQgPSBtZWFuIC0gY2wsDQogICAgICAgICAgIHVwcGVyLmJvdW5kID0gbWVhbiArIGNsLA0KICAgICAgICAgICBzZSA9IHNlKSkNCn0NCmBgYA0KDQpTaWxseSBsaWZlaGFjazog0JLQuCDQvNC+0LbQtdGC0LUg0L/QtdGA0LXQstGW0YDQuNGC0Lgg0YHQtdCx0LUg0YLQsCDQstC40LfQvdCw0YfQuNGC0Lgg0ZbQvdGC0LXRgNCy0LDQu9C4INC00L7RgdGC0L7QstGW0YDQvdC+0YHRgtGWINGB0LXRgNC10LTQvdGM0L7Qs9C+INGH0LXRgNC10Lcg0LLQuNC60LvQuNC6INC70ZbQvdGW0LnQvdC+0Zcg0YDQtdCz0YDQtdGB0ZbRlyDQtyDRhNC+0YDQvNGD0LvQvtGOINGC0LjQv9GDIGBsbSh5IH4gMSlgINGC0LAg0L3QsNGB0YLRg9C/0L3QuNC8INC30LDRgdGC0L7RgdGD0LLQsNC90L3Rj9C8INGE0YPQvdC60YbRltGXIGBjb25maW50KClgINC00L4g0L3QtdGXDQoNCmBgYHtyfQ0KbWVhbl9jbChjcmFicyRGTCwgMC4wNSkNCmNvbmZpbnQobG0oY3JhYnMkRkwgfiAxKSwgbGV2ZWwgPSAwLjk1KQ0KYGBgDQoNCjMuICDQnNC+0LTQuNGE0ZbQutGD0LnRgtC1INCS0LDRiNGDINGE0YPQvdC60YbRltGOIGBtZWFuX3NkKClgINGC0LDQuiwg0LDQsdC4INCy0L7QvdCwINC/0YDQuNC50LzQsNC70LAg0LvQuNGI0LUg0LLQtdC60YLQvtGAINC3INGH0LjRgdC10LvRjNC90LjRhSDQsNCx0L4g0LvQvtCz0ZbRh9C90LjRhSDQt9C90LDRh9C10L3RjCwg0ZYg0YMg0ZbQvdCw0LrRiNC+0LzRgyDQstC40L/QsNC00LrRgyDQstC40LTQsNCy0LDQu9CwINC/0L7QvNC40LvQutGDINC3INGC0LXQutGB0YLQvtCy0LjQvCDQv9C+0LLRltC00L7QvNC70LXQvdC90Y/QvCDRidC+ICJ4IGNhbid0IGJlIHRyZWF0ZWQgYXMgYSBudW1iZXIiDQoNCmBgYHtyfQ0KIyDRlCDQvdC40LfQutCwINGA0ZbQt9C90LjRhSDQstCw0YDRltCw0L3RgtGW0LIsINGP0Log0YHQsNC80LUg0YbQtSDQvdCw0L/QuNGB0LDRgtC4DQojINC00LXQutGW0LvRjNC60LAg0LTQu9GPINC/0YDQuNC60LvQsNC00YMsINGA0LXQt9GD0LvRjNGC0LDRgiDQvtC00LjQvSDRliDRgtC+0Lkg0YHQsNC80LjQuQ0KDQptZWFuX3NkIDwtIGZ1bmN0aW9uKHgsIG5hLnJtID0gRkFMU0UpIHsNCiAgICBpZiAoaXMubnVtZXJpYyh4KSB8fCBpcy5sb2dpY2FsKHgpKSB7DQogICAgbWVhbiA8LSBtZWFuKHgsIG5hLnJtID0gbmEucm0pDQogICAgc2QgPC0gc2QoeCwgbmEucm0gPSBuYS5ybSkNCiAgICByZXR1cm4oYyhtZWFuID0gbWVhbiwgc2QgPSBzZCkpDQogICAgfSBlbHNlIHsNCiAgICAgIHN0b3AoInggY2FuJ3QgYmUgdHJlYXRlZCBhcyBhIG51bWJlciIpDQogICAgfQ0KfQ0KDQptZWFuX3NkIDwtIGZ1bmN0aW9uKHgsIG5hLnJtID0gRkFMU0UpIHsNCiAgICBpZiAoYyhpcy5udW1lcmljKHgpIHx8IGlzLmxvZ2ljYWwoeCkpICE9IFRSVUUpIHsNCiAgICAgIHN0b3AoInggY2FuJ3QgYmUgdHJlYXRlZCBhcyBhIG51bWJlciIpDQogICAgfQ0KICAgIG1lYW4gPC0gbWVhbih4LCBuYS5ybSA9IG5hLnJtKQ0KICAgIHNkIDwtIHNkKHgsIG5hLnJtID0gbmEucm0pDQogICAgcmV0dXJuKGMobWVhbiA9IG1lYW4sIHNkID0gc2QpKQ0KfQ0KDQptZWFuX3NkIDwtIGZ1bmN0aW9uKHgsIG5hLnJtID0gRkFMU0UpIHsNCiAgICBzdG9waWZub3QoInggY2FuJ3QgYmUgdHJlYXRlZCBhcyBhIG51bWJlciIgPSBpcy5udW1lcmljKHgpIHx8IGlzLmxvZ2ljYWwoeCkpDQogICAgbWVhbiA8LSBtZWFuKHgsIG5hLnJtID0gbmEucm0pDQogICAgc2QgPC0gc2QoeCwgbmEucm0gPSBuYS5ybSkNCiAgICByZXR1cm4oYyhtZWFuID0gbWVhbiwgc2QgPSBzZCkpDQp9DQpgYGANCg0KNS4gINCS0LjQutC+0YDQuNGB0YLQsNCy0YjQuCBgZm9yYCDQutC+0L3RgdGC0YDRg9C60YbRltGOINC90LDQv9C40YjRltGC0Ywg0YTRg9C90LrRhtGW0Y4sINGJ0L4g0LHRg9C00LUg0LPQtdC90LXRgNGD0LLQsNGC0Lgg0LrQsNC00YAg0LTQsNC90LjRhSDQsNCx0L4g0LzQsNGC0YDQuNGG0Y4g0YDQvtC30LzRltGA0L7QvCBuINC90LAgbS4g0JrQvtC20L3QsCDQtyBuINC60L7Qu9C+0L3QvtC6INC60LDQtNGA0YMg0LzQsNGUINC80ZbRgdGC0LjRgtC4INCy0LjQsdGW0YDQutGDINC3INC90L7RgNC80LDQu9GM0L3QuNC8INGA0L7Qt9C/0L7QtNGW0LvQvtC8INC00L7QstC20LjQvdC+0Y4gbS4NCg0KYGBge3J9DQojINC90LXQv9GA0LDQstC40LvRjNC90LjQuSDQstCw0YDRltCw0L3Rgiwg0L/RgNC40LfQstC10LTQtSDQtNC+INGB0YLQstC+0YDQtdC90L3RjyDQutC+0L/RltGXINC+0LEn0ZTQutGC0YMg0L3QsCDQutC+0LbQvdGW0Lkg0ZbRgtC10YDQsNGG0ZbRlyDRhtC40LrQu9GDDQpub3JtX2RhdGFfYmFkIDwtIGZ1bmN0aW9uKG4sIG0pIHsNCiAgZGYgPC0gdmVjdG9yKCkNCiAgICBmb3IgKGkgaW4gMTpuKSB7DQogICAgICBkZiA8LSByYmluZChkZiwgcm5vcm0obSkpDQogICAgfQ0KICByZXR1cm4oZGYpDQp9DQoNCiMg0L/RgNCw0LLQuNC70YzQvdC40Lkg0LLQsNGA0ZbQsNC90YIsINC/0LXRgNGI0LAg0LTRltGPINC+0LTRgNCw0LfRgyDQstC40LTRltC70Y/RlCDQv9C10LLQvdC40Lkg0L7QsSfRlNC8INC/0LDQvCfRj9GC0ZYg0L/RltC0INC+0LEn0ZTQutGCDQpub3JtX2RhdGFfZ29vZCA8LSBmdW5jdGlvbihuLCBtKSB7DQogIGRmIDwtIHZlY3RvcigibGlzdCIsIG4pDQogIGZvciAoaSBpbiAxOm4pIHsNCiAgICBkZltbaV1dIDwtIHJub3JtKG0pDQogIH0NCiAgZG8uY2FsbCgiY2JpbmQiLCBkZikgIyDRhtC1INC/0L7QstC10YDRgtCw0ZQg0LzQsNGC0YDQuNGG0Y4sINC80L7QttC90LAg0LLQuNC60LvQuNC60LDRgtC4IGRhdGEuZnJhbWUoKSDRidC+0LEg0L/QvtCy0LXRgNGC0LDQu9C+INC60LDQtNGADQp9DQpgYGANCg0KNi4gINCi0LXQtiDRgdCw0LzQtSwg0LDQu9C1INCy0LjQutC+0YDQuNGB0YLQsNCy0YjQuCBgbGFwcGx5KClgDQoNCmBgYHtyfQ0Kbm9ybV9kYXRhX2xhcHBseSA8LSBmdW5jdGlvbihuLCBtKSB7DQogIGRvLmNhbGwoImNiaW5kIiwgbGFwcGx5KDE6biwgZnVuY3Rpb24oeCkgcm5vcm0obSkpKQ0KfQ0KYGBgDQoNCjcuICDQodGC0LLQvtGA0ZbRgtGMINC60LDQtNGAINC00LDQvdC40YUg0LDQsdC+INC80LDRgtGA0LjRhtGOINGA0L7Qt9C80ZbRgNC+0LwgMiDQvdCwIDEw0LouINCd0LDQv9C40YjRltGC0Ywg0L/RgNC+0YHRgtC40Lkg0YbQuNC60Lsg0Y/QutC40Lkg0LTQvtC30LLQvtC70LjRgtGMINC/0L7QsdGD0LTRg9Cy0LDRgtC4INC00LXQutGW0LvRjNC60LAg0LPRgNCw0YTRltC60ZbQsiwg0YnQviDQsdGD0LTRg9GC0Ywg0LTQtdC80L7QvdGB0YLRgNGD0LLQsNGC0Lgg0Y/QuiDQt9C80ZbQvdGO0ZTRgtGM0YHRjyDRgNC+0LfQv9C+0LTRltC7INGDINC30LDQu9C10LbQvdC+0YHRgtGWINCy0ZbQtCDRgNC+0LfQvNGW0YDRgyDQstC40LHRltGA0LrQuA0KDQrQlNC70Y8g0LTQtdC80L7QvdGB0YLRgNCw0YbRltGXINGA0L7Qt9C/0L7QtNGW0LvRgyDQtNCy0L7RhSDQt9C80ZbQvdC90LjRhSDQvNC+0LbQvdCwINCy0LjQutC+0YDQuNGB0YLQsNGC0LggYHBsb3RgLCBgcXFwbG90YCDRgtCwIGBzbW9vdGhTY2F0dGVyYCwg0LTQu9GPINC00LXQvNC+0L3RgdGC0YDQsNGG0ZbRlyDRgNC+0LfQv9C+0LTRltC70YMg0L7QtNC90ZbRlNGXINC30LzRltC90L3QvtGXINC80L7QttC90LAg0LLQuNC60L7RgNC40YHRgtCw0YLQuCBgaGlzdGAg0LDQsdC+IGBxcW5vcm1gDQoNCmBgYHtyfQ0KZGYgPC1kby5jYWxsKCJjYmluZCIsIGxhcHBseSgxOjIsIFwoeCkgcm5vcm0oMTAwMDApKSkgIyDRgdCw0LzQsCDQvNCw0YLRgNC40YbRjyDQtNCw0L3QuNGFDQp4IDwtIGMoMywgMTAsIDEwMCwgNTAwLCAxMDAwLCAxMDAwMCkgIyBuINCy0LjQsdGW0YDQutC4LCDQvNC+0LbQvdCwINCx0YPQtNGMLdGP0LrRliDRltC90YjRliDQstC60LDQt9Cw0YLQuCANCg0KIyDRidC+0LEg0YDQvtC30LzRltGB0YLQuNGC0Lgg0LTQtdC60ZbQu9GM0LrQsCDQs9GA0LDRhNGW0LrRltCyINC90LAg0L7QtNC90L7QvNGDICLQu9C40YHRgtGWIiwg0LTQstGWINC60L7Qu9C+0L3QutC4INGC0LAg0YLRgNC4INGA0Y/QtNC60LgNCiMg0L/RgNCw0YbRjtGUINGC0ZbQu9GM0LrQuCDQv9GA0Lgg0LLQuNC60L7QvdCw0L3QvdGWINC60L7QvNCw0L3QtCDRgyDQutC+0L3RgdC+0LvRjA0KcGFyKG1mcm93ID0gYygzLCAyKSkgDQoNCmZvciAoaSBpbiBzZXFfYWxvbmcoeCkpIHsNCiAgICBzbW9vdGhTY2F0dGVyKGRmWzE6eFtpXSwgMV0sIGRmWzE6eFtpXSwgMl0sIG1haW4gPSBwYXN0ZSgic2FtcGxlIG9mIiwgeFtpXSkpDQp9DQoNCmZvciAoaSBpbiBzZXFfYWxvbmcoeCkpIHsNCiAgICBxcXBsb3QoZGZbMTp4W2ldLCAxXSwgZGZbMTp4W2ldLCAyXSwgbWFpbiA9IHBhc3RlKCJzYW1wbGUgb2YiLCB4W2ldKSkNCn0NCg0KZm9yIChpIGluIHNlcV9hbG9uZyh4KSkgew0KICAgIGhpc3QoZGZbMTp4W2ldLCAxXSwgbWFpbiA9IHBhc3RlKCJzYW1wbGUgb2YiLCB4W2ldKSkNCn0NCg0KIyDQstCw0YDRltCw0L3RgiDQtyDQstC40LrQvtGA0LjRgdGC0LDQvdC90Y/QvCDRhNGD0L3QutGG0ZbRlyBzYW1wbGUoKSwg0YDQsNC90LTQvtC80ZbQt9C+0LLQsNC90LAg0LLQuNCx0ZbRgNC60LAg0YDQvtC30LzRltGA0L7QvCBuICANCiMg0Lcg0L/QvtC/0LXRgNC10LTQvdGM0L4g0YHRgtCy0L7RgNC10L3QvtGXINC80LDRgtGA0LjRhtGWINCy0LjRidC1IA0KZm9yIChpIGluIHNlcV9hbG9uZyh4KSkgew0KICBoaXN0KHNhbXBsZShkZiwgeFtpXSksIG1haW4gPSBwYXN0ZSgic2FtcGxlIG9mIiwgeFtpXSkpIA0KfQ0KYGBgDQoNCiMjIFRJRFlWRVJTRSBJTlRSTw0KDQpgYGB7cn0NCmxpYnJhcnkodGlkeXZlcnNlKQ0KbGlicmFyeShwYWxtZXJwZW5ndWlucykNCmBgYA0KDQojIyMg0KTRg9C90LrRhtGW0Zcg0LTQu9GPINGA0Y/QtNC+0YfQutGW0LINCg0KMS4gINCS0LjQutC+0YDQuNGB0YLQsNCy0YjQuCDQtNCw0YLQsNGB0LXRgiBgc3RhcndhcnNgINCy0LjQsdC10YDRltGC0Ywg0YPRgdGW0YUg0L/QtdGA0YHQvtC90LDQttGW0LIg0YnQviDQvNCw0Y7RgtGMINC30YDRltGB0YIgMTYwINGB0Lwg0YLQsCDQstC40YnQtSwg0ZQg0YDQvtC00L7QvCDQtyDQotCw0YLRg9GX0L3RgyDQsNCx0L4g0J3QsNCx0YMg0YLQsCDQvdC1INGUINC70Y7QtNGM0LzQuA0KDQpgYGB7cn0NCnN0YXJ3YXJzIHw+IA0KICBmaWx0ZXIoDQogICAgaGVpZ2h0ID49IDE2MCAmIGMoaG9tZXdvcmxkID09ICJUYXRvb2luZSIgfCBob21ld29ybGQgPT0gIk5hYm9vIikgJiBzcGVjaWVzICE9ICJIdW1hbiINCiAgKQ0KDQojINGC0LXQtiDRgdCw0LzQtSwg0LLQsNGA0ZbQsNC90YIg0Lcg0LLQuNC60L7RgNC40YHRgtCw0L3QvdGP0LwgJWluJQ0KDQpzdGFyd2FycyB8PiANCiAgZmlsdGVyKA0KICAgIGhlaWdodCA+PSAxNjAgJiBob21ld29ybGQgJWluJSBjKCJUYXRvb2luZSIsICJOYWJvbyIpICYgc3BlY2llcyAhPSAiSHVtYW4iDQogICkNCmBgYA0KDQoyLiAg0JLRltC00YHQvtGA0YLRg9C50YLQtSDQv9GW0L3Qs9Cy0ZbQvdGW0LIg0Lcg0LTQsNGC0LDRgdC10YLRgyBgcGVuZ3VpbnNgINC30LAg0LLQsNCz0L7RjiDRgtCwINC00L7QstC20LjQvdC+0Y4g0L/Qu9Cw0LLRhtGW0LIg0LLRltC0INC90LDQudCx0ZbQu9GM0YjQvtCz0L4g0LTQviDQvdCw0LnQvNC10L3RiNC+0LPQvi4g0K/QutC+0Y4g0ZQg0LTQvtCy0LbQuNC90LAg0L/Qu9Cw0LLRhtGPINC90LDQudCy0LDQttGH0L7Qs9C+INC/0ZbQvdCz0LLRltC90LAg0YLQsCDRgtGA0LXRgtGM0L7Qs9C+INC90LDQudCy0LDQttGH0L7Qs9C+INC/0ZbQvdCz0LLRltC90LA/DQoNCmBgYHtyfQ0KcGVuZ3VpbnMgfD4gDQogIGFycmFuZ2UoDQogICAgZGVzYyhib2R5X21hc3NfZyksDQogICAgZGVzYyhmbGlwcGVyX2xlbmd0aF9tbSkNCiAgKSB8PiANCiAgaGVhZCg1KQ0KYGBgDQoNCjMuICDQktC40LrQvtGA0LjRgdGC0LDQstGI0Lgg0LTQsNGC0LDRgdC10YIgYG1zbGVlcGAg0Lcn0Y/RgdGD0LnRgtC1INGP0LrRliDRg9C90ZbQutCw0LvRjNC90ZYg0YDQvtC00Lgg0L/RgNC10LTRgdGC0LDQstC70LXQvdC+INC00LvRjyDQutC+0LbQvdC+0LPQviDQv9C+0YDRj9C00LrRgyDRgtCy0LDRgNC40L0uINCh0LrRltC70YzQutC4INGA0L7QtNGW0LIg0L/RgNC10LTRgdGC0LDQstC70LXQvdC+INC00LvRjyDQv9C+0YDRj9C00LrRgyBBcnRpb2RhY3R5bGE/DQoNCmBgYHtyfQ0KbXNsZWVwIHw+IA0KICBkaXN0aW5jdChnZW51cywgb3JkZXIpIHw+IA0KICBhcnJhbmdlKG9yZGVyKSB8PiANCiAgbnJvdygpDQoNCm1zbGVlcCB8PiANCiAgZGlzdGluY3QoZ2VudXMsIG9yZGVyKSB8PiANCiAgYXJyYW5nZShvcmRlcikNCg0KYGBgDQoNCiMjIyDQpNGD0L3QutGG0ZbRlyDQtNC70Y8g0LrQvtC70L7QvdC+0LoNCg0KMS4gINCjINC00LDRgtCw0YHQtdGC0ZYg0L/RltC90LPQstGW0L3RltCyINC/0LXRgNC10YHRg9C90YzRgtC1INC60L7Qu9C+0L3QutC4ICJzZXgiINGC0LAgInllYXIiINGC0LDQuiwg0YnQvtCxINCy0L7QvdC4INGB0YLQvtGP0LvQuCDQv9C10YDQtdC0INC/0LXRgNGI0L7RjiDQutC+0LvQvtC90LrQvtGOINC3INGH0LjRgdC10LvRjNC90LjQvNC4INC30L3QsNGH0LXQvdC90Y/QvNC4DQoNCmBgYHtyfQ0KcGVuZ3VpbnMgfD4gDQogIHJlbG9jYXRlKGMoInNleCIsICJ5ZWFyIiksIC5iZWZvcmUgPSBiaWxsX2xlbmd0aF9tbSkNCg0KcGVuZ3VpbnMgfD4gDQogIHJlbG9jYXRlKGMoInNleCIsICJ5ZWFyIiksIC5iZWZvcmUgPSB3aGVyZShpcy5udW1lcmljKSkNCmBgYA0KDQoyLiAg0KMg0LTQsNGC0LDRgdC10YLRliDQv9GW0L3Qs9Cy0ZbQvdGW0LIg0YHRgtCy0L7RgNGW0YLRjCDQutC+0LvQvtC90LrRgyDQtyDQvdCw0LfQstC+0Y4gcmF0aW8g0LfQvdCw0YfQtdC90L3RjyDRj9C60L7RlyDRlCDRgdC/0ZbQstCy0ZbQtNC90L7RiNC10L3QvdGP0LwgYmlsbF9kZXB0aF9tbSDQtNC+IGJpbGxfbGVuZ3RoX21tLCDRgdGC0LLQvtGA0ZbRgtGMINGJ0LUg0L7QtNC90YMg0LrQvtC70L7QvdC60YMg0LfQvdCw0YfQtdC90L3RjyDRj9C60L7RlyDQsdGD0LTQtSAxLCDRj9C60YnQviDRgdC/0ZbQstCy0ZbQtNC90L7RiNC10L3QvdGPINGUIFw+IDAuNSDRgtCwIDAg0YMg0ZbQvdGI0L7QvNGDINCy0LjQv9Cw0LTQutGDLiDQn9C+0LzRltGB0YLRltGC0Ywg0L7QsdC40LTQstGWINC60L7Qu9C+0L3QutC4INC/0LXRgNC10LQgZmxpcHBlcl9sZW5ndGgNCg0KYGBge3J9DQoNCnBlbmd1aW5zIHw+IA0KICBtdXRhdGUoDQogICAgcmF0aW8gPSBiaWxsX2RlcHRoX21tIC8gYmlsbF9sZW5ndGhfbW0sDQogICAgbW9yZV90aGFuXzA1ID0gaWZfZWxzZShyYXRpbyA+IC41LCAxLCAwKSwNCiAgICAuYmVmb3JlID0gZmxpcHBlcl9sZW5ndGhfbW0NCiAgKQ0KYGBgDQoNCjMuICDQoyDQtNCw0YLQsNGB0LXRgtGWIGBtc2xlZXBgINCy0LjQsdC10YDRltGC0Ywg0YPRgdGWINC60L7Qu9C+0L3QutC4LCDRidC+INC80ZbRgdGC0Y/RgtGMINGB0LvQvtCy0L4gc2xlZXANCg0KYGBge3J9DQptc2xlZXAgfD4gc2VsZWN0KGNvbnRhaW5zKCJzbGVlcCIpKQ0KYGBgDQoNCiMjIyDQk9GA0YPQv9C+0LLQsNC90ZYg0LTQsNC90ZYNCg0KMS4gINCS0LfRj9Cy0YjQuCDQtNCw0YLQsNGB0LXRgiDQv9GW0L3Qs9Cy0ZbQvdGW0LIg0LLQuNC30L3QsNGH0L3QtSDRgdC10YDQtdC00L3RlCDQt9C90LDRh9C10L3QvdGPINGC0LAg0YHRgtCw0L3QtNCw0YDRgtC90YMg0L/QvtGF0LjQsdC60YMg0LTQu9GPINCy0LDQs9C4INC/0ZbQvdCz0LLRltC90YMg0YMg0LfQsNC70LXQttC90L7RgdGC0ZYg0LLRltC0INC50L7Qs9C+INCy0LjQtNGDINGC0LAg0YHRgtCw0YLRlg0KDQpgYGB7cn0NCnBlbmd1aW5zIHw+IA0KICBmaWx0ZXIoIWlzLm5hKHNleCkpIHw+IA0KICBncm91cF9ieShzcGVjaWVzLCBzZXgpIHw+IA0KICBzdW1tYXJpc2UoDQogICAgbWVhbiA9IG1lYW4oYm9keV9tYXNzX2cpLA0KICAgIHNlID0gc2QoYm9keV9tYXNzX2cpIC8gbigpXjAuNSwNCiAgICBuID0gbigpDQogICkNCmBgYA0KDQoyLiAg0JLQuNC60L7RgNC40YHRgtCw0LLRiNC4INC00LDRgtCw0YHQtdGCIGBtc2xlZXBgINCy0LjQt9C90LDRh9GC0LUg0Y/QutC40Lkg0L/QvtGA0Y/QtNC+0Log0YLQstCw0YDQuNC9INGUINC90LDQudCx0ZbQu9GM0Ygg0L/RgNC10LTRgdGC0LDQstC70LXQvdC40Lwg0YMg0LTQsNGC0LDRgdC10YLRlg0KDQpgYGB7cn0NCm1zbGVlcCB8PiANCiAgZ3JvdXBfYnkob3JkZXIpIHw+IA0KICBjb3VudCgpIHw+IA0KICBhcnJhbmdlKGRlc2MobikpDQpgYGANCg0KIyMjINCG0YLQtdGA0LDRhtGW0ZcNCg0KMS4gINCX0LPRgNGD0L/Rg9C50YLQtSDQv9GW0L3Qs9Cy0ZbQvdGW0LIg0LfQsCDQstC40LTQvtC8LCDQstC40LfQvdCw0YfRgtC1INGB0LXRgNC10LTQvdGUINGC0LAg0LzQtdC00ZbQsNC90YMg0LTQu9GPINC60L7Qu9C+0L3QvtC6IGJpbGxfbGVuZ3RoX21tLCBiaWxsX2RlcHRoX21tINGC0LAgZmxpcHBlcl9sZW5ndGhfbW0NCg0KYGBge3J9DQpwZW5ndWlucyB8PiANCiAgZ3JvdXBfYnkoc3BlY2llcykgfD4gDQogIHN1bW1hcmlzZSgNCiAgICBhY3Jvc3MoDQogICAgICBjb250YWlucygibW0iKSwNCiAgICAgIGxpc3QoDQogICAgICAgIG1lYW4gPSBcKHgpIG1lYW4oeCwgbmEucm0gPSBUKSwNCiAgICAgICAgbWVkaWFuID0gXCh4KSBtZWRpYW4oeCwgbmEucm0gPSBUUlVFKQ0KICAgICAgKQ0KICAgICkNCiAgKQ0KYGBgDQo=</div>
 
 
 
@@ -2109,8 +2435,8 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("examples.Rmd");
-  window.initializeCodeFolding("hide" === "show");
+  window.initializeSourceEmbed("exercises.Rmd");
+  window.initializeCodeFolding("show" === "show");
 });
 </script>
 
