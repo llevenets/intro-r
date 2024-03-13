@@ -1,0 +1,862 @@
+# List of algae, fungi, and plant species included into the Red Data Book of Ukraine
+# this tsv file assembled from GBIF checklist dataset, see citation
+# Prylutskyi O, Marushchak O, Vasyliuk O (2023). List of algae, fungi, and plant species included into the Red Data Book of Ukraine. Version 1.1. Ukrainian Nature Conservation Group (NGO). Checklist dataset https://doi.org/10.15468/x2knyk accessed via GBIF.org on 2024-03-13. 
+# ----------------------------------------------------------------------------------
+vernacularName	scientificName	kingdom	phylum	class	genus	taxonRank	threatStatus
+Кладостефус жорстковолосистий	Cladostephus hirsutus (L.) C.-F. Boudouresque & M.Perret-Boudouresque	Chromista	Ochrophyta	Phaeophyceae	Cladostephus	species	рідкісний
+Діктиота дихотомічна	Dictyota dichotoma (Huds.) J.V. Lamour.	Chromista	Ochrophyta	Phaeophyceae	Dictyota	species	вразливий
+Ектокарпус стручкуватий	Ectocarpus siliculosus (Dillw.) Lyngb. var. hiemalis (P.Crouan & H.Crouan ex Kjellman) Gallardo  (Crouan ex Kjellm.) Gallardo	Chromista	Ochrophyta	Phaeophyceae	Ectocarpus	varietas	вразливий
+Галоптеріс мітлоподібний	Halopteris scoparia (L.) Sauv	Chromista	Ochrophyta	Phaeophyceae	Halopteris	species	рідкісний
+Планосифон зостеролистий	Planosiphon zosterifolius (Reinke) McDevit & G.W.Saunders	Chromista	Ochrophyta	Phaeophyceae	Planosiphon	species	вразливий
+Пунктарія широколиста	Punctaria latifolia Grev.	Chromista	Ochrophyta	Phaeophyceae	Punctaria	species	рідкісний
+Пунктарія хвиляста	Punctaria tenuissima (C. Agardh) Grev.	Chromista	Ochrophyta	Phaeophyceae	Punctaria	species	рідкісний
+Пілайєла прибережна	Pylaiella littoralis (L.) Kjellm.	Chromista	Ochrophyta	Phaeophyceae	Pylaiella	species	рідкісний
+Сперматохнус особливий	Spermatochnus paradoxus (Roth) Kutz.	Chromista	Ochrophyta	Phaeophyceae	Spermatochnus	species	вразливий
+Сфацелярія карликова	Sphacelaria nana Nageli ex Kutz.	Chromista	Ochrophyta	Phaeophyceae	Sphacelaria	species	вразливий
+Стилофора ніжна	Stilophora tenella (Esper) P.C. Silva	Chromista	Ochrophyta	Phaeophyceae	Stilophora	species	вразливий
+Вошерія прибережна	Vaucheria litorea Hoffm.-Bang. & C. Agardh	Chromista	Ochrophyta	Xanthophyceae	Vaucheria	species	рідкісний
+Роччела водоростеподібна	Roccella phycopsis (Ach.) Ach.	Fungi	Ascomycota	Arthoniomycetes	Roccella	species	рідкісний
+Псороглена біаторова	Psoroglaena biatorella (Arnold) Lucking & Serus.	Fungi	Ascomycota	Eurotiomycetes	Psoroglaena	species	зникаючий
+Агрестія щетиниста	Agrestia hispida (Mereschk.) Hale & W. Culb.	Fungi	Ascomycota	Lecanoromycetes	Agrestia	species	вразливий
+Агрестія Зерова	Agrestia zerovii S. Y. Kondr., A. B. Gromakova & Khodos.	Fungi	Ascomycota	Lecanoromycetes	Agrestia	species	рідкісний
+Алекторія паросткова	Alectoria sarmentosa (Ach.) Ach.	Fungi	Ascomycota	Lecanoromycetes	Alectoria	species	вразливий
+Аллоцетрарія мадрепорова	Allocetraria madreporiformis (Ach.) Karnefelt & A. Thell	Fungi	Ascomycota	Lecanoromycetes	Allocetraria	species	рідкісний
+Аллоцетрарія Океза	Allocetraria oakesiana (Tuck.) Randlane & Thell	Fungi	Ascomycota	Lecanoromycetes	Allocetraria	species	рідкісний
+Цірцінарія кущиста	Aspicilia fruticulosa (Eversm.) Flagey	Fungi	Ascomycota	Lecanoromycetes	Aspicilia	species	вразливий
+Цірцінарія блукаюча	Circinaria fruticulosa (Eversm.) Sohrabi	Fungi	Ascomycota	Lecanoromycetes	Circinaria	species	зникаючий
+Цірцінарія гірозна	Circinaria gyrosa Sohrabi, Sipman, V. John & V.J. Rico	Fungi	Ascomycota	Lecanoromycetes	Circinaria	species	вразливий
+Кладонія зірчаста	Cladonia stellaris (Opiz.) Pouzar & Vezda	Fungi	Ascomycota	Lecanoromycetes	Cladonia	species	рідкісний
+Доліхоуснея найдовша	Dolichousnea longissima (Ach.) Articus	Fungi	Ascomycota	Lecanoromycetes	Dolichousnea	species	вразливий
+Фульгензія пустельна	Fulgensia desertorum (Tomin) Poelt	Fungi	Ascomycota	Lecanoromycetes	Fulgensia	species	зникаючий
+Гіалекта геркулінська	Gyalecta herculina (Rehm) Baloch, Lumbsch & Wedin	Fungi	Ascomycota	Lecanoromycetes	Gyalecta	species	вразливий
+Гіалекта стовбурова	Gyalecta truncigena (Ach.) Hepp	Fungi	Ascomycota	Lecanoromycetes	Gyalecta	species	рідкісний
+Гіалекта берестова	Gyalecta ulmi (Sw.) Zahlnr. in Engler.	Fungi	Ascomycota	Lecanoromycetes	Gyalecta	species	рідкісний
+Гетеродермія прекрасна	Heterodermia speciosa (Wulf.) Trev.	Fungi	Ascomycota	Lecanoromycetes	Heterodermia	species	рідкісний
+Гіпотрахіна відігнута	Hypotrachina revoluta (Florke)	Fungi	Ascomycota	Lecanoromycetes	Hypotrachina	species	зникаючий
+Ласалія пухирчаста	Lasallia pustulata (L.) Merat	Fungi	Ascomycota	Lecanoromycetes	Lasallia	species	рідкісний
+Ласалія російська	Lasallia rossica Dombr.	Fungi	Ascomycota	Lecanoromycetes	Lasallia	species	рідкісний
+Лептогіум насічений	Leptogium saturninum (Dicks.) Nyl.	Fungi	Ascomycota	Lecanoromycetes	Leptogium	species	вразливий
+Летарієла переплутана	Lethariella intricata (Moris) Krog	Fungi	Ascomycota	Lecanoromycetes	Lethariella	species	зникаючий
+Лобарія легеневоподібна	Lobaria pulmonaria (L.) Hoffm.	Fungi	Ascomycota	Lecanoromycetes	Lobaria	species	вразливий
+Меланохалеа елегантна	Melanohalea elegantula (Zahlbr.) O. Blanco & Al.	Fungi	Ascomycota	Lecanoromycetes	Melanohalea	species	рідкісний
+Нефрома рівна	Nephroma parile Ach.	Fungi	Ascomycota	Lecanoromycetes	Nephroma	species	вразливий
+Нефрома загорнута	Nephroma resupinatum (L.) Ach.	Fungi	Ascomycota	Lecanoromycetes	Nephroma	species	вразливий
+Паннарія шерстиста	Pannaria conoplea (Pers.) Bory	Fungi	Ascomycota	Lecanoromycetes	Pannaria	species	вразливий
+Пармелієла щетинистолиста	Parmeliella triptophylla (Ach.) Mull. Arg.	Fungi	Ascomycota	Lecanoromycetes	Parmeliella	species	рідкісний
+Пармотрема перлинова	Parmotrema perlatum (Huds.) M. Choisy	Fungi	Ascomycota	Lecanoromycetes	Parmotrema	species	рідкісний
+Полізосія Реутера	Polyzosia reuteri (Schaer.) S.Y. Kondr., L. Lokos & Farkas	Fungi	Ascomycota	Lecanoromycetes	Polyzosia	species	рідкісний
+Псора обманлива	Psora decipiens (Hedw.) Hoffm.	Fungi	Ascomycota	Lecanoromycetes	Psora	species	вразливий
+Рамаліна канарська	Ramalina canariensis J. Steiner	Fungi	Ascomycota	Lecanoromycetes	Ramalina	species	рідкісний
+Рамаліна рвана	Ramalina lacera (With.) J.R. Laundon	Fungi	Ascomycota	Lecanoromycetes	Ramalina	species	рідкісний
+Рамаліна понтійська	Ramalina pontica Vezda	Fungi	Ascomycota	Lecanoromycetes	Ramalina	species	зникаючий
+Рікасолія широка	Ricasolia amplissima (Scop.) De Not.	Fungi	Ascomycota	Lecanoromycetes	Ricasolia	species	вразливий
+Русавскія долоненосна	Rusavskia digitata (S. Kondr.) S. Kondr. & Karnef.	Fungi	Ascomycota	Lecanoromycetes	Rusavskia	species	зникаючий
+Сцитініум черепицеподібний	Scytinium imbricatum (P.M.Jorg.) Otalora, P.M.Jorg. & Wedin	Fungi	Ascomycota	Lecanoromycetes	Scytinium	species	вразливий
+Сцитініум шредера	Scytinium schraderi (Ach.) Otalora, P.M.Jorg. & Wedin	Fungi	Ascomycota	Lecanoromycetes	Scytinium	species	вразливий
+Сейрофора загадкова	Seirophora contortuplicata (Ach.) Froden	Fungi	Ascomycota	Lecanoromycetes	Seirophora	species	рідкісний
+Сейрофора ямчаста	Seirophora lacunosa (Rupr) Froden	Fungi	Ascomycota	Lecanoromycetes	Seirophora	species	вразливий
+Солоріна двоспорова	Solorina bispora (L.) Ach.	Fungi	Ascomycota	Lecanoromycetes	Solorina	species	вразливий
+Солоріна мішкувата	Solorina saccata (L.) Ach.	Fungi	Ascomycota	Lecanoromycetes	Solorina	species	вразливий
+Сквамарина щетиниста	Squamarina cartilaginea (With.) P. James	Fungi	Ascomycota	Lecanoromycetes	Squamarina	species	неоцінений
+Сквамарина сочевиценосна	Squamarina lentigera (G. H. Weber) Poelt	Fungi	Ascomycota	Lecanoromycetes	Squamarina	species	вразливий
+Сквамарина небезпечна	Squamarina periculosa (Duf.) Poelt	Fungi	Ascomycota	Lecanoromycetes	Squamarina	species	вразливий
+Стікта закопчена	Sticta fuliginosa (Dics.) Ach.	Fungi	Ascomycota	Lecanoromycetes	Sticta	species	вразливий
+Стікта лісова	Sticta sylvatica (Huds.) Ach.	Fungi	Ascomycota	Lecanoromycetes	Sticta	species	вразливий
+Тамнолія щетиниста	Thamnolia vermicularis (Sw.) Axh. ex Schaerer	Fungi	Ascomycota	Lecanoromycetes	Thamnolia	species	вразливий
+Торнабея щитоподібна	Tornabea scutellifera (With.) Laund.	Fungi	Ascomycota	Lecanoromycetes	Tornabea	species	рідкісний
+Тукнерарія Лаурера	Tuckneraria laureri (Krempelh.) Randlane & Thell	Fungi	Ascomycota	Lecanoromycetes	Tuckneraria	species	рідкісний
+Умбілікарія багатолистоподібна	Umbilicaria subpolyphylla Oxner	Fungi	Ascomycota	Lecanoromycetes	Umbilicaria	species	рідкісний
+Уснея квітуча	Usnea florida (L.) Web.	Fungi	Ascomycota	Lecanoromycetes	Usnea	species	вразливий
+Ксантопармелія камчадальська	Xanthoparmelia camtschadalis (Ach.) Hale	Fungi	Ascomycota	Lecanoromycetes	Xanthoparmelia	species	вразливий
+Ксантопармелія грубозморшкувата	Xanthoparmelia ryssolea (Ach.) O. Blanco & Al.	Fungi	Ascomycota	Lecanoromycetes	Xanthoparmelia	species	вразливий
+Ксанторія ялівцева	Xanthoria juniperina S.Y. Kondr.	Fungi	Ascomycota	Lecanoromycetes	Xanthoria	species	рідкісний
+Гельвела монашка	Helvella monachella (Scop.) Fr.	Fungi	Ascomycota	Pezizomycetes	Helvella	species	вразливий
+Зморшок товстоногий	Morchella crassipes (Vent.) Pers.	Fungi	Ascomycota	Pezizomycetes	Morchella	species	вразливий
+Плектанія чорніюча	Plectania melastoma (Sowerby) Fuckel	Fungi	Ascomycota	Pezizomycetes	Plectania	species	вразливий
+Саркосома куляста	Sarcosoma globosum (Schmidel) Rehm	Fungi	Ascomycota	Pezizomycetes	Sarcosoma	species	рідкісний
+Трюфель літній	Tuber aestivum Vitt.	Fungi	Ascomycota	Pezizomycetes	Tuber	species	зникаючий
+Поронія крапчаста	Poronia punctata (L.) Fr.	Fungi	Ascomycota	Sordariomycetes	Poronia	species	зникаючий
+Печериця мухомороподібна	Agaricus amanitaeformis Wasser	Fungi	Basidiomycota	Agaricomycetes	Agaricus	species	зникаючий
+Печериця Романьєзі	Agaricus romagnesii Wasser	Fungi	Basidiomycota	Agaricomycetes	Agaricus	species	зникаючий
+Печериця таблитчаста	Agaricus tabularis Peck	Fungi	Basidiomycota	Agaricomycetes	Agaricus	species	зникаючий
+Мухомор Цезаря	Amanita caesarea (Scop.) Pers.	Fungi	Basidiomycota	Agaricomycetes	Amanita	species	зникаючий
+Мухомор щетинистий	Amanita solitaria (Bull.) Fr.	Fungi	Basidiomycota	Agaricomycetes	Amanita	species	зникаючий
+Амилоцистіс лапландський	Amylocystis lapponica (Romell) Bondartsev & Singer	Fungi	Basidiomycota	Agaricomycetes	Amylocystis	species	зниклий
+Баттаррея веселкоподібна	Battarrea phalloides (Dicks.) Pers.	Fungi	Basidiomycota	Agaricomycetes	Battarrea	species	вразливий
+Боровик бронзовий	Boletus aereus Bull.	Fungi	Basidiomycota	Agaricomycetes	Boletus	species	вразливий
+Порхавка болотяна	Bovista paludosa Lev.	Fungi	Basidiomycota	Agaricomycetes	Bovista	species	зникаючий
+Яєшник укорінений	Butyriboletus appendiculatus (Schaeff.) D. Arora & J.L. Frank	Fungi	Basidiomycota	Agaricomycetes	Butyriboletus	species	вразливий
+Яєшник Фехтнера	Butyriboletus fechtneri (Velen.) Arora & J.L. Frank	Fungi	Basidiomycota	Agaricomycetes	Butyriboletus	species	зникаючий
+Яєшник темно-рожевий	Butyriboletus fuscoroseus (Smotl.) Vizzini & Gelardi	Fungi	Basidiomycota	Agaricomycetes	Butyriboletus	species	зникаючий
+Яєшник королівський	Butyriboletus regius (Krombh.) D. Arora & J.L. Frank	Fungi	Basidiomycota	Agaricomycetes	Butyriboletus	species	зникаючий
+Яєшник гірський	Butyriboletus subappendiculatus (Dermek, Lazebn. & J.Veselsky) D.Arora & J.L.Frank	Fungi	Basidiomycota	Agaricomycetes	Butyriboletus	species	зникаючий
+Катателазма царська	Catathelasma imperiale (Fr.) Sing.	Fungi	Basidiomycota	Agaricomycetes	Catathelasma	species	рідкісний
+Клаваріадельф товкачиковий	Clavariadelphus pistillaris (Fr.) Donk	Fungi	Basidiomycota	Agaricomycetes	Clavariadelphus	species	рідкісний
+Крепідот македонський	Crepidotus macedonicus Pilat	Fungi	Basidiomycota	Agaricomycetes	Crepidotus	species	вразливий
+Флокулярія Рікена	Floccularia rickenii (Bohus) Wasser	Fungi	Basidiomycota	Agaricomycetes	Floccularia	species	вразливий
+Гомф булавоподібний	Gomphus clavatus (Pers.) Gray	Fungi	Basidiomycota	Agaricomycetes	Gomphus	species	зникаючий
+Грифола листувата	Grifola frondosa (Dicks.) Gray	Fungi	Basidiomycota	Agaricomycetes	Grifola	species	вразливий
+Напівборовик ямчастий	Hemileccinum depilatum (Redeuilh) Sutara	Fungi	Basidiomycota	Agaricomycetes	Hemileccinum	species	вразливий
+Герицій коралоподібний	Hericium coralloides (Fr.) Gray	Fungi	Basidiomycota	Agaricomycetes	Hericium	species	вразливий
+Герицій їжаковий	Hericium erinaceum (Fr.) Pers.	Fungi	Basidiomycota	Agaricomycetes	Hericium	species	зникаючий
+Кавінія біло-зелена	Kavinia alboviridis (Morgan) Gilb. & Budington	Fungi	Basidiomycota	Agaricomycetes	Kavinia	species	вразливий
+Хрящ-молочник золотисто-жовтий	Lactarius chrysorrheus Fr.	Fungi	Basidiomycota	Agaricomycetes	Lactarius	species	вразливий
+Хрящ-молочник чорний	Lactarius lignyotus Fr.	Fungi	Basidiomycota	Agaricomycetes	Lactarius	species	рідкісний
+Хрящ-молочник криваво-червоний	Lactarius sanguifluus (Paulet) Fr.	Fungi	Basidiomycota	Agaricomycetes	Lactarius	species	вразливий
+Білопечериця довгокоренева	Leucoagaricus macrorhizus Locq. ex Horak	Fungi	Basidiomycota	Agaricomycetes	Leucoagaricus	species	зникаючий
+Білопечериця Мозера	Leucoagaricus moseri (Wasser) Wasser	Fungi	Basidiomycota	Agaricomycetes	Leucoagaricus	species	рідкісний
+Білопечериця дівоча	Leucoagaricus nympharum (Kalchbr.) Bon	Fungi	Basidiomycota	Agaricomycetes	Leucoagaricus	species	рідкісний
+Білогнойовик Богуша	Leucocoprinus bohusii Wasser	Fungi	Basidiomycota	Agaricomycetes	Leucocoprinus	species	зникаючий
+Білопавутинник бульбистий	Leucocortinarius bulbiger (Alb. & Schwein.) Singer	Fungi	Basidiomycota	Agaricomycetes	Leucocortinarius	species	рідкісний
+Ліхеномфалія Гудсонова	Lichenomphalia hudsoniana (H.S. Jenn) Redhead, Lutzoni, Moncalvo & Vilgalys	Fungi	Basidiomycota	Agaricomycetes	Lichenomphalia	species	рідкісний
+Лімацела степова	Limacella steppicola Zerova & S. Wasser	Fungi	Basidiomycota	Agaricomycetes	Limacella	species	недостатньо відомий
+Дощовик соскоподібний	Lycoperdon mammaeforme Pers.	Fungi	Basidiomycota	Agaricomycetes	Lycoperdon	species	вразливий
+Ліофіл Фавре	Lyophyllum favrei R. Haller Aar. & R. Haller Suhr	Fungi	Basidiomycota	Agaricomycetes	Lyophyllum	species	зникаючий
+Монтанея промениста	Montagnea radiosa (Pall.) Sebek	Fungi	Basidiomycota	Agaricomycetes	Montagnea	species	вразливий
+Мутин собачий	Mutinus caninus (Huds.) Fr.	Fungi	Basidiomycota	Agaricomycetes	Mutinus	species	рідкісний
+Міріостома шийкова	Myriostoma coliforme (Dicks.) Corda	Fungi	Basidiomycota	Agaricomycetes	Myriostoma	species	рідкісний
+Мітікоміцес рогоніжковий	Mythicomyces corneipes (Fr.) Redhead & A.H. Sm.	Fungi	Basidiomycota	Agaricomycetes	Mythicomyces	species	вразливий
+Панеол пустельний	Panaeolus desertorum (Velen. & Dvorak) E.F. Malysheva, G. Moreno, Svetash. & M. Villarreal	Fungi	Basidiomycota	Agaricomycetes	Panaeolus	species	зникаючий
+Свинуха Зерової	Paxillus zerovae Wasser	Fungi	Basidiomycota	Agaricomycetes	Paxillus	species	зникаючий
+Феолепіота золотиста	Phaeolepiota aurea (Matt.) Maire	Fungi	Basidiomycota	Agaricomycetes	Phaeolepiota	species	вразливий
+Феллінідіум іржаво-бурий	Phellinidium ferrugineofuscum (P.Karst.) Fiasson & Niemela	Fungi	Basidiomycota	Agaricomycetes	Phellinidium	species	вразливий
+Фелоринія Геркулесова	Phellorinia herculeana (Pers.) Kreisel	Fungi	Basidiomycota	Agaricomycetes	Phellorinia	species	зниклий
+Філопор рожево-золотистий	Phylloporus pelletieri (Lev.) Quel.	Fungi	Basidiomycota	Agaricomycetes	Phylloporus	species	зникаючий
+Смолоніг коренелюбний	Picipes rhizophilus (Pat.) J.L. Zhou & B.K. Cui	Fungi	Basidiomycota	Agaricomycetes	Picipes	species	рідкісний
+Пізоліт безкореневий	Pisolithus arhizus (Scop.) Rauschert	Fungi	Basidiomycota	Agaricomycetes	Pisolithus	species	рідкісний
+Трутовик зонтичний	Polyporus umbellatus (Pers.) Fr.	Fungi	Basidiomycota	Agaricomycetes	Polyporus	species	рідкісний
+Порполомопсис ковпакоподібний	Porpolomopsis calyptriformis (Berk.) Bresinsky	Fungi	Basidiomycota	Agaricomycetes	Porpolomopsis	species	рідкісний
+Псевдомоховик паразитний	Pseudoboletus parasiticus (Bull.) Sutara	Fungi	Basidiomycota	Agaricomycetes	Pseudoboletus	species	вразливий
+Рубіномоховик карміново-червоний	Rubinoboletus rubinus (W.G.Sm.) Pilat & Dermek	Fungi	Basidiomycota	Agaricomycetes	Rubinoboletus	species	зникаючий
+Червоноборовик вовчий	Rubroboletus lupinus (Fr.) Costanzo, Gelardi, Simonini & Vizzini	Fungi	Basidiomycota	Agaricomycetes	Rubroboletus	species	вразливий
+Червоноборовик чортів	Rubroboletus satanas (Lenz) Kuan Zhao & Zhu L. Yang	Fungi	Basidiomycota	Agaricomycetes	Rubroboletus	species	зникаючий
+Сироїжка синювата	Russula turci Bres.	Fungi	Basidiomycota	Agaricomycetes	Russula	species	вразливий
+Твердошкір багатокореневий	Scleroderma polyrhizum (J.F. Gmel.) Pers.	Fungi	Basidiomycota	Agaricomycetes	Scleroderma	species	недостатньо відомий
+Листочня кучерява	Sparassis crispa (Wulfen) Fr.	Fungi	Basidiomycota	Agaricomycetes	Sparassis	species	зникаючий
+Шишкогриб лускатий	Strobilomyces strobilaceus (Scop.) Berk.	Fungi	Basidiomycota	Agaricomycetes	Strobilomyces	species	вразливий
+Піддубник рожево-золотистий	Suillellus rhodoxanthus (Krombh.) Blanco-Dios	Fungi	Basidiomycota	Agaricomycetes	Suillellus	species	зникаючий
+Піддубник криваво-червоний	Suillellus rubrosanguineus (Cheype) Blanco-Dios	Fungi	Basidiomycota	Agaricomycetes	Suillellus	species	зникаючий
+Маслюк плакучий	Suillus plorans (Rolland) Kuntze	Fungi	Basidiomycota	Agaricomycetes	Suillus	species	вразливий
+Рядовка величезна	Tricholoma colossus (Fr.) Quel.	Fungi	Basidiomycota	Agaricomycetes	Tricholoma	species	рідкісний
+Рядовка опенькоподібна	Tricholoma focale (Fr.) Ricken	Fungi	Basidiomycota	Agaricomycetes	Tricholoma	species	вразливий
+Анакамтодон сплахноподібний	Anacamptodon splachnoides (Froel. ex Brid.) Brid.	Plantae	Bryophyta	Bryopsida	Anacamptodon	species	вразливий
+Анектангій Ганделя	Anoectangium handelii Schiffn.	Plantae	Bryophyta	Bryopsida	Anoectangium	species	рідкісний
+Кампілостелій скельний	Campylostelium saxicola (F.Weber & D.Mohr) Bruch & Schimp.	Plantae	Bryophyta	Bryopsida	Campylostelium	species	рідкісний
+Цинклідот водяний	Cinclidotus aquaticus (Hedw.) Bruch & Schimp.	Plantae	Bryophyta	Bryopsida	Cinclidotus	species	рідкісний
+Конардія компактна	Conardia compacta (Drumm. Ex Mull.Hal.) H.Rob.	Plantae	Bryophyta	Bryopsida	Conardia	species	рідкісний
+Дикранодонцій шорсткий	Dicranodontium asperulum (Mitt.) Broth.	Plantae	Bryophyta	Bryopsida	Dicranodontium	species	рідкісний
+Фісиденс джерельний	Fissidens fontanus (Bach.Pyl.) Steud.	Plantae	Bryophyta	Bryopsida	Fissidens	species	рідкісний
+Фісиденс струмковий	Fissidens rivularis (Spruce) Schimp.	Plantae	Bryophyta	Bryopsida	Fissidens	species	рідкісний
+Фісиденс рудуватий	Fissidens rufulus Bruch & Schimp.	Plantae	Bryophyta	Bryopsida	Fissidens	species	рідкісний
+Гелодій Бландова	Helodium blandowii (F.Weber & D.Mohr) Warnst.	Plantae	Bryophyta	Bryopsida	Helodium	species	вразливий
+Генедієла Гайма	Hennediella heimii (Hedw.) R.H.Zander	Plantae	Bryophyta	Bryopsida	Hennediella	species	рідкісний
+Гетерофіл споріднений	Heterophyllium affine (Hook.) M.Fleisch.	Plantae	Bryophyta	Bryopsida	Heterophyllium	species	рідкісний
+Гукерія блискуча	Hookeria lucens (Hedw.) Sm.	Plantae	Bryophyta	Bryopsida	Hookeria	species	рідкісний
+Лазаренкія Козлова	Lazarenkia kozlovii (Laz.) Boiko	Plantae	Bryophyta	Bryopsida	Lazarenkia	species	рідкісний
+Лекерея складчаста	Lescuraea plicata (Schleich. ex F.Weber & D.Mohr)	Plantae	Bryophyta	Bryopsida	Lescuraea	species	рідкісний
+Меезія довгоніжкова	Meesia longiseta Hedw.	Plantae	Bryophyta	Bryopsida	Meesia	species	зниклий
+Меезія тригранна	Meesia triquetra (L. ex Jolycl.) Angstr.	Plantae	Bryophyta	Bryopsida	Meesia	species	зникаючий
+Меезія багнова	Meesia uliginosa Hedw.	Plantae	Bryophyta	Bryopsida	Meesia	species	вразливий
+Некера Мензіса	Neckera menziesii Drumm.	Plantae	Bryophyta	Bryopsida	Neckera	species	рідкісний
+Ногоптеріум граціозний	Nogopterium gracile (Hedw.) Crosby & W.R. Buck	Plantae	Bryophyta	Bryopsida	Nogopterium	species	рідкісний
+Ортотецій рудуватий	Orthothecium rufescens (Dicks. ex Brid.) Schimp.	Plantae	Bryophyta	Bryopsida	Orthothecium	species	рідкісний
+Паламокладій справжньозелений	Palamocladium euchloron (H. Mull.) Wijk & Marg.	Plantae	Bryophyta	Bryopsida	Palamocladium	species	рідкісний
+Палудела відстовбурчена	Paludella squarrosa (Hedw.) Brid.	Plantae	Bryophyta	Bryopsida	Paludella	species	зникаючий
+Фіскомітріум піщаний	Physcomitrium arenicola Lazar.	Plantae	Bryophyta	Bryopsida	Physcomitrium	species	рідкісний
+Плагіотецій некероподібний	Plagiothecium neckeroideum Schimp.	Plantae	Bryophyta	Bryopsida	Plagiothecium	species	рідкісний
+Псевдобрій цинклідієподібний	Pseudobryum cinclidioides (Huebener)T.J.Kop.	Plantae	Bryophyta	Bryopsida	Pseudobryum	species	рідкісний
+Псевдокаліергон плауноподібний	Pseudocalliergon lycopodioides (Brid.) Hedenas	Plantae	Bryophyta	Bryopsida	Pseudocalliergon	species	вразливий
+Псевдокаліергон трирядний	Pseudocalliergon trifarium (F.Weber & D.Mohr) Loeske	Plantae	Bryophyta	Bryopsida	Pseudocalliergon	species	зникаючий
+Селанія сизувата	Saelania glaucescens (Hedw.) Broth.	Plantae	Bryophyta	Bryopsida	Saelania	species	рідкісний
+Скорпідій скорпіоноподібний	Scorpidium scorpioides (Hedw.) Limpr.	Plantae	Bryophyta	Bryopsida	Scorpidium	species	вразливий
+Тейлорія язичкова	Tayloria lingulata (Dicks.) Lindb.	Plantae	Bryophyta	Bryopsida	Tayloria	species	рідкісний
+Тимія мекленбурзька	Timmia megapolitana Hedw.	Plantae	Bryophyta	Bryopsida	Timmia	species	зникаючий
+Тортела ламка	Tortella fragilis (Hook. & Wilson) Limpr.	Plantae	Bryophyta	Bryopsida	Tortella	species	рідкісний
+Тортула Ранда	Tortula randii (Kenn.) R.H.Zander	Plantae	Bryophyta	Bryopsida	Tortula	species	рідкісний
+Сфагн балтійський	Sphagnum balticum (Russow) C.E.O.Jensen	Plantae	Bryophyta	Sphagnopsida	Sphagnum	species	рідкісний
+Сфагн м'який	Sphagnum molle Sull.	Plantae	Bryophyta	Sphagnopsida	Sphagnum	species	вразливий
+Сфагн блискучий	Sphagnum subnitens Russow & Warnst.	Plantae	Bryophyta	Sphagnopsida	Sphagnum	species	зникаючий
+Сфагн тоненький	Sphagnum tenellum (Brid.) Pers. ex Brid.	Plantae	Bryophyta	Sphagnopsida	Sphagnum	species	вразливий
+Сфагн Вульфа	Sphagnum wulfianum Girg.	Plantae	Bryophyta	Sphagnopsida	Sphagnum	species	зникаючий
+Лампротамніум пухирчастий	Lamprothamnium papullosum (Wallroth) J. Groves	Plantae	Charophyta	Charophyceae	Lamprothamnium	species	вразливий
+Ліхнотамнус бородатий	Lychnothamnus barbatus (Meyen) Leonhardi	Plantae	Charophyta	Charophyceae	Lychnothamnus	species	рідкісний
+Нітела струнка	Nitella gracilis (J.E. Sm.) C. Agardh	Plantae	Charophyta	Charophyceae	Nitella	species	вразливий
+Нітела найтонша	Nitella tenuissima (Desv.) Kutz.	Plantae	Charophyta	Charophyceae	Nitella	species	рідкісний
+Нітелопсис притуплений	Nitellopsis obtusa (Desv. in Loisel) J. Groves	Plantae	Charophyta	Charophyceae	Nitellopsis	species	рідкісний
+Толіпела проліферуюча	Tolypella prolifera (Ziz. ex A. Braun) Leonh.	Plantae	Charophyta	Charophyceae	Tolypella	species	рідкісний
+Хара Брауна	Сhara braunii C.C. Gmellin	Plantae	Charophyta	Charophyceae	Сhara	species	вразливий
+Хара сивіюча	Сhara canescens Desv. & Loisel in Loisel	Plantae	Charophyta	Charophyceae	Сhara	species	рідкісний
+Хара мохувата	Сhara muscosa J. Groves & Bull.-Webst.	Plantae	Charophyta	Charophyceae	Сhara	species	вразливий
+Хара витончена	Сhara virgata Kutz.	Plantae	Charophyta	Charophyceae	Сhara	species	рідкісний
+Бамбузіна Бребіссона	Bambusina brebissonii Kutz. ex Kutz.	Plantae	Charophyta	Zygnematophyceae	Bambusina	species	рідкісний
+Десмідіум Бейлі	Desmidium baileyi (Ralfs) Nordst.	Plantae	Charophyta	Zygnematophyceae	Desmidium	species	рідкісний
+Генікулярія спіротенієва	Genicularia spirotaenia (de Bary) de Bary	Plantae	Charophyta	Zygnematophyceae	Genicularia	species	вразливий
+Гонатозігон волохатий	Gonatozygon pilosum Wolle	Plantae	Charophyta	Zygnematophyceae	Gonatozygon	species	рідкісний
+Оокардіум простягнутий	Oocardium stratum Nдgeli	Plantae	Charophyta	Zygnematophyceae	Oocardium	species	вразливий
+Пеніум Борге	Penium borgeanum Skuja	Plantae	Charophyta	Zygnematophyceae	Penium	species	вразливий
+Роя англійська	Roya anglica G.S. West in Hodgetts	Plantae	Charophyta	Zygnematophyceae	Roya	species	вразливий
+Спірогіра Рейнгарда	Spirogyra reinhardii Chmielevsky	Plantae	Charophyta	Zygnematophyceae	Spirogyra	species	вразливий
+Бульбохета майже квадратна	Bulbochaete subquadrata Mrozinska	Plantae	Chlorophyta	Chlorophyceae	Bulbochaete	species	вразливий
+Евастропсіс Ріхтера	Euastropsis richterii (Schmidle) Lagerh.	Plantae	Chlorophyta	Chlorophyceae	Euastropsis	species	вразливий
+Едогоній косопоровий різновид донський	Oedogonium plagiostomum Wittr. ex Hirn var. tanaiticum Y.V. Roll	Plantae	Chlorophyta	Chlorophyceae	Oedogonium	species	рідкісний
+Псевдопедіаструм Каврайського	Pseudopediastrum kawraiskyi (Schmidle) E.Hegewald	Plantae	Chlorophyta	Chlorophyceae	Pseudopediastrum	species	вразливий
+Стигеоклоніум пучкуватий	Stigeoclonium fasciculare Kutz.	Plantae	Chlorophyta	Chlorophyceae	Stigeoclonium	species	вразливий
+Егагропіла лінея	Aegagropila linnaei Kutz.	Plantae	Chlorophyta	Ulvophyceae	Aegagropila	species	рідкісний
+Бріопсіс адріатичний	Bryopsis adriatica (J. Agardh) Frauenfeld	Plantae	Chlorophyta	Ulvophyceae	Bryopsis	species	вразливий
+Хетоморфа Зернова	Chaetomorpha zernovii Wononich	Plantae	Chlorophyta	Ulvophyceae	Chaetomorpha	species	вразливий
+Кладофора далматська	Cladophora dalmatica Kutzing	Plantae	Chlorophyta	Ulvophyceae	Cladophora	species	рідкісний
+Кладофоропсис шкірястий	Cladophoropsis membranacea (Bang ex C.Agardh) Borgesen	Plantae	Chlorophyta	Ulvophyceae	Cladophoropsis	species	рідкісний
+Кодіум черв'якуватий	Codium vermilara (Olivi) Delle Chiaje	Plantae	Chlorophyta	Ulvophyceae	Codium	species	рідкісний
+Сифонокладус маленький	Siphonocladus pusillus (C.Agardh ex Kutz.) Hauck	Plantae	Chlorophyta	Ulvophyceae	Siphonocladus	species	рідкісний
+Ульва азовська	Ulva maeotica (Proshk.-Lavr.) P.Tsarenko in Burova & Al.	Plantae	Chlorophyta	Ulvophyceae	Ulva	species	рідкісний
+Гапломітрій Гукера	Haplomitrium hookeri (Sm.) Nees	Plantae	Marchantiophyta	Haplomitriopsida	Haplomitrium	species	зникаючий
+Кололеженея Россета	Cololejeunea rossettiana (C.Massal.) Schiffn.	Plantae	Marchantiophyta	Jungermanniopsida	Cololejeunea	species	рідкісний
+Фруланія Яка	Frullania jackii Gottsche	Plantae	Marchantiophyta	Jungermanniopsida	Frullania	species	рідкісний
+Фускоцефалозиопсис білуватий	Fuscocephaloziopsis albescens (Hook.) Vana & L.Soderstr.	Plantae	Marchantiophyta	Jungermanniopsida	Fuscocephaloziopsis	species	рідкісний
+Скапанія компактна	Scapania compacta (A.Roth) Dumort.	Plantae	Marchantiophyta	Jungermanniopsida	Scapania	species	рідкісний
+Скапанія швейцарська	Scapania helvetica Gottsche	Plantae	Marchantiophyta	Jungermanniopsida	Scapania	species	рідкісний
+Клевея Спатиза	Clevea spathysii (Lindenb.) Mull.Frib.	Plantae	Marchantiophyta	Marchantiopsida	Clevea	species	рідкісний
+Таргіонія підлиста	Targionia hypophylla L.	Plantae	Marchantiophyta	Marchantiopsida	Targionia	species	рідкісний
+Батрахоспермум зовнішньоплідний	Batrachospermum ectocarpum Sirodot	Plantae	Rhodophyta	Florideophyceae	Batrachospermum	species	вразливий
+Батрахоспермум зроговілий	Batrachospermum keratophytum Bory emend. R.G. Sheath & Al.	Plantae	Rhodophyta	Florideophyceae	Batrachospermum	species	рідкісний
+Калітамніон зернистий	Callithamnion granulatum (Ducl.) Agardh	Plantae	Rhodophyta	Florideophyceae	Callithamnion	species	вразливий
+Дазія короткогострокінцева	Dasya apiculata (C. Agardh) J. Agardh	Plantae	Rhodophyta	Florideophyceae	Dasya	species	вразливий
+Гельмінтора розчепірена	Helminthora divaricata (C. Agardh) J. Agardh	Plantae	Rhodophyta	Florideophyceae	Helminthora	species	вразливий
+Лорансія чашоподібна	Laurencia coronopus J. Agardh	Plantae	Rhodophyta	Florideophyceae	Laurencia	species	рідкісний
+Лептосифонія дрібнотипова	Leptosiphonia fibrillosa (Agardh) Savoie & G.W.Saunders	Plantae	Rhodophyta	Florideophyceae	Leptosiphonia	species	вразливий
+Лофосифонія повзуча	Lophosiphonia reptabunda (Suhr.) Kylin	Plantae	Rhodophyta	Florideophyceae	Lophosiphonia	species	рідкісний
+Немаліон глистоподібний	Nemalion helminthoides (Velley) Batters	Plantae	Rhodophyta	Florideophyceae	Nemalion	species	вразливий
+Осмундея гібридна	Osmundea hybrida (DC.) K.W. Nam	Plantae	Rhodophyta	Florideophyceae	Osmundea	species	вразливий
+Осмундея зрізана	Osmundea truncata (Kutz.) K.W. Nam & Maggs	Plantae	Rhodophyta	Florideophyceae	Osmundea	species	вразливий
+Філофора псевдорогата	Phyllophora pseudoceranoides (S.G. Gmel.) Newroth & R. Taylor ex P.S. Dixon & L.M. Irvine	Plantae	Rhodophyta	Florideophyceae	Phyllophora	species	зникаючий
+Родохортон пурпуровий	Rhodochorton purpureum (Lighth.) Rosenv.	Plantae	Rhodophyta	Florideophyceae	Rhodochorton	species	рідкісний
+Торея найрозгалуженіша	Thorea ramosissima Bory	Plantae	Rhodophyta	Florideophyceae	Thorea	species	рідкісний
+Ксіфосифонія пірчаста	Xiphosiphonia pennata (C.Agardh) Savoie & G.W.Saunders	Plantae	Rhodophyta	Florideophyceae	Xiphosiphonia	species	рідкісний
+Хроодактилон прикрашений	Chroodactylon ornatum (C. Agardh) Basson	Plantae	Rhodophyta	Stylonematophyceae	Chroodactylon	species	рідкісний
+Хроодактилон Волле	Chroodactylon wolleanum Hansg.	Plantae	Rhodophyta	Stylonematophyceae	Chroodactylon	species	рідкісний
+Стілонема альсідії	Stylonema alsidii (Zanardini) K.M. Drew	Plantae	Rhodophyta	Stylonematophyceae	Stylonema	species	рідкісний
+Плодоріжка рідкоквіткова	Anacamptis laxiflora (Lam.) R.M. Bateman, Pridgeon & M.W. Chase	Plantae	Tracheophyta	Liliopsida	Anacamptis	species	вразливий
+Плодоріжка салепова	Anacamptis morio (L.) R.M. Bateman, Pridgeon & M.W. Chase	Plantae	Tracheophyta	Liliopsida	Anacamptis	species	вразливий
+Плодоріжка болотна	Anacamptis palustris (Jacq.) R.M. Bateman, Pridgeon & M.W. Chase	Plantae	Tracheophyta	Liliopsida	Anacamptis	species	вразливий
+Півники Брандзи	Iris brandzae Prodan	Plantae	Tracheophyta	Liliopsida	Iris	species	зникаючий
+Півники рогаті	Iris furcata M.Bieb.	Plantae	Tracheophyta	Liliopsida	Iris	species	зникаючий
+Півники борові	Iris pineticola Klokov	Plantae	Tracheophyta	Liliopsida	Iris	species	вразливий
+Півники понтичні	Iris pontica Zapał.	Plantae	Tracheophyta	Liliopsida	Iris	species	вразливий
+Півники несправжньосмикавцеві	Iris pseudocyperus Schur	Plantae	Tracheophyta	Liliopsida	Iris	species	рідкісний
+Півники сибірські	Іris sibirica L.	Plantae	Tracheophyta	Liliopsida	Іris	species	вразливий
+Зелениця альпійська	Diphasiastrum alpinum (L.) Holub	Plantae	Tracheophyta	Lycopodiopsida	Diphasiastrum	species	рідкісний
+Зелениця сплюснута	Diphasiastrum complanatum (L.) Holub	Plantae	Tracheophyta	Lycopodiopsida	Diphasiastrum	species	рідкісний
+Зелениця Ісслера	Diphasiastrum issleri (Rouy) Holub	Plantae	Tracheophyta	Lycopodiopsida	Diphasiastrum	species	вразливий
+Зелениця триколоскова	Diphasiastrum tristachyum (Pursh) Holub	Plantae	Tracheophyta	Lycopodiopsida	Diphasiastrum	species	зникаючий
+Зелениця Цайллера	Diphasiastrum zeilleri (Rouy) Holub	Plantae	Tracheophyta	Lycopodiopsida	Diphasiastrum	species	зникаючий
+Баранець звичайний	Huperzia selago (L.) Bernh. ex Schrank & Mart.	Plantae	Tracheophyta	Lycopodiopsida	Huperzia	species	неоцінений
+Молодильник озерний	Isoëtes lacustris L.	Plantae	Tracheophyta	Lycopodiopsida	Isoëtes	species	вразливий
+Плаунець заплавний	Lycopodiella inundata (L.) Holub	Plantae	Tracheophyta	Lycopodiopsida	Lycopodiella	species	вразливий
+Плаун річний	Lycopodium annotinum L.	Plantae	Tracheophyta	Lycopodiopsida	Lycopodium	species	неоцінений
+Плаунок швейцарський	Selaginella helvetica (L.) Spring	Plantae	Tracheophyta	Lycopodiopsida	Selaginella	species	зниклий в природі
+Плаунок плауноподібний	Selaginella selaginoides (L.) C.Mart.	Plantae	Tracheophyta	Lycopodiopsida	Selaginella	species	вразливий
+Деревій голий	Achillea glaberrima Klokov	Plantae	Tracheophyta	Magnoliopsida	Achillea	species	рідкісний
+Деревій язичковий	Achillea lingulata Waldst. & Kit.	Plantae	Tracheophyta	Magnoliopsida	Achillea	species	рідкісний
+Деревій Шура	Achillea schurii Sch.Bip.	Plantae	Tracheophyta	Magnoliopsida	Achillea	species	рідкісний
+Аконіт Бессера	Aconitum besserianum Andrz. ex Trautv.	Plantae	Tracheophyta	Magnoliopsida	Aconitum	species	вразливий
+Аконіт Жакена	Aconitum jacquinii Rchb.	Plantae	Tracheophyta	Magnoliopsida	Aconitum	species	рідкісний
+Аконіт опушеноплодий	Aconitum lasiocarpum (Rchb.) Gayer	Plantae	Tracheophyta	Magnoliopsida	Aconitum	species	вразливий
+Аконіт несправжньо-протиотруйний	Aconitum pseudanthora Blocki ex Pacz.	Plantae	Tracheophyta	Magnoliopsida	Aconitum	species	рідкісний
+Дзвінка кримська	Adenophora taurica (Sukacz.) Juz.	Plantae	Tracheophyta	Magnoliopsida	Adenophora	species	рідкісний
+Горицвіт весняний	Adonis vernalis L.	Plantae	Tracheophyta	Magnoliopsida	Adonis	species	неоцінений
+Горицвіт волзький	Adonis wolgensis Steven	Plantae	Tracheophyta	Magnoliopsida	Adonis	species	неоцінений
+Мітлиця альпійська	Agrostis alpina Scop.	Plantae	Tracheophyta	Magnoliopsida	Agrostis	species	недостатньо відомий
+Мітлиця скельна	Agrostis rupestris All.	Plantae	Tracheophyta	Magnoliopsida	Agrostis	species	зникаючий
+Альдрованда пухирчаста	Aldrovanda vesiculosa L.	Plantae	Tracheophyta	Magnoliopsida	Aldrovanda	species	рідкісний
+Цибуля білувата	Allium albidum Fisch. ex M.Bieb.	Plantae	Tracheophyta	Magnoliopsida	Allium	species	зникаючий
+Цибуля лінійна	Allium lineare L.	Plantae	Tracheophyta	Magnoliopsida	Allium	species	вразливий
+Цибуля коса	Allium obliquum L.	Plantae	Tracheophyta	Magnoliopsida	Allium	species	зникаючий
+Цибуля перевдягнена	Allium pervestitum Klokov	Plantae	Tracheophyta	Magnoliopsida	Allium	species	зникаючий
+Цибуля Регеля	Allium regelianum A.Becker ex Iljin	Plantae	Tracheophyta	Magnoliopsida	Allium	species	рідкісний
+Цибуля савранська	Allium savranicum (Nyman) Oxner	Plantae	Tracheophyta	Magnoliopsida	Allium	species	вразливий
+Цибуля cкіфська	Allium scythicum Zoz	Plantae	Tracheophyta	Magnoliopsida	Allium	species	вразливий
+Цибуля Діоскорида	Allium siculum subsp. dioscoridis (Sm.) K.Richt.	Plantae	Tracheophyta	Magnoliopsida	Allium	subspecies	рідкісний
+Цибуля круглонога	Allium sphaeropodum Klokov	Plantae	Tracheophyta	Magnoliopsida	Allium	species	вразливий
+Цибуля пряма	Allium strictum Schrad.	Plantae	Tracheophyta	Magnoliopsida	Allium	species	рідкісний
+Цибуля ведмежа (черемша)	Allium ursinum L.	Plantae	Tracheophyta	Magnoliopsida	Allium	species	неоцінений
+Плодоріжка блощична	Anacamptis coriophora (L.) R.M. Bateman, Pridgeon & M.W. Chase	Plantae	Tracheophyta	Magnoliopsida	Anacamptis	species	вразливий
+Плодоріжка запашна	Anacamptis fragrans (Pollini) R.M. Bateman	Plantae	Tracheophyta	Magnoliopsida	Anacamptis	species	вразливий
+Плодоріжка розмальована	Anacamptis picta (Loisel.) R.M. Bateman	Plantae	Tracheophyta	Magnoliopsida	Anacamptis	species	вразливий
+Плодоріжка пірамідальна	Anacamptis pyramidalis (L.) Rich.	Plantae	Tracheophyta	Magnoliopsida	Anacamptis	species	вразливий
+Переломник Козо-Полянського	Androsace koso-poljanskii Ovcz.	Plantae	Tracheophyta	Magnoliopsida	Androsace	species	зникаючий
+Вітеринка нарцисоквіткова	Anemonastrum narcissiflorum (L.) Holub	Plantae	Tracheophyta	Magnoliopsida	Anemonastrum	species	вразливий
+Котячі лапки карпатські	Antennaria carpatica (Wahlenb.) Bluff & Fingerh.	Plantae	Tracheophyta	Magnoliopsida	Antennaria	species	зникаючий
+Роман карпатський	Anthemis carpatica Willd.	Plantae	Tracheophyta	Magnoliopsida	Anthemis	species	зникаючий
+Орлики чорніючі	Aquilegia nigricans Baumg.	Plantae	Tracheophyta	Magnoliopsida	Aquilegia	species	рідкісний
+Суничник дрібноплодий	Arbutus andrachne L.	Plantae	Tracheophyta	Magnoliopsida	Arbutus	species	рідкісний
+Армерія покутська	Armeria pocutica Pawl.	Plantae	Tracheophyta	Magnoliopsida	Armeria	species	зниклий
+Хрін великоплідний	Armoracia macrocarpa (Waldst. & Kit.) Baumg.	Plantae	Tracheophyta	Magnoliopsida	Armoracia	species	зникаючий
+Полин вірменський	Artemisia armeniaca Lam.	Plantae	Tracheophyta	Magnoliopsida	Artemisia	species	зникаючий
+Полин Дзевановського	Artemisia dzevanovskii Leonova	Plantae	Tracheophyta	Magnoliopsida	Artemisia	species	неоцінений
+Полин суцільнобілий	Artemisia hololeuca M.Bieb. ex Besser	Plantae	Tracheophyta	Magnoliopsida	Artemisia	species	неоцінений
+Кліщинець білокрилий	Arum albispathum Steven ex Ledeb.	Plantae	Tracheophyta	Magnoliopsida	Arum	species	зникаючий
+Кліщинець східний	Arum orientale M.Bieb.	Plantae	Tracheophyta	Magnoliopsida	Arum	species	рідкісний
+Холодок Палласа	Asparagus pallasii Miscz.	Plantae	Tracheophyta	Magnoliopsida	Asparagus	species	вразливий
+Золотень жовтий	Asphodeline lutea (L.) Rchb.	Plantae	Tracheophyta	Magnoliopsida	Asphodeline	species	неоцінений
+Айстра альпійська	Aster alpinus L.	Plantae	Tracheophyta	Magnoliopsida	Aster	species	вразливий
+Астрагал піщаний	Astragalus arenarius L.	Plantae	Tracheophyta	Magnoliopsida	Astragalus	species	вразливий
+Астрагал арнакантовий	Astragalus arnacantha M.Bieb.	Plantae	Tracheophyta	Magnoliopsida	Astragalus	species	вразливий
+Астрагал дніпровський	Astragalus borysthenicus Klokov	Plantae	Tracheophyta	Magnoliopsida	Astragalus	species	рідкісний
+Астрагал чашечковий	Astragalus calycinus M. Bieb	Plantae	Tracheophyta	Magnoliopsida	Astragalus	species	рідкісний
+Астрагал крейдолюбний	Astragalus cretophilus Klokov	Plantae	Tracheophyta	Magnoliopsida	Astragalus	species	рідкісний
+Астрагал шерстистоквітковий	Astragalus dasyanthus Pall.	Plantae	Tracheophyta	Magnoliopsida	Astragalus	species	вразливий
+Астрагал безстрілковий	Astragalus excapus L.	Plantae	Tracheophyta	Magnoliopsida	Astragalus	species	рідкісний
+Астрагал сизий	Astragalus glaucus L.	Plantae	Tracheophyta	Magnoliopsida	Astragalus	species	вразливий
+Астрагал Геннінга	Astragalus henningii (Steven) Boriss.	Plantae	Tracheophyta	Magnoliopsida	Astragalus	species	рідкісний
+Астрагал Крайни	Astragalus krajinae Domin	Plantae	Tracheophyta	Magnoliopsida	Astragalus	species	зникаючий
+Астрагал монпелійський	Astragalus monspessulanus L.	Plantae	Tracheophyta	Magnoliopsida	Astragalus	species	вразливий
+Астрагал одеський	Astragalus odessanus Besser	Plantae	Tracheophyta	Magnoliopsida	Astragalus	species	рідкісний
+Астрагал понтійський	Astragalus ponticus Pall.	Plantae	Tracheophyta	Magnoliopsida	Astragalus	species	вразливий
+Астрагал зігнутий	Astragalus reduncus Pall.	Plantae	Tracheophyta	Magnoliopsida	Astragalus	species	зникаючий
+Астрагал сарептський	Astragalus sareptanus A.Beck.	Plantae	Tracheophyta	Magnoliopsida	Astragalus	species	рідкісний
+Астрагал щетинистий	Astragalus setosulus Gontsch.	Plantae	Tracheophyta	Magnoliopsida	Astragalus	species	зникаючий
+Астрагал подібний	Astragalus similis Boriss.	Plantae	Tracheophyta	Magnoliopsida	Astragalus	species	рідкісний
+Астрагал донський	Astragalus tanaiticus K.Koch	Plantae	Tracheophyta	Magnoliopsida	Astragalus	species	рідкісний
+Астрагал яйцеплідний	Astragalus testiculatus Pall.	Plantae	Tracheophyta	Magnoliopsida	Astragalus	species	рідкісний
+Астрагал Цингера	Astragalus zingeri Korsh.	Plantae	Tracheophyta	Magnoliopsida	Astragalus	species	зникаючий
+Морківниця прибережна	Astrodaucus littoralis (M.Bieb.) Drude	Plantae	Tracheophyta	Magnoliopsida	Astrodaucus	species	вразливий
+Смілка бузька	Atocion hypanicum (Klokov) Tzvelev	Plantae	Tracheophyta	Magnoliopsida	Atocion	species	вразливий
+Кучерявка кущова	Atraphaxis frutescens (L.) K. Koch	Plantae	Tracheophyta	Magnoliopsida	Atraphaxis	species	зникаючий
+Кучерявка відігнута	Atraphaxis replicata Lam.	Plantae	Tracheophyta	Magnoliopsida	Atraphaxis	species	рідкісний
+Беладонна звичайна	Atropa belladonna L.	Plantae	Tracheophyta	Magnoliopsida	Atropa	species	вразливий
+Водяний жовтець плаваючий	Batrachium fluitans (Lam.) Wimm.	Plantae	Tracheophyta	Magnoliopsida	Batrachium	species	вразливий
+Зеленоплідниця фіолетова	Bellardiochloa violacea (Bell.) Chiov.	Plantae	Tracheophyta	Magnoliopsida	Bellardiochloa	species	рідкісний
+Береза дніпровська	Betula borysthenica Klokov	Plantae	Tracheophyta	Magnoliopsida	Betula	species	рідкісний
+Береза низька	Betula humilis Schrank	Plantae	Tracheophyta	Magnoliopsida	Betula	species	вразливий
+Береза Клокова	Betula klokovii Zaverucha	Plantae	Tracheophyta	Magnoliopsida	Betula	species	зникаючий
+Очки гладенькі	Biscutella laevigata L.	Plantae	Tracheophyta	Magnoliopsida	Biscutella	species	зникаючий
+Блекстонія пронизанолиста	Blackstonia рerfoliata (L.) Huds	Plantae	Tracheophyta	Magnoliopsida	Blackstonia	species	зникаючий
+Капуста кримська	Brassica taurica (Tzvelev) Tzvelev	Plantae	Tracheophyta	Magnoliopsida	Brassica	species	зникаючий
+Ласкавець жовтецевий	Bupleurum ranunculoides L.	Plantae	Tracheophyta	Magnoliopsida	Bupleurum	species	зникаючий
+Ласкавець тонкий	Bupleurum tenuissimum L.	Plantae	Tracheophyta	Magnoliopsida	Bupleurum	species	вразливий
+Кальдезія білозоролиста	Caldesia parnassifolia (L.) Parl.	Plantae	Tracheophyta	Magnoliopsida	Caldesia	species	зникаючий
+Рутовик коріандролистий	Callianthemum coriandrifolium Rchb.	Plantae	Tracheophyta	Magnoliopsida	Callianthemum	species	вразливий
+Калофака волзька	Calophaca wolgarica (L.f.) DC.	Plantae	Tracheophyta	Magnoliopsida	Calophaca	species	вразливий
+Плетуха сольданелова	Calystegia soldanella (L.) R.Br.	Plantae	Tracheophyta	Magnoliopsida	Calystegia	species	зникаючий
+Дзвоники карпатські	Campanula carpatica Jacq.	Plantae	Tracheophyta	Magnoliopsida	Campanula	species	рідкісний
+Дзвоники Кладни	Campanula kladniana (Schur) Vitasek	Plantae	Tracheophyta	Magnoliopsida	Campanula	species	рідкісний
+Карагана скіфська	Caragana scythica (Kom.) Pojark.	Plantae	Tracheophyta	Magnoliopsida	Caragana	species	вразливий
+Жеруха грецька	Cardamine graeca L.	Plantae	Tracheophyta	Magnoliopsida	Cardamine	species	вразливий
+Жеруха ніжна	Cardamine tenera S.G. Gmel. ex C.A.Mey.	Plantae	Tracheophyta	Magnoliopsida	Cardamine	species	зникаючий
+Будяк пагорбовий	Carduus collinus Waldst. & Kit.	Plantae	Tracheophyta	Magnoliopsida	Carduus	species	зникаючий
+Будяк сизий	Carduus glaucinus Holub	Plantae	Tracheophyta	Magnoliopsida	Carduus	species	зникаючий
+Осока біла	Carex alba Scop.	Plantae	Tracheophyta	Magnoliopsida	Carex	species	зникаючий
+Осока двоколірна	Carex bicolor All.	Plantae	Tracheophyta	Magnoliopsida	Carex	species	зникаючий
+Осока богемська	Carex bohemica Schreb.	Plantae	Tracheophyta	Magnoliopsida	Carex	species	вразливий
+Осока буріюча	Carex brunnescens (Pers.) Poiret	Plantae	Tracheophyta	Magnoliopsida	Carex	species	зникаючий
+Осока Буксбаума	Carex buxbaumii Wahlenb.	Plantae	Tracheophyta	Magnoliopsida	Carex	species	вразливий
+Осока тонкокореневищна	Carex chordorhiza Ehrh.	Plantae	Tracheophyta	Magnoliopsida	Carex	species	вразливий
+Осока Девелла	Carex davalliana Smith	Plantae	Tracheophyta	Magnoliopsida	Carex	species	вразливий
+Осока збіднена	Carex depauperata Curt. ex With.	Plantae	Tracheophyta	Magnoliopsida	Carex	species	рідкісний
+Осока дводомна	Carex dioica L.	Plantae	Tracheophyta	Magnoliopsida	Carex	species	вразливий
+Осока темно-бура	Carex fuliginosa Schkuhr	Plantae	Tracheophyta	Magnoliopsida	Carex	species	рідкісний
+Осока кулястоподібна	Carex globularis L.	Plantae	Tracheophyta	Magnoliopsida	Carex	species	зникаючий
+Осока торфова	Carex heleonastes Ehrh.	Plantae	Tracheophyta	Magnoliopsida	Carex	species	зникаючий
+Осока Хоста	Carex hostiana DC.	Plantae	Tracheophyta	Magnoliopsida	Carex	species	вразливий
+Осока Лахеналя	Carex lachenalii Schkuhr	Plantae	Tracheophyta	Magnoliopsida	Carex	species	зникаючий
+Осока блискуча	Carex liparocarpos Gaud.	Plantae	Tracheophyta	Magnoliopsida	Carex	species	зникаючий
+Осока пажитницеподібна	Carex loliacea L.	Plantae	Tracheophyta	Magnoliopsida	Carex	species	зникаючий
+Осока притуплена	Carex obtusata Liljebl.	Plantae	Tracheophyta	Magnoliopsida	Carex	species	рідкісний
+Осока малоквіткова	Carex pauciflora Lightf.	Plantae	Tracheophyta	Magnoliopsida	Carex	species	вразливий
+Осока лапкоподібна	Carex pediformis C.A. Mey.	Plantae	Tracheophyta	Magnoliopsida	Carex	species	рідкісний
+Осока скельна	Carex rupestris All.	Plantae	Tracheophyta	Magnoliopsida	Carex	species	рідкісний
+Осока житня	Carex secalina Willd. ex Wahlenb.	Plantae	Tracheophyta	Magnoliopsida	Carex	species	вразливий
+Осока щетиниста	Carex strigosa Huds.	Plantae	Tracheophyta	Magnoliopsida	Carex	species	зникаючий
+Осока піхвова	Carex vaginata Tausch	Plantae	Tracheophyta	Magnoliopsida	Carex	species	зникаючий
+Відкасник осотоподібний	Carlina cirsioides Klokov	Plantae	Tracheophyta	Magnoliopsida	Carlina	species	вразливий
+Відкасник татарниколистий	Carlina onopordifolia Besser ex Szafer, Kulcz. & Pawł.	Plantae	Tracheophyta	Magnoliopsida	Carlina	species	вразливий
+Волошка великопридаткова	Centaurea appendicata Klokov	Plantae	Tracheophyta	Magnoliopsida	Centaurea	species	зникаючий
+Волошка короткоголова	Centaurea breviceps Iljin	Plantae	Tracheophyta	Magnoliopsida	Centaurea	species	вразливий
+Волошка козяча	Centaurea caprina Steven	Plantae	Tracheophyta	Magnoliopsida	Centaurea	species	неоцінений
+Волошка Компера	Centaurea comperiana Steven	Plantae	Tracheophyta	Magnoliopsida	Centaurea	species	вразливий
+Волошка донецька	Centaurea donetzica Klokov	Plantae	Tracheophyta	Magnoliopsida	Centaurea	species	вразливий
+Волошка Конки	Centaurea konkae Klokov	Plantae	Tracheophyta	Magnoliopsida	Centaurea	species	зникаючий
+Волошка білоперлинна	Centaurea margarita-alba Klokov	Plantae	Tracheophyta	Magnoliopsida	Centaurea	species	зникаючий
+Волошка перлиста	Centaurea margaritacea Ten.	Plantae	Tracheophyta	Magnoliopsida	Centaurea	species	зникаючий
+Волошка Пачоського	Centaurea paczoskii Kotov ex Klokov	Plantae	Tracheophyta	Magnoliopsida	Centaurea	species	зникаючий
+Волошка первинногерберова	Centaurea protogerberi Klokov	Plantae	Tracheophyta	Magnoliopsida	Centaurea	species	зникаючий
+Волошка первинноперлинна	Centaurea protomargaritacea Klokov	Plantae	Tracheophyta	Magnoliopsida	Centaurea	species	зникаючий
+Волошка несправжньо-блідолускова	Centaurea pseudoleucolepis Kleopow	Plantae	Tracheophyta	Magnoliopsida	Centaurea	species	рідкісний
+Волошка верболиста	Centaurea salicifolia M. Bieb.	Plantae	Tracheophyta	Magnoliopsida	Centaurea	species	зникаючий
+Волошка Сарандінакі	Centaurea sarandinakiae Illar.	Plantae	Tracheophyta	Magnoliopsida	Centaurea	species	вразливий
+Волошка напівзаконна	Centaurea semijusta Juz.	Plantae	Tracheophyta	Magnoliopsida	Centaurea	species	недостатньо відомий
+Волошка Cтевена	Centaurea steveniana Klokov	Plantae	Tracheophyta	Magnoliopsida	Centaurea	species	неоцінений
+Волошка Ванькова	Centaurea vankovii Klokov	Plantae	Tracheophyta	Magnoliopsida	Centaurea	species	неоцінений
+Остіжник валеріаноподібний	Centranthus calcitrapa (L.) Dufr.	Plantae	Tracheophyta	Magnoliopsida	Centranthus	species	зникаючий
+Булатка великоквіткова	Cephalanthera damasonium (Mill.) Druce	Plantae	Tracheophyta	Magnoliopsida	Cephalanthera	species	рідкісний
+Булатка довголиста	Cephalanthera longifolia (L.) Fritsch.	Plantae	Tracheophyta	Magnoliopsida	Cephalanthera	species	рідкісний
+Булатка червона	Cephalanthera rubra (L.) Rich.	Plantae	Tracheophyta	Magnoliopsida	Cephalanthera	species	рідкісний
+Головачка Дмитра	Cephalaria demetrii Bobrov	Plantae	Tracheophyta	Magnoliopsida	Cephalaria	species	зникаючий
+Головачка Литвинова	Cephalaria litvinovii Bobrov	Plantae	Tracheophyta	Magnoliopsida	Cephalaria	species	зникаючий
+Роговик Біберштейна	Cerastium biebersteinii DC.	Plantae	Tracheophyta	Magnoliopsida	Cerastium	species	неоцінений
+Вишня Клокова	Cerasus klokovii Sobko	Plantae	Tracheophyta	Magnoliopsida	Cerasus	species	вразливий
+Зіновать біла	Chamaecytisus albus (Hacq.) Rothm.	Plantae	Tracheophyta	Magnoliopsida	Chamaecytisus	species	вразливий
+Зіновать Блоцького	Chamaecytisus blockianus (Pawl.) Klask.	Plantae	Tracheophyta	Magnoliopsida	Chamaecytisus	species	рідкісний
+Зіновать гранітна	Chamaecytisus graniticus (Rehmann) Rothm.	Plantae	Tracheophyta	Magnoliopsida	Chamaecytisus	species	вразливий
+Зіновать Пачоського	Chamaecytisus paczoskii (V.Krecz.) Klask.	Plantae	Tracheophyta	Magnoliopsida	Chamaecytisus	species	рідкісний
+Зіновать подільська	Chamaecytisus podolicus (Błocki) Klask.	Plantae	Tracheophyta	Magnoliopsida	Chamaecytisus	species	вразливий
+Зіновать Рошеля	Chamaecytisus rochelii (Wierzb.) Rothm.	Plantae	Tracheophyta	Magnoliopsida	Chamaecytisus	species	рідкісний
+Зіновать Вульфа	Chamaecytisus wulffii (V.Krecz.) Klask.	Plantae	Tracheophyta	Magnoliopsida	Chamaecytisus	species	вразливий
+Хамедафна чашкова	Chamaedaphne calyculata (L.) Moench	Plantae	Tracheophyta	Magnoliopsida	Chamaedaphne	species	вразливий
+Золотобородник цикадовий	Chrysopogon gryllus (L.) Trin.	Plantae	Tracheophyta	Magnoliopsida	Chrysopogon	species	вразливий
+Осот різнолистий	Cirsium heterophylum (L.) Hill.	Plantae	Tracheophyta	Magnoliopsida	Cirsium	species	недостатньо відомий
+Чист кримський	Cistus tauricus J.Presl & C.Presl	Plantae	Tracheophyta	Magnoliopsida	Cistus	species	неоцінений
+Меч-трава болотна	Cladium mariscus (L.) Pohl	Plantae	Tracheophyta	Magnoliopsida	Cladium	species	вразливий
+Клеома птахоніжкоподібна	Cleome ornithopodioides L.	Plantae	Tracheophyta	Magnoliopsida	Cleome	species	зникаючий
+Пахучка чебрецелиста	Clinopodium serpyllifolium (M. Bieb.) Kuntze	Plantae	Tracheophyta	Magnoliopsida	Clinopodium	species	рідкісний
+Ложечниця польська	Cochlearia pyrenaica DC.	Plantae	Tracheophyta	Magnoliopsida	Cochlearia	species	зникаючий
+Язичок зелений	Coeloglossum viride (L.) C.Hartm.	Plantae	Tracheophyta	Magnoliopsida	Coeloglossum	species	рідкісний
+Пізньоцвіт осінній	Colchicum autumnale L.	Plantae	Tracheophyta	Magnoliopsida	Colchicum	species	неоцінений
+Пізньоцвіт Фоміна	Colchicum fominii Bordz.	Plantae	Tracheophyta	Magnoliopsida	Colchicum	species	вразливий
+Пізньоцвіт трилистий	Colchicum triphyllum Kunze	Plantae	Tracheophyta	Magnoliopsida	Colchicum	species	вразливий
+Пізньоцвіт тіньовий	Colchicum umbrosum (Ker Gawl.) Steven	Plantae	Tracheophyta	Magnoliopsida	Colchicum	species	вразливий
+Пізньоцвіт різнобарвний	Colchicum versicolor Ker Gawl.	Plantae	Tracheophyta	Magnoliopsida	Colchicum	species	вразливий
+Комперія кримська	Comperia comperiana (Steven) Asch. & Graebn.	Plantae	Tracheophyta	Magnoliopsida	Comperia	species	зникаючий
+Свистуля татарська	Conioselinum tataricum Hoffm.	Plantae	Tracheophyta	Magnoliopsida	Conioselinum	species	рідкісний
+Коральковець тричінадрізаний	Corallorhiza trifida Chatel.	Plantae	Tracheophyta	Magnoliopsida	Corallorhiza	species	рідкісний
+Вовна гірська пухнаста	Cortusa matthioli subsp. pubens (Schott) Simonk.	Plantae	Tracheophyta	Magnoliopsida	Cortusa	species	зникаючий
+Катран шорсткий	Crambe aspera M. Bieb.	Plantae	Tracheophyta	Magnoliopsida	Crambe	species	вразливий
+Катран великоквітковий	Crambe grandiflora DC.	Plantae	Tracheophyta	Magnoliopsida	Crambe	species	вразливий
+Катран коктебельський	Crambe koktebelica (Junge) N.Busch	Plantae	Tracheophyta	Magnoliopsida	Crambe	species	рідкісний
+Катран морський	Crambe maritima L.	Plantae	Tracheophyta	Magnoliopsida	Crambe	species	вразливий
+Катран мітрідатський	Crambe mitridatis Juz.	Plantae	Tracheophyta	Magnoliopsida	Crambe	species	вразливий
+Катран пірчастонадрізаний	Crambe pinnatifida R. Br.	Plantae	Tracheophyta	Magnoliopsida	Crambe	species	вразливий
+Катран Стевена	Crambe steveniana Rupr.	Plantae	Tracheophyta	Magnoliopsida	Crambe	species	вразливий
+Катран татарський	Crambe tataria Sebeok	Plantae	Tracheophyta	Magnoliopsida	Crambe	species	вразливий
+Глід Пояркової	Crataegus pojarkovae Kossych	Plantae	Tracheophyta	Magnoliopsida	Crataegus	species	вразливий
+Глід Турнефора	Crataegus tournefortii Griseb.	Plantae	Tracheophyta	Magnoliopsida	Crataegus	species	вразливий
+Скереда Жакена	Crepis jacquinii Tausch	Plantae	Tracheophyta	Magnoliopsida	Crepis	species	зникаючий
+Скереда пурпурова	Crepis purpurea (Willd.) M. Bieb.	Plantae	Tracheophyta	Magnoliopsida	Crepis	species	вразливий
+Критмій морський	Crithmum maritimum L.	Plantae	Tracheophyta	Magnoliopsida	Crithmum	species	неоцінений
+Шафран вузьколистий	Crocus angustifolius Weston	Plantae	Tracheophyta	Magnoliopsida	Crocus	species	неоцінений
+Шафран банатський	Crocus banaticus J.Gay	Plantae	Tracheophyta	Magnoliopsida	Crocus	species	вразливий
+Шафран Гейфелів	Crocus heuffelianus Herb.	Plantae	Tracheophyta	Magnoliopsida	Crocus	species	неоцінений
+Шафран Палласа	Crocus pallasii Goldb.	Plantae	Tracheophyta	Magnoliopsida	Crocus	species	вразливий
+Шафран сітчастий	Crocus reticulatus Steven ex Adams	Plantae	Tracheophyta	Magnoliopsida	Crocus	species	неоцінений
+Шафран гарний	Crocus speciosus M.Bieb.	Plantae	Tracheophyta	Magnoliopsida	Crocus	species	вразливий
+Шафран кримський	Crocus tauricus (Trautv.) Puring	Plantae	Tracheophyta	Magnoliopsida	Crocus	species	вразливий
+Цикламен коський	Cyclamen coum Mill.	Plantae	Tracheophyta	Magnoliopsida	Cyclamen	species	зникаючий
+Повстянка дніпровська	Cymbochasma borysthenica (Pall. ex Schlecht.) Klokov &et Zoz	Plantae	Tracheophyta	Magnoliopsida	Cymbochasma	species	рідкісний
+Зозулині черевички справжні	Cypripedium calceolus L.	Plantae	Tracheophyta	Magnoliopsida	Cypripedium	species	вразливий
+Зозульки серценосні	Dactylorhiza cordigera (Fries) Soу	Plantae	Tracheophyta	Magnoliopsida	Dactylorhiza	species	вразливий
+Зозульки Фукса	Dactylorhiza fuchsii (Druce) Soу	Plantae	Tracheophyta	Magnoliopsida	Dactylorhiza	species	неоцінений
+Зозульки іберійські	Dactylorhiza iberica (M.Bieb. ex Willd.) Soу	Plantae	Tracheophyta	Magnoliopsida	Dactylorhiza	species	рідкісний
+Зозульки м’ясочервоні	Dactylorhiza incarnata (L.) Soу	Plantae	Tracheophyta	Magnoliopsida	Dactylorhiza	species	вразливий
+Зозульки плямисті	Dactylorhiza maculata (L.) Soу	Plantae	Tracheophyta	Magnoliopsida	Dactylorhiza	species	вразливий
+Зозульки травневі	Dactylorhiza majalis (Rchb.) P.F.Hunt & Summerhayes	Plantae	Tracheophyta	Magnoliopsida	Dactylorhiza	species	рідкісний
+Зозульки римські	Dactylorhiza romana (Seb.) Soу	Plantae	Tracheophyta	Magnoliopsida	Dactylorhiza	species	вразливий
+Зозульки бузинові	Dactylorhiza sambucina (L.) Soу	Plantae	Tracheophyta	Magnoliopsida	Dactylorhiza	species	вразливий
+Зозульки трансильванські	Dactylorhiza transsilvanica (Schur) Aver.	Plantae	Tracheophyta	Magnoliopsida	Dactylorhiza	species	зникаючий
+Зозульки Траунштейнера	Dactylorhiza traunsteineri (Saut. ex Rchb.) Soу	Plantae	Tracheophyta	Magnoliopsida	Dactylorhiza	species	рідкісний
+Зіркоплідник частуховий	Damasonium alisma Mill.	Plantae	Tracheophyta	Magnoliopsida	Damasonium	species	зникаючий
+Вовче лико пахуче	Daphne cneorum L.	Plantae	Tracheophyta	Magnoliopsida	Daphne	species	вразливий
+Вовче лико Софії	Daphne sophia Kalen.	Plantae	Tracheophyta	Magnoliopsida	Daphne	species	зникаючий
+Вовче лико кримське	Daphne taurica Kotov	Plantae	Tracheophyta	Magnoliopsida	Daphne	species	зникаючий
+Дельфіній високий	Delphinium elatum L.	Plantae	Tracheophyta	Magnoliopsida	Delphinium	species	вразливий
+Дельфіній Палласа	Delphinium pallasii Nevski	Plantae	Tracheophyta	Magnoliopsida	Delphinium	species	рідкісний
+Дельфіній яскраво-червоний	Delphinium puniceum Pall.	Plantae	Tracheophyta	Magnoliopsida	Delphinium	species	зникаючий
+Дельфіній руський	Delphinium rossicum Litv.	Plantae	Tracheophyta	Magnoliopsida	Delphinium	species	вразливий
+Дельфіній Сергія	Delphinium sergii Wissjul.	Plantae	Tracheophyta	Magnoliopsida	Delphinium	species	вразливий
+Гвоздика бессарабська	Dianthus bessarabicus Klokov	Plantae	Tracheophyta	Magnoliopsida	Dianthus	species	зникаючий
+Гвоздика гренобльська	Dianthus gratiаnopolitanus Vill.	Plantae	Tracheophyta	Magnoliopsida	Dianthus	species	зниклий в природі
+Гвоздика бузька	Dianthus hypanicus Andrz.	Plantae	Tracheophyta	Magnoliopsida	Dianthus	species	вразливий
+Гвоздика несправжньопізня	Dianthus pseudoserotinus Błocki	Plantae	Tracheophyta	Magnoliopsida	Dianthus	species	вразливий
+Гвоздика гарна	Dianthus speciosus Rchb.	Plantae	Tracheophyta	Magnoliopsida	Dianthus	species	вразливий
+Роговиця роговикова	Dichodon cerastoides (L.) Rchb.	Plantae	Tracheophyta	Magnoliopsida	Dichodon	species	рідкісний
+Ясенець голостовпчиковий	Dictamnus albus L.	Plantae	Tracheophyta	Magnoliopsida	Dictamnus	species	рідкісний
+Дворядник крейдовий	Diplotaxis cretacea Kotov	Plantae	Tracheophyta	Magnoliopsida	Diplotaxis	species	вразливий
+Сугайник угорський	Doronicum hungaricum Rchb.f.	Plantae	Tracheophyta	Magnoliopsida	Doronicum	species	рідкісний
+Сугайник штирійський	Doronicum stiriacum (Vill.) Dalla Torre	Plantae	Tracheophyta	Magnoliopsida	Doronicum	species	рідкісний
+Крупка аїзоподібна	Draba aizoides L.	Plantae	Tracheophyta	Magnoliopsida	Draba	species	зникаючий
+Крупка подільська	Draba podolica (Besser) Rupr.	Plantae	Tracheophyta	Magnoliopsida	Draba	species	вразливий
+Змієголовник австрійський	Dracocephalum austriacum L.	Plantae	Tracheophyta	Magnoliopsida	Dracocephalum	species	вразливий
+Змієголовник Рюйша	Dracocephalum ruyschiana L.	Plantae	Tracheophyta	Magnoliopsida	Dracocephalum	species	неоцінений
+Росичка середня	Drosera intermedia Hayne	Plantae	Tracheophyta	Magnoliopsida	Drosera	species	вразливий
+Росичка довголиста	Drosera longifolia L.	Plantae	Tracheophyta	Magnoliopsida	Drosera	species	вразливий
+Дріада восьмипелюсткова	Dryas octopetala L.	Plantae	Tracheophyta	Magnoliopsida	Dryas	species	рідкісний
+Колючконос Сібторпа	Echinophora sibthorpiana Guss.	Plantae	Tracheophyta	Magnoliopsida	Echinophora	species	зниклий в природі
+Головатень високий	Echinops exaltatus Schrad.	Plantae	Tracheophyta	Magnoliopsida	Echinops	species	неоцінений
+Руслиця угорська	Elatine hungarica Moesz	Plantae	Tracheophyta	Magnoliopsida	Elatine	species	вразливий
+Ситняг карніолійський	Eleocharis carniolica W.D.J.Koch	Plantae	Tracheophyta	Magnoliopsida	Eleocharis	species	вразливий
+Ситняг сосочкоподібний	Eleocharis mamillata Lindb. f.	Plantae	Tracheophyta	Magnoliopsida	Eleocharis	species	вразливий
+Ситняг багатостебловий	Eleocharis multicaulis (Smith) Desv.	Plantae	Tracheophyta	Magnoliopsida	Eleocharis	species	зниклий в природі
+Ситняг гостролусковий	Eleocharis oxylepis (Meinsh.) B. Fedtsch.	Plantae	Tracheophyta	Magnoliopsida	Eleocharis	species	зникаючий
+Пирійник палермський	Elymus panormitanus (Parl.) Tzvelev	Plantae	Tracheophyta	Magnoliopsida	Elymus	species	зникаючий
+Коручка ельбська	Epipactis albensis H.Novakova & Rydlo	Plantae	Tracheophyta	Magnoliopsida	Epipactis	species	рідкісний
+Коручка темно-червона	Epipactis atrorubens (Hoffm. ex Bernh.) Besser	Plantae	Tracheophyta	Magnoliopsida	Epipactis	species	вразливий
+Коручка чемерникоподібна	Epipactis helleborine (L.) Crantz	Plantae	Tracheophyta	Magnoliopsida	Epipactis	species	неоцінений
+Коручка дрібнолиста	Epipactis microphylla (Ehrh.) Sw.	Plantae	Tracheophyta	Magnoliopsida	Epipactis	species	рідкісний
+Коручка болотна	Epipactis palustris (L.) Crantz	Plantae	Tracheophyta	Magnoliopsida	Epipactis	species	вразливий
+Коручка пурпурова	Epipactis purpurata Smith	Plantae	Tracheophyta	Magnoliopsida	Epipactis	species	рідкісний
+Коручка Таллоші	Epipactis tallosii A. Molnar & Robatsch	Plantae	Tracheophyta	Magnoliopsida	Epipactis	species	зникаючий
+Надбородник безлистий	Epipogium aphyllum Sw.	Plantae	Tracheophyta	Magnoliopsida	Epipogium	species	зникаючий
+Пустельниця головчаста	Eremogone cephalotes (M.Bieb.) Fenzl	Plantae	Tracheophyta	Magnoliopsida	Eremogone	species	рідкісний
+Еремур показний	Eremurus spectabilis M.Bieb.	Plantae	Tracheophyta	Magnoliopsida	Eremurus	species	зникаючий
+Еремур кримський	Eremurus tauricus Steven	Plantae	Tracheophyta	Magnoliopsida	Eremurus	species	зникаючий
+Злинка альпійська	Erigeron alpinus L.	Plantae	Tracheophyta	Magnoliopsida	Erigeron	species	рідкісний
+Злинка залозиста	Erigeron atticus Vill.	Plantae	Tracheophyta	Magnoliopsida	Erigeron	species	зникаючий
+Грабельки Бекетова	Erodium beketowii Schmalh.	Plantae	Tracheophyta	Magnoliopsida	Erodium	species	рідкісний
+Жовтушник кринкський	Erysimum krynkense Lavrenko	Plantae	Tracheophyta	Magnoliopsida	Erysimum	species	зникаючий
+Жовтушник Талієва	Erysimum talievii (Klokov) Mosyakin	Plantae	Tracheophyta	Magnoliopsida	Erysimum	species	вразливий
+Жовтушник трансільванський	Erysimum transsilvanicum Schur	Plantae	Tracheophyta	Magnoliopsida	Erysimum	species	зникаючий
+Жовтушник український	Erysimum ucranicum J.Gay	Plantae	Tracheophyta	Magnoliopsida	Erysimum	species	вразливий
+Еритроній собачий зуб	Erythronium dens-canis L.	Plantae	Tracheophyta	Magnoliopsida	Erythronium	species	рідкісний
+Бруслина карликова	Euonymus nanus M.Bieb.	Plantae	Tracheophyta	Magnoliopsida	Euonymus	species	вразливий
+Молочай прибережний	Euphorbia paralias L.	Plantae	Tracheophyta	Magnoliopsida	Euphorbia	species	вразливий
+Молочай густоволохатоплодий	Euphorbia valdevillosocarpa Arvat & Nyar.	Plantae	Tracheophyta	Magnoliopsida	Euphorbia	species	зникаючий
+Молочай волинський	Euphorbia volhynica Besser ex Racib.	Plantae	Tracheophyta	Magnoliopsida	Euphorbia	species	рідкісний
+Костриця крейдова	Festuca cretacea T.Pop. & Proskor.	Plantae	Tracheophyta	Magnoliopsida	Festuca	species	неоцінений
+Костриця гірська	Festuca drymeja Mert. & Koch	Plantae	Tracheophyta	Magnoliopsida	Festuca	species	вразливий
+Костриця різнолиста	Festuca heterophylla Lam.	Plantae	Tracheophyta	Magnoliopsida	Festuca	species	вразливий
+Костриця блідувата	Festuca pallens Host	Plantae	Tracheophyta	Magnoliopsida	Festuca	species	рідкісний
+Костриця Порціуса	Festuca porcii Hack.	Plantae	Tracheophyta	Magnoliopsida	Festuca	species	вразливий
+Костриця cкельна	Festuca saxatilis Schur	Plantae	Tracheophyta	Magnoliopsida	Festuca	species	неоцінений
+Комишник двороздільний	Fimbristylis bisumbellata (Forsk.) Bub.	Plantae	Tracheophyta	Magnoliopsida	Fimbristylis	species	зникаючий
+Франкенія припорошена	Frankenia pulverulenta L.	Plantae	Tracheophyta	Magnoliopsida	Frankenia	species	вразливий
+Ясен білоцвітий	Fraxinus ornus L.	Plantae	Tracheophyta	Magnoliopsida	Fraxinus	species	рідкісний
+Рябчик шаховий	Fritillaria meleagris L.	Plantae	Tracheophyta	Magnoliopsida	Fritillaria	species	вразливий
+Рябчик малий	Fritillaria meleagroides Patrin ex Schult. & Schult.f.	Plantae	Tracheophyta	Magnoliopsida	Fritillaria	species	вразливий
+Рябчик гірський	Fritillaria montana Hoppe	Plantae	Tracheophyta	Magnoliopsida	Fritillaria	species	зникаючий
+Рябчик руський	Fritillaria ruthenica Wikstr.	Plantae	Tracheophyta	Magnoliopsida	Fritillaria	species	вразливий
+Сонянчик гладкий	Fumanopsis laevis (Cav.) Tzvelev	Plantae	Tracheophyta	Magnoliopsida	Fumanopsis	species	зникаючий
+Зірочник пізній	Gagea serotina (L.) Ker Gawl.	Plantae	Tracheophyta	Magnoliopsida	Gagea	species	рідкісний
+Зірочки чохлуваті	Gagea spathacea (Hayne) Salisb.	Plantae	Tracheophyta	Magnoliopsida	Gagea	species	рідкісний
+Підсніжник Ельвеза	Galanthus elwesii Hook.f.	Plantae	Tracheophyta	Magnoliopsida	Galanthus	species	вразливий
+Підсніжник білосніжний	Galanthus nivalis L.	Plantae	Tracheophyta	Magnoliopsida	Galanthus	species	неоцінений
+Підсніжник складчастий	Galanthus plicatus M.Bieb.	Plantae	Tracheophyta	Magnoliopsida	Galanthus	species	вразливий
+Солонечник крапчастий	Galatella punctata (Waldst. & Kit.) Nees	Plantae	Tracheophyta	Magnoliopsida	Galatella	species	вразливий
+Дрік малонасінний	Genista oligosperma (Andre) Simk	Plantae	Tracheophyta	Magnoliopsida	Genista	species	зниклий в природі
+Дрік скіфський	Genista scythica Pacz.	Plantae	Tracheophyta	Magnoliopsida	Genista	species	неоцінений
+Дрік чотиригранний	Genista tetragona Besser	Plantae	Tracheophyta	Magnoliopsida	Genista	species	зникаючий
+Дрочок крилатий	Genistella sagittalis (L.) Gams	Plantae	Tracheophyta	Magnoliopsida	Genistella	species	рідкісний
+Тирлич безстебловий	Gentiana acaulis L.	Plantae	Tracheophyta	Magnoliopsida	Gentiana	species	вразливий
+Тирлич роздільний	Gentiana laciniata Kit. ex Kanitz	Plantae	Tracheophyta	Magnoliopsida	Gentiana	species	рідкісний
+Тирлич жовтий	Gentiana lutea L.	Plantae	Tracheophyta	Magnoliopsida	Gentiana	species	зникаючий
+Тирлич сніговий	Gentiana nivalis L.	Plantae	Tracheophyta	Magnoliopsida	Gentiana	species	зникаючий
+Тирлич крапчастий	Gentiana punctata L.	Plantae	Tracheophyta	Magnoliopsida	Gentiana	species	вразливий
+Тирлич мішкоподібний	Gentiana utriculosa L.	Plantae	Tracheophyta	Magnoliopsida	Gentiana	species	зникаючий
+Тирлич весняний	Gentiana verna L.	Plantae	Tracheophyta	Magnoliopsida	Gentiana	species	зникаючий
+Косарики черепитчасті	Gladiolus imbricatus L.	Plantae	Tracheophyta	Magnoliopsida	Gladiolus	species	вразливий
+Косарики італійські	Gladiolus italicus Mill.	Plantae	Tracheophyta	Magnoliopsida	Gladiolus	species	зникаючий
+Косарики болотні	Gladiolus palustris Gaudin	Plantae	Tracheophyta	Magnoliopsida	Gladiolus	species	зникаючий
+Косарики тонкі	Gladiolus tenuis M.Bieb.	Plantae	Tracheophyta	Magnoliopsida	Gladiolus	species	вразливий
+Мачок жовтий	Glaucium flavum Crantz	Plantae	Tracheophyta	Magnoliopsida	Glaucium	species	вразливий
+Кулівниця вузькопелюсткова	Globularia trichosantha Fisch. & C.A.Mey.	Plantae	Tracheophyta	Magnoliopsida	Globularia	species	рідкісний
+Солодка гола	Glycyrrhiza glabra L.	Plantae	Tracheophyta	Magnoliopsida	Glycyrrhiza	species	неоцінений
+Кермечник злаколистий	Goniolimon graminifolium (Aiton) Boiss.	Plantae	Tracheophyta	Magnoliopsida	Goniolimon	species	вразливий
+Кермечник червонуватий	Goniolimon rubellum (S.G.Gmel.) Klokov	Plantae	Tracheophyta	Magnoliopsida	Goniolimon	species	вразливий
+Гудієра повзуча	Goodyera repens (L.) R.Br.	Plantae	Tracheophyta	Magnoliopsida	Goodyera	species	вразливий
+Билинець довгорогий	Gymnadenia conopsea (L.) R.Br.	Plantae	Tracheophyta	Magnoliopsida	Gymnadenia	species	вразливий
+Билинець щільноквітковий	Gymnadenia densiflora (Wahlenb.) A.Dietr.	Plantae	Tracheophyta	Magnoliopsida	Gymnadenia	species	вразливий
+Билинець найзапашніший	Gymnadenia odoratissima (L.) Rich.	Plantae	Tracheophyta	Magnoliopsida	Gymnadenia	species	зникаючий
+Оставник одеський	Gymnospermium odessanum (DC.) Takht.	Plantae	Tracheophyta	Magnoliopsida	Gymnospermium	species	вразливий
+Лещиця скупчена	Gypsophila glomerata Pall. ex Adams	Plantae	Tracheophyta	Magnoliopsida	Gypsophila	species	вразливий
+Лещиця дністровська	Gypsophila thyraica Krasnova	Plantae	Tracheophyta	Magnoliopsida	Gypsophila	species	вразливий
+М'якух болотний	Hammarbya paludosa (L.) O.Kuntze	Plantae	Tracheophyta	Magnoliopsida	Hammarbya	species	зникаючий
+Солодушка крейдова	Hedysarum cretaceum Fisch.	Plantae	Tracheophyta	Magnoliopsida	Hedysarum	species	зникаючий
+Солодушка солодушкова	Hedysarum hedysaroides (L.) Schinz & Thell.	Plantae	Tracheophyta	Magnoliopsida	Hedysarum	species	зникаючий
+Солодушка українська	Hedysarum ucrainicum Kaschm.	Plantae	Tracheophyta	Magnoliopsida	Hedysarum	species	зникаючий
+Сонцецвіт сивий	Helianthemum canum (L.) Hornem.	Plantae	Tracheophyta	Magnoliopsida	Helianthemum	species	рідкісний
+Борщівник лігустиколистий	Heracleum ligusticifolium M.Bieb.	Plantae	Tracheophyta	Magnoliopsida	Heracleum	species	рідкісний
+Борщівник пухнастий	Heracleum pubescens (Hoffm.) M.Bieb.	Plantae	Tracheophyta	Magnoliopsida	Heracleum	species	недостатньо відомий
+Бровник однобульбовий	Herminium monorchis (L.) R.Br.	Plantae	Tracheophyta	Magnoliopsida	Herminium	species	зникаючий
+Ремнепелюстник козячий	Himantoglossum caprinum (M.Bieb.) K.Koch	Plantae	Tracheophyta	Magnoliopsida	Himantoglossum	species	вразливий
+Підковка чубата	Hippocrepis comosa L.	Plantae	Tracheophyta	Magnoliopsida	Hippocrepis	species	рідкісний
+Гіацинтик Палласів	Hyacinthella pallasiana (Steven) Losinsk.	Plantae	Tracheophyta	Magnoliopsida	Hyacinthella	species	вразливий
+Щитолисник звичайний	Hydrocotyle vulgaris L.	Plantae	Tracheophyta	Magnoliopsida	Hydrocotyle	species	рідкісний
+Гісоп крейдовий	Hyssopus cretaceus Dubjan.	Plantae	Tracheophyta	Magnoliopsida	Hyssopus	species	неоцінений
+Вайда прибережна	Isatis littoralis Steven ex DC.	Plantae	Tracheophyta	Magnoliopsida	Isatis	species	вразливий
+Якобея кримська	Jacobaea taurica (Koneczn.) Mosyakin & Yena	Plantae	Tracheophyta	Magnoliopsida	Jacobaea	species	рідкісний
+Борідник шерстистоволосистий	Jovibarba hirta (L.) Opiz.	Plantae	Tracheophyta	Magnoliopsida	Jovibarba	species	зникаючий
+Борідник паростковий	Jovibarba sobolifera (Sims) Opiz	Plantae	Tracheophyta	Magnoliopsida	Jovibarba	species	рідкісний
+Ситник бульбистий	Juncus bulbosus L.	Plantae	Tracheophyta	Magnoliopsida	Juncus	species	вразливий
+Ситник кулястоплодий	Juncus sphaerocarpus Nees	Plantae	Tracheophyta	Magnoliopsida	Juncus	species	зникаючий
+Ситник тупопелюстковий	Juncus subnodulosus Schrank	Plantae	Tracheophyta	Magnoliopsida	Juncus	species	зникаючий
+Юринея Талієва	Jurinea talievii Klokov	Plantae	Tracheophyta	Magnoliopsida	Jurinea	species	недостатньо відомий
+Кальмія лежача	Kalmia procumbens (L.) Gift, Kron & P.F.Stevens ex Galasso, Banfi & F.Conti	Plantae	Tracheophyta	Magnoliopsida	Kalmia	species	рідкісний
+Серпій болгарський	Klasea bulgarica (Acht. & Stoj.) Holub	Plantae	Tracheophyta	Magnoliopsida	Klasea	species	зникаючий
+Серпій донецький	Klasea donetzica (Dubovik) J.Holub	Plantae	Tracheophyta	Magnoliopsida	Klasea	species	рідкісний
+Серпій донський	Klasea tanaitica (P.Smirn.) J.Holub	Plantae	Tracheophyta	Magnoliopsida	Klasea	species	рідкісний
+Келерія Талієва	Koeleria talievii Lavrenko	Plantae	Tracheophyta	Magnoliopsida	Koeleria	species	неоцінений
+Глуха кропива гола	Lamium glaberrimum (K.Koch) Taliev	Plantae	Tracheophyta	Magnoliopsida	Lamium	species	рідкісний
+Чина гладенька	Lathyrus laevigatus (Waldst. & Kit.) Fritsch	Plantae	Tracheophyta	Magnoliopsida	Lathyrus	species	рідкісний
+Чина трансильванська	Lathyrus transsilvanicus (Spreng.) Rchb.	Plantae	Tracheophyta	Magnoliopsida	Lathyrus	species	зникаючий
+Чина ряба	Lathyrus venetus (Mill.) Wohlf.	Plantae	Tracheophyta	Magnoliopsida	Lathyrus	species	вразливий
+Сочевиця східна	Lens orientalis (Boiss.) Schmalh.	Plantae	Tracheophyta	Magnoliopsida	Lens	species	зникаючий
+Білотка альпійська	Leontopodium alpinum Cass.	Plantae	Tracheophyta	Magnoliopsida	Leontopodium	species	зникаючий
+Хрінниця сиваська	Lepidium syvaschicum Kleopow	Plantae	Tracheophyta	Magnoliopsida	Lepidium	species	вразливий
+Хрінниця Турчанінова	Lepidium turczaninowii Lipsky	Plantae	Tracheophyta	Magnoliopsida	Lepidium	species	зникаючий
+Короличка пізня	Leucanthemella serotina (L.) Tzvelev	Plantae	Tracheophyta	Magnoliopsida	Leucanthemella	species	зникаючий
+Білоцвіт літній	Leucojum aestivum L.	Plantae	Tracheophyta	Magnoliopsida	Leucojum	species	вразливий
+Білоцвіт весняний	Leucojum vernum L.	Plantae	Tracheophyta	Magnoliopsida	Leucojum	species	неоцінений
+Язичник сивий	Ligularia glauca (L.) J.Hoffm.	Plantae	Tracheophyta	Magnoliopsida	Ligularia	species	зникаючий
+Язичник сибірський	Ligularia sibirica Cass.	Plantae	Tracheophyta	Magnoliopsida	Ligularia	species	вразливий
+Лілія цибулинконосна	Lilium bulbiferum L.	Plantae	Tracheophyta	Magnoliopsida	Lilium	species	зникаючий
+Лілія лісова	Lilium martagon L.	Plantae	Tracheophyta	Magnoliopsida	Lilium	species	неоцінений
+Лімодор недорозвинений	Limodorum abortivum (L.) Sw.	Plantae	Tracheophyta	Magnoliopsida	Limodorum	species	неоцінений
+Кермек чурюкський	Limonium tschurjukiense (Klokov) Lawrenko ex Klokov	Plantae	Tracheophyta	Magnoliopsida	Limonium	species	вразливий
+Льонок бессарабський	Linaria bessarabica Kotov	Plantae	Tracheophyta	Magnoliopsida	Linaria	species	недостатньо відомий
+Льонок крейдовий	Linaria cretacea Fisch. ex Spreng.	Plantae	Tracheophyta	Magnoliopsida	Linaria	species	вразливий
+Ліннея північна	Linnaea borealis L.	Plantae	Tracheophyta	Magnoliopsida	Linnaea	species	зникаючий
+Льон бессарабський	Linum basarabicum (Savul. & Rayss) Klokov ex Juz.	Plantae	Tracheophyta	Magnoliopsida	Linum	species	неоцінений
+Льон Палласів	Linum pallasianum Schult.	Plantae	Tracheophyta	Magnoliopsida	Linum	species	рідкісний
+Жировик Льозеля	Liparis loeselii (L.) Rich.	Plantae	Tracheophyta	Magnoliopsida	Liparis	species	вразливий
+Жимолость голуба	Lonicera caerulea L.	Plantae	Tracheophyta	Magnoliopsida	Lonicera	species	рідкісний
+Людвігія болотна	Ludwigia palustris (L.) Elliott	Plantae	Tracheophyta	Magnoliopsida	Ludwigia	species	зниклий в природі
+Місячниця оживаюча	Lunaria rediviva L.	Plantae	Tracheophyta	Magnoliopsida	Lunaria	species	неоцінений
+Ожика ожикова	Luzula luzulina (Vill.) Racib.	Plantae	Tracheophyta	Magnoliopsida	Luzula	species	зниклий в природі
+Ожика колосиста	Luzula spicata (L.) DC.	Plantae	Tracheophyta	Magnoliopsida	Luzula	species	зниклий в природі
+Плакун чебрецелистий	Lythrum thymifolia L.	Plantae	Tracheophyta	Magnoliopsida	Lythrum	species	вразливий
+Глевчак однолистий	Malaxis monophyllos (L.) Sw.	Plantae	Tracheophyta	Magnoliopsida	Malaxis	species	вразливий
+Левкой запашний	Matthiola fragrans Bunge	Plantae	Tracheophyta	Magnoliopsida	Matthiola	species	рідкісний
+Люцерна приморська	Medicago marina L.	Plantae	Tracheophyta	Magnoliopsida	Medicago	species	вразливий
+Люцерна щебениста	Medicago saxatilis M.Bieb.	Plantae	Tracheophyta	Magnoliopsida	Medicago	species	неоцінений
+Мерингія бузька	Moehringia hypanica Grynj & Klokov	Plantae	Tracheophyta	Magnoliopsida	Moehringia	species	рідкісний
+Гадюча цибулька гроноподібна	Muscari botryoides (L.) Mill.	Plantae	Tracheophyta	Magnoliopsida	Muscari	species	зникаючий
+Нарцис вузьколистий	Narcissus angustifolius Curtis	Plantae	Tracheophyta	Magnoliopsida	Narcissus	species	вразливий
+Неотінея тризубчаста	Neotinea tridentata (Scop.) R.M. Bateman, Pridgeon & M.W. Chase	Plantae	Tracheophyta	Magnoliopsida	Neotinea	species	зникаючий
+Неотінея обпалена	Neotinea ustulata (L.) R.M. Bateman, Pridgeon & M.W. Chase	Plantae	Tracheophyta	Magnoliopsida	Neotinea	species	зникаючий
+Гніздівка серцелиста	Neottia cordata (L.) Rich.	Plantae	Tracheophyta	Magnoliopsida	Neottia	species	вразливий
+Гніздівка звичайна	Neottia nidus-avis (L.) Rich.	Plantae	Tracheophyta	Magnoliopsida	Neottia	species	неоцінений
+Гніздівка яйцелиста	Neottia ovata (L.) Bluff & Fingerh.	Plantae	Tracheophyta	Magnoliopsida	Neottia	species	неоцінений
+Чорнянка карпатська	Nigritella carpatica (Zapal.) Teppner, Klein & Zagulski	Plantae	Tracheophyta	Magnoliopsida	Nigritella	species	зникаючий
+Селітрянка Шобера	Nitraria schoberi L.	Plantae	Tracheophyta	Magnoliopsida	Nitraria	species	зникаючий
+Плавун щитолистий	Nymphoides peltata (S.G.Gmel.) O.Kuntze	Plantae	Tracheophyta	Magnoliopsida	Nymphoides	species	вразливий
+Одонтарена Борзи	Odontarrhena borzaeana (Nyar.) D.A. German	Plantae	Tracheophyta	Magnoliopsida	Odontarrhena	species	вразливий
+Одонтарена голоніжкова	Odontarrhena gymnopoda (P.A. Smirn.) D.A. German	Plantae	Tracheophyta	Magnoliopsida	Odontarrhena	species	вразливий
+Одонтарена савранська	Odontarrhena savranica (Andrz. ex Besser) D.A. German	Plantae	Tracheophyta	Magnoliopsida	Odontarrhena	species	зникаючий
+Солониця однотичинкова	Ofaiston monandrum (Pall.) Moq.	Plantae	Tracheophyta	Magnoliopsida	Ofaiston	species	вразливий
+Еспарцет Палласа	Onobrychis pallasii (Willd.) M.Bieb.	Plantae	Tracheophyta	Magnoliopsida	Onobrychis	species	вразливий
+Еспарцет Васильченка	Onobrychis vassilczenkoi Grossh.	Plantae	Tracheophyta	Magnoliopsida	Onobrychis	species	зникаючий
+Громовик гранітний	Onosma graniticola Klokov	Plantae	Tracheophyta	Magnoliopsida	Onosma	species	зникаючий
+Громовик багатолистий	Onosma polyphylla Ledeb.	Plantae	Tracheophyta	Magnoliopsida	Onosma	species	вразливий
+Громовик донський	Onosma tanaitica Klokov	Plantae	Tracheophyta	Magnoliopsida	Onosma	species	неоцінений
+Офрис бджолоносна	Ophrys apifera Huds.	Plantae	Tracheophyta	Magnoliopsida	Ophrys	species	зникаючий
+Офрис комахоносна	Ophrys insectifera L.	Plantae	Tracheophyta	Magnoliopsida	Ophrys	species	зникаючий
+Офрис оводоносна	Ophrys oestrifera M.Bieb.	Plantae	Tracheophyta	Magnoliopsida	Ophrys	species	зникаючий
+Офрис кримська	Ophrys taurica (Aggeenko) Nevski	Plantae	Tracheophyta	Magnoliopsida	Ophrys	species	зникаючий
+Зозулинець чоловічий	Orchis mascula (L.) L.	Plantae	Tracheophyta	Magnoliopsida	Orchis	species	вразливий
+Зозулинець шоломоносний	Orchis militaris L.	Plantae	Tracheophyta	Magnoliopsida	Orchis	species	вразливий
+Зозулинець блідий	Orchis pallens L.	Plantae	Tracheophyta	Magnoliopsida	Orchis	species	зникаючий
+Зозулинець прованський	Orchis provincialis Balb.	Plantae	Tracheophyta	Magnoliopsida	Orchis	species	зникаючий
+Зозулинець дрібнокрапчастий	Orchis punctulata Steven ex Lindl.	Plantae	Tracheophyta	Magnoliopsida	Orchis	species	зникаючий
+Зозулинець пурпуровий	Orchis purpurea Huds.	Plantae	Tracheophyta	Magnoliopsida	Orchis	species	вразливий
+Зозулинець прикрашений	Orchis signifera Vest	Plantae	Tracheophyta	Magnoliopsida	Orchis	species	зникаючий
+Зозулинець мавпячий	Orchis simia Lam.	Plantae	Tracheophyta	Magnoliopsida	Orchis	species	вразливий
+Зозулинець Ванькова	Orchis wanjkowii E.Wulff	Plantae	Tracheophyta	Magnoliopsida	Orchis	species	недостатньо відомий
+Горянка дворядна	Oreochloa disticha (Wulfen) Link	Plantae	Tracheophyta	Magnoliopsida	Oreochloa	species	зникаючий
+Рястка двозначна	Ornithogalum amphibolum Zahar.	Plantae	Tracheophyta	Magnoliopsida	Ornithogalum	species	зникаючий
+Рястка Буше	Ornithogalum boucheanum (Kunth) Asch.	Plantae	Tracheophyta	Magnoliopsida	Ornithogalum	species	неоцінений
+Рястка гірська	Ornithogalum oreoides Zahar.	Plantae	Tracheophyta	Magnoliopsida	Ornithogalum	species	вразливий
+Рястка відігнута	Ornithogalum refractum Schlecht.	Plantae	Tracheophyta	Magnoliopsida	Ornithogalum	species	вразливий
+Пташник крихітний	Ornithopus perpusillus L.	Plantae	Tracheophyta	Magnoliopsida	Ornithopus	species	вразливий
+Кисличник двостовпчиковий	Oxyria digina (L.) Hill.	Plantae	Tracheophyta	Magnoliopsida	Oxyria	species	рідкісний
+Півонія кримська	Paeonia daurica Andrews	Plantae	Tracheophyta	Magnoliopsida	Paeonia	species	вразливий
+Півонія тонколиста	Paeonia tenuifolia L.	Plantae	Tracheophyta	Magnoliopsida	Paeonia	species	вразливий
+Палімбія солончакова	Palimbia salsa (L. f.) Besser	Plantae	Tracheophyta	Magnoliopsida	Palimbia	species	вразливий
+Палімбія тургайська	Palimbia turgaica Lipsky ex Woronow	Plantae	Tracheophyta	Magnoliopsida	Palimbia	species	зникаючий
+Дволусківниця зігнута	Parapholis incurva (L.) C.E.Hubb.	Plantae	Tracheophyta	Magnoliopsida	Parapholis	species	недостатньо відомий
+Шолудивник високий	Pedicularis exaltata Besser	Plantae	Tracheophyta	Magnoliopsida	Pedicularis	species	вразливий
+Шолудивник Едера	Pedicularis oederi Vahl	Plantae	Tracheophyta	Magnoliopsida	Pedicularis	species	зникаючий
+Шолудивник королівський	Pedicularis sceptrum-carolinum L.	Plantae	Tracheophyta	Magnoliopsida	Pedicularis	species	вразливий
+Шолудивник лісовий	Pedicularis sylvatica L.	Plantae	Tracheophyta	Magnoliopsida	Pedicularis	species	вразливий
+Накорінниця червона	Phelypaea coccinea (M.Bieb.) Poir.	Plantae	Tracheophyta	Magnoliopsida	Phelypaea	species	зникаючий
+Залізняк скіфський	Phlomoides scythica (Klokov & Des.-Shost.) Czer.	Plantae	Tracheophyta	Magnoliopsida	Phlomoides	species	вразливий
+Товстянка альпійська	Pinguicula alpina L.	Plantae	Tracheophyta	Magnoliopsida	Pinguicula	species	вразливий
+Товстянка двоколірна	Pinguicula bicolor Wol.	Plantae	Tracheophyta	Magnoliopsida	Pinguicula	species	зникаючий
+Товстянка звичайна	Pinguicula vulgaris L.	Plantae	Tracheophyta	Magnoliopsida	Pinguicula	species	вразливий
+Фісташка туполиста	Pistacia mutica Fisch. & C.A.Mey.	Plantae	Tracheophyta	Magnoliopsida	Pistacia	species	неоцінений
+Горох високий	Pisum elatius M.Bieb.	Plantae	Tracheophyta	Magnoliopsida	Pisum	species	неоцінений
+Любка дволиста	Platanthera bifolia (L.) Rich.	Plantae	Tracheophyta	Magnoliopsida	Platanthera	species	неоцінений
+Любка зеленоквіткова	Platanthera chlorantha (Cust.) Rchb.	Plantae	Tracheophyta	Magnoliopsida	Platanthera	species	неоцінений
+Тонконіг Ремана	Poa rehmannii (Asch. & Graebn.) Wol.	Plantae	Tracheophyta	Magnoliopsida	Poa	species	рідкісний
+Понерорхіс каптуруватий	Ponerorchis cucullata (L.) X.H. Jin, Schuit. & W.T. Jin	Plantae	Tracheophyta	Magnoliopsida	Ponerorchis	species	зникаючий
+Прангос трироздільний	Prangos trifida (Mill.) Herrnst. & Heyn	Plantae	Tracheophyta	Magnoliopsida	Prangos	species	рідкісний
+Первоцвіт борошнистий	Primula farinosa L.	Plantae	Tracheophyta	Magnoliopsida	Primula	species	зниклий в природі
+Первоцвіт Галлера	Primula halleri J.F. Gmel.	Plantae	Tracheophyta	Magnoliopsida	Primula	species	рідкісний
+Первоцвіт дрібний	Primula minima L.	Plantae	Tracheophyta	Magnoliopsida	Primula	species	рідкісний
+Ламкоколосник ситниковий	Psathyrostachys juncea (Fisch.) Nevski	Plantae	Tracheophyta	Magnoliopsida	Psathyrostachys	species	рідкісний
+Псевдорхіс білуватий	Pseudorchis albida (L.) A.Love & D.Love	Plantae	Tracheophyta	Magnoliopsida	Pseudorchis	species	вразливий
+Псевдорегнерія ковилолиста	Pseudoroegneria stipifolia (Trautv.) A.Love	Plantae	Tracheophyta	Magnoliopsida	Pseudoroegneria	species	неоцінений
+Сон великий	Pulsatilla grandis Wender.	Plantae	Tracheophyta	Magnoliopsida	Pulsatilla	species	вразливий
+Сон розкритий	Pulsatilla patens (L.) Mill.	Plantae	Tracheophyta	Magnoliopsida	Pulsatilla	species	неоцінений
+Сон лучний	Pulsatilla pratensis (L.) Mill.	Plantae	Tracheophyta	Magnoliopsida	Pulsatilla	species	неоцінений
+Сон Шерфеля	Pulsatilla scherfelii (Ullep) Skalicky	Plantae	Tracheophyta	Magnoliopsida	Pulsatilla	species	рідкісний
+Сон кримський	Pulsatilla taurica Juz.	Plantae	Tracheophyta	Magnoliopsida	Pulsatilla	species	неоцінений
+Дуб кошенільний	Quercus cerris L.	Plantae	Tracheophyta	Magnoliopsida	Quercus	species	рідкісний
+Жовтець тора	Ranunculus thora L. (R. tatrae Borbбs)	Plantae	Tracheophyta	Magnoliopsida	Ranunculus	species	рідкісний
+Редька приморська	Raphanus maritimus Smith	Plantae	Tracheophyta	Magnoliopsida	Raphanus	species	вразливий
+Жостір фарбувальний	Rhamnus tinctoria Waldst. & Kit.	Plantae	Tracheophyta	Magnoliopsida	Rhamnus	species	рідкісний
+Волошка Талієва	Rhaponticoides taliewii (Kleopow) M.V.Agab. & Greuter	Plantae	Tracheophyta	Magnoliopsida	Rhaponticoides	species	вразливий
+Дзвінець крейдовий	Rhinanthus cretaceus Vassilcz.	Plantae	Tracheophyta	Magnoliopsida	Rhinanthus	species	недостатньо відомий
+Родіола рожева	Rhodiola rosea L.	Plantae	Tracheophyta	Magnoliopsida	Rhodiola	species	вразливий
+Рододендрон східнокарпатський	Rhododendron kotschyi Simonk.	Plantae	Tracheophyta	Magnoliopsida	Rhododendron	species	неоцінений
+Шипшина Чацького	Rosa czackiana Besser	Plantae	Tracheophyta	Magnoliopsida	Rosa	species	неоцінений
+Шипшина донецька	Rosa donetzica Dubovik	Plantae	Tracheophyta	Magnoliopsida	Rosa	species	недостатньо відомий
+Румія критмолиста	Rumia crithmifolia (Willd.) Koso-Pol.	Plantae	Tracheophyta	Magnoliopsida	Rumia	species	неоцінений
+Рускус під’язиковий	Ruscus hypoglossum L.	Plantae	Tracheophyta	Magnoliopsida	Ruscus	species	рідкісний
+Сабуліна гостропелюсткова	Sabulina oxypetala (Woł..) Mosyakin & Fedor.	Plantae	Tracheophyta	Magnoliopsida	Sabulina oxypetala (Woł..)	species	зникаючий
+Сабуліна весняна	Sabulina verna (L.) Rchb.	Plantae	Tracheophyta	Magnoliopsida	Sabulina	species	рідкісний
+Верба альпійська	Salix alpina Scop.	Plantae	Tracheophyta	Magnoliopsida	Salix	species	зникаючий
+Верба трав’яна	Salix herbacea L.	Plantae	Tracheophyta	Magnoliopsida	Salix	species	рідкісний
+Верба лапландська	Salix lapponum L.	Plantae	Tracheophyta	Magnoliopsida	Salix	species	вразливий
+Верба чорнична	Salix myrtilloides L.	Plantae	Tracheophyta	Magnoliopsida	Salix	species	вразливий
+Верба туполиста	Salix retusa L.	Plantae	Tracheophyta	Magnoliopsida	Salix	species	рідкісний
+Верба Старке	Salix starkeana Willd.	Plantae	Tracheophyta	Magnoliopsida	Salix	species	вразливий
+Шавлія кременецька	Salvia cremenecensis Besser	Plantae	Tracheophyta	Magnoliopsida	Salvia	species	рідкісний
+Шавлія скабіозолиста	Salvia scabiosifolia Lam.	Plantae	Tracheophyta	Magnoliopsida	Salvia	species	неоцінений
+Соссюрея альпійська	Saussurea alpina (L.) DC.	Plantae	Tracheophyta	Magnoliopsida	Saussurea	species	рідкісний
+Соссюрея різноколірна	Saussurea discolor (Willd.) DC.	Plantae	Tracheophyta	Magnoliopsida	Saussurea	species	зникаючий
+Соссюрея Порціуса	Saussurea porcii Degen	Plantae	Tracheophyta	Magnoliopsida	Saussurea	species	рідкісний
+Ломикамінь аїзоподібний	Saxifraga aizoides L.	Plantae	Tracheophyta	Magnoliopsida	Saxifraga	species	зникаючий
+Ломикамінь переломниковий	Saxifraga androsacea L.	Plantae	Tracheophyta	Magnoliopsida	Saxifraga	species	рідкісний
+Ломикамінь мохоподібний	Saxifraga bryoides L.	Plantae	Tracheophyta	Magnoliopsida	Saxifraga	species	рідкісний
+Ломикамінь бульбистий	Saxifraga bulbifera L.	Plantae	Tracheophyta	Magnoliopsida	Saxifraga	species	зникаючий
+Ломикамінь карпатський	Saxifraga carpatica Rchb.	Plantae	Tracheophyta	Magnoliopsida	Saxifraga	species	рідкісний
+Ломикамінь зернистий	Saxifraga granulata L.	Plantae	Tracheophyta	Magnoliopsida	Saxifraga	species	зникаючий
+Ломикамінь болотний	Saxifraga hirculus L.	Plantae	Tracheophyta	Magnoliopsida	Saxifraga	species	вразливий
+Ломикамінь жовто-зелений	Saxifraga luteoviridis Schott & Kotschy	Plantae	Tracheophyta	Magnoliopsida	Saxifraga	species	рідкісний
+Ломикамінь супротивнолистий	Saxifraga oppositifolia L.	Plantae	Tracheophyta	Magnoliopsida	Saxifraga	species	зниклий в природі
+Ломикамінь напівзонтиковий	Saxifraga pedemontana subsp. cymosa (Waldst. & Kit.) Engl.	Plantae	Tracheophyta	Magnoliopsida	Saxifraga	subspecies	зникаючий
+Шенкія колосиста	Schenkia spicata (L.) Mans.	Plantae	Tracheophyta	Magnoliopsida	Schenkia	species	неоцінений
+Шейхцерія болотна	Scheuchzeria palustris L.	Plantae	Tracheophyta	Magnoliopsida	Scheuchzeria	species	вразливий
+Куга гострокінцева	Schoenoplectiella mucronata (L.) J.Jung & H.K.Choi	Plantae	Tracheophyta	Magnoliopsida	Schoenoplectiella	species	вразливий
+Сашник іржавий	Schoenus ferrugineus L.	Plantae	Tracheophyta	Magnoliopsida	Schoenus	species	вразливий
+Скополія карніолійська	Scopolia carniolica Jacq.	Plantae	Tracheophyta	Magnoliopsida	Scopolia	species	неоцінений
+Ранник крейдовий	Scrophularia cretacea Fisch. ex Spreng.	Plantae	Tracheophyta	Magnoliopsida	Scrophularia	species	неоцінений
+Ранник донецький	Scrophularia donetzica Kotov	Plantae	Tracheophyta	Magnoliopsida	Scrophularia	species	неоцінений
+Ранник гранітний	Scrophularia granitica Klokov & A.Krasnova	Plantae	Tracheophyta	Magnoliopsida	Scrophularia	species	недостатньо відомий
+Ранник весняний	Scrophularia vernalis L.	Plantae	Tracheophyta	Magnoliopsida	Scrophularia	species	вразливий
+Шоломниця крейдова	Scutellaria creticola Juz.	Plantae	Tracheophyta	Magnoliopsida	Scutellaria	species	неоцінений
+Шоломниця весняна	Scutellaria verna Besser	Plantae	Tracheophyta	Magnoliopsida	Scutellaria	species	рідкісний
+Сокироносиця струнка	Securigera elegans (Pancic) Lassen	Plantae	Tracheophyta	Magnoliopsida	Securigera	species	вразливий
+Очиток іспанський	Sedum hispanicum L.	Plantae	Tracheophyta	Magnoliopsida	Sedum	species	рідкісний
+Молодило мармурове	Sempervivum marmoreum Griseb.	Plantae	Tracheophyta	Magnoliopsida	Sempervivum	species	зникаючий
+Молодило гірське	Sempervivum montanum L.	Plantae	Tracheophyta	Magnoliopsida	Sempervivum	species	рідкісний
+Жовтозілля Бессера	Senecio besserianus Minder.	Plantae	Tracheophyta	Magnoliopsida	Senecio	species	вразливий
+Жовтозілля карпатське	Senecio capraticus Herbich	Plantae	Tracheophyta	Magnoliopsida	Senecio	species	рідкісний
+Серпій вовконоголистий	Serratula lycopifolia (Vill.) A.Kern.	Plantae	Tracheophyta	Magnoliopsida	Serratula	species	вразливий
+Жабриця Лемана	Seseli lehmannii Degen	Plantae	Tracheophyta	Magnoliopsida	Seseli	species	рідкісний
+Сеслерія голуба	Sesleria caerulea (L.) Ard.	Plantae	Tracheophyta	Magnoliopsida	Sesleria	species	зникаючий
+Смілкоквітка Завадського	Silenanthe zawadzkii (Herbich) Griseb. & Schenk	Plantae	Tracheophyta	Magnoliopsida	Silenanthe	species	зникаючий
+Смілка крейдова	Silene cretacea Fisch. ex Spreng.	Plantae	Tracheophyta	Magnoliopsida	Silene	species	вразливий
+Смілка яйлинська	Silene jailensis N.I.Rubtzov	Plantae	Tracheophyta	Magnoliopsida	Silene	species	зникаючий
+Смілка Ситника	Silene sytnikii Krytzka, Novosad & Protopopova	Plantae	Tracheophyta	Magnoliopsida	Silene	species	вразливий
+Смілка зеленоквіткова	Silene viridiflora L.	Plantae	Tracheophyta	Magnoliopsida	Silene	species	рідкісний
+Соболевськія сибірська	Sobolewskia sibirica (Willd.) P.W.Ball	Plantae	Tracheophyta	Magnoliopsida	Sobolewskia	species	рідкісний
+Содниця загострена	Soda acutifolia (Bunge) Mosyakin, Freitag & Rilke	Plantae	Tracheophyta	Magnoliopsida	Soda	species	вразливий
+Трубкоцвіт сумнівний	Solenanthus dubius Fisch. & C.A.Mey.	Plantae	Tracheophyta	Magnoliopsida	Solenanthus	species	рідкісний
+Софора китникоподібна	Sophora alopecuroides L.	Plantae	Tracheophyta	Magnoliopsida	Sophora	species	зникаючий
+Їжача голівка вузьколиста	Sparganium angustifolium Michx.	Plantae	Tracheophyta	Magnoliopsida	Sparganium	species	зникаючий
+Таволга пиківська	Spiraea pikoviensis Besser	Plantae	Tracheophyta	Magnoliopsida	Spiraea	species	зникаючий
+Таволга польська	Spiraea polоnica Błocki	Plantae	Tracheophyta	Magnoliopsida	Spiraea	species	зникаючий
+Скрученик приємний	Spiranthes amoena (M.Bieb.) Spreng.	Plantae	Tracheophyta	Magnoliopsida	Spiranthes	species	зникаючий
+Скрученик спіральний	Spiranthes spiralis (L.) Chevall.	Plantae	Tracheophyta	Magnoliopsida	Spiranthes	species	зникаючий
+Чистець вузьколистий	Stachys angustifolia М.Bieb.	Plantae	Tracheophyta	Magnoliopsida	Stachys	species	рідкісний
+Клокичка периста	Staphylea pinnata L.	Plantae	Tracheophyta	Magnoliopsida	Staphylea	species	рідкісний
+Осінник пізньоцвітовий	Sternbergia colchiciflora Waldst. & Kit.	Plantae	Tracheophyta	Magnoliopsida	Sternbergia	species	вразливий
+Стевеніела сатирієподібна	Steveniella satyrioides (Spreng.) Schltr.	Plantae	Tracheophyta	Magnoliopsida	Steveniella	species	зникаючий
+Ковила дивна	Stipa adoxa Klokov & Ossycznjuk	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	недостатньо відомий
+Ковила відмінна	Stipa anomala P.Smirn. ex Roshev.	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	зникаючий
+Ковила шорстка	Stipa asperella Klokov & Ossycznjuk	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	недостатньо відомий
+Ковила дніпровська	Stipa borysthenica Klokov ex Prokudin	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	вразливий
+Ковила короткокрила	Stipa brachyptera Klokov	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	недостатньо відомий
+Ковила Браунера	Stipa brauneri (Pacz.) Klokov	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	неоцінений
+Ковила волосиста	Stipa capillata L.	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	неоцінений
+Ковила пухнастолиста	Stipa dasyphylla (Czern. ex Lindem.) Trautv.	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	вразливий
+Ковила відокремлена	Stipa disjuncta Klokov	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	вразливий
+Ковила донецька	Stipa donetzica Czupryna	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	недостатньо відомий
+Ковила облудна	Stipa fallacina Klokov & Ossycznjuk	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	недостатньо відомий
+Ковила гранітна	Stipa graniticola Klokov	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	недостатньо відомий
+Ковила різнолиста	Stipa heterophylla Klokov	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	недостатньо відомий
+Ковила Лессінга	Stipa lessingiana Trin. & Rupr.	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	неоцінений
+Ковила каменелюбна	Stipa lithophila P.Smirn.	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	неоцінений
+Ковила азовська	Stipa maeotica Klokov & Ossycznjuk	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	недостатньо відомий
+Ковила травнева	Stipa majalis Klokov	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	недостатньо відомий
+Ковила Мартиновського	Stipa martinovskyi Klokov	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	недостатньо відомий
+Ковила гірська	Stipa oreades Klokov	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	недостатньо відомий
+Ковила пірчаста	Stipa pennata L.	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	вразливий
+Ковила поетична	Stipa poetica Klokov	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	вразливий
+Ковила найкрасивіша	Stipa pulcherrima K.Koch	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	вразливий
+Ковила Сирейщикова	Stipa syreistschikowii P.Smirn.	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	вразливий
+Ковила вузьколиста	Stipa tirsa Steven	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	вразливий
+Ковила закарпатська	Stipa transcarpatica Klokov	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	зникаючий
+Ковила українська	Stipa ucrainica P.Smirn.	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	неоцінений
+Ковила Залеського	Stipa zalesskii Wilensky	Plantae	Tracheophyta	Magnoliopsida	Stipa	species	вразливий
+Шильник водяний	Subularia aquatica L.	Plantae	Tracheophyta	Magnoliopsida	Subularia	species	зниклий в природі
+Коломонночок зігнутий	Succisella inflexa (Kluk) G. Beck	Plantae	Tracheophyta	Magnoliopsida	Succisella	species	рідкісний
+Сверція багаторічна	Swertia perennis L.	Plantae	Tracheophyta	Magnoliopsida	Swertia	species	вразливий
+Сверція крапчаста	Swertia punctata Baumg.	Plantae	Tracheophyta	Magnoliopsida	Swertia	species	вразливий
+Бузок угорський	Syringa josikaea J.Jacq. ex Rchb.	Plantae	Tracheophyta	Magnoliopsida	Syringa	species	вразливий
+Тахтаджяноквітник австрійський	Takhtajaniantha austriaca (Willd.) Zaika, Sukhor. & N.Kilian	Plantae	Tracheophyta	Magnoliopsida	Takhtajaniantha	species	зникаючий
+Тамарикс стрункий	Tamarix gracilis Willd.	Plantae	Tracheophyta	Magnoliopsida	Tamarix	species	вразливий
+Рутвиця смердюча	Thalictrum foetidum L.	Plantae	Tracheophyta	Magnoliopsida	Thalictrum	species	зникаючий
+Рутвиця гачкувата	Thalictrum uncinnatum Rehmann	Plantae	Tracheophyta	Magnoliopsida	Thalictrum	species	рідкісний
+Чебрець кальміуський	Thymus kaljmijussicus Klokov & Des.-Shost.	Plantae	Tracheophyta	Magnoliopsida	Thymus	species	недостатньо відомий
+Чебрець прибережний	Thymus littoralis Klokov & Des.-Shost.	Plantae	Tracheophyta	Magnoliopsida	Thymus	species	вразливий
+Липа пухнастостовпчикова	Tilia dasystyla Steven	Plantae	Tracheophyta	Magnoliopsida	Tilia	species	зникаючий
+Тофільдія чашечкова	Tofieldia calyculata (L.) Wahlenb.	Plantae	Tracheophyta	Magnoliopsida	Tofieldia	species	вразливий
+Берека	Torminalis glaberrima (Gand.) Sennikov & Kurtto	Plantae	Tracheophyta	Magnoliopsida	Torminalis	species	неоцінений
+Кендир венеційський	Trachomitum venetum (L.) Woodson	Plantae	Tracheophyta	Magnoliopsida	Trachomitum	species	вразливий
+Козельці донецькі	Tragopogon donetzicus Artemcz.	Plantae	Tracheophyta	Magnoliopsida	Tragopogon	species	неоцінений
+Траунштейнера куляста	Traunsteinera globosa (L.) Rcnb.	Plantae	Tracheophyta	Magnoliopsida	Traunsteinera	species	вразливий
+Пухівочка альпійська	Trichophorum alpinum (L.) Pers.	Plantae	Tracheophyta	Magnoliopsida	Trichophorum	species	недостатньо відомий
+Конюшина темно-каштанова	Trifolium badium Schreb.	Plantae	Tracheophyta	Magnoliopsida	Trifolium	species	рідкісний
+Конюшина люпиноподібна	Trifolium lupinaster L.	Plantae	Tracheophyta	Magnoliopsida	Trifolium	species	вразливий
+Конюшина червонувата	Trifolium rubens L.	Plantae	Tracheophyta	Magnoliopsida	Trifolium	species	рідкісний
+Тринія Біберштейна	Trinia biebersteinii Fedoronczuk	Plantae	Tracheophyta	Magnoliopsida	Trinia	species	рідкісний
+Пшениця дика однозернянка	Triticum boeoticum Boiss.	Plantae	Tracheophyta	Magnoliopsida	Triticum	species	неоцінений
+Тюльпан двоквітковий	Tulipa biflora Pall.	Plantae	Tracheophyta	Magnoliopsida	Tulipa	species	вразливий
+Тюльпан гранітний	Tulipa graniticola (Klokov & Zoz) Klokov	Plantae	Tracheophyta	Magnoliopsida	Tulipa	species	вразливий
+Тюльпан бузький	Tulipa hypanica Klokov & Zoz	Plantae	Tracheophyta	Magnoliopsida	Tulipa	species	вразливий
+Тюльпан змієлистий	Tulipa ophiophylla Klokov & Zoz	Plantae	Tracheophyta	Magnoliopsida	Tulipa	species	вразливий
+Тюльпан дібровний	Tulipa quercetorum Klokov & Zoz	Plantae	Tracheophyta	Magnoliopsida	Tulipa	species	вразливий
+Тюльпан Шренка	Tulipa schrenkii Regel	Plantae	Tracheophyta	Magnoliopsida	Tulipa	species	вразливий
+Тюльпан скіфський	Tulipa scythica Klokov & Zoz	Plantae	Tracheophyta	Magnoliopsida	Tulipa	species	зникаючий
+Рогіз малий	Typha minima Funk.	Plantae	Tracheophyta	Magnoliopsida	Typha	species	зникаючий
+Журавлина дрібноплода	Vaccinium microcarpum (Turcz. ex Rupr.) Schmalh.	Plantae	Tracheophyta	Magnoliopsida	Vaccinium	species	вразливий
+Дивина розлога	Verbascum laxum Fil. & Jav.	Plantae	Tracheophyta	Magnoliopsida	Verbascum	species	зникаючий
+Вероніка безлиста	Veronica aphylla L.	Plantae	Tracheophyta	Magnoliopsida	Veronica	species	рідкісний
+Вероніка стокроткова	Veronica bellidioides L.	Plantae	Tracheophyta	Magnoliopsida	Veronica	species	зникаючий
+Вероніка кущикова	Veronica fruticans Jacq.	Plantae	Tracheophyta	Magnoliopsida	Veronica	species	рідкісний
+Фіалка біла	Viola alba Besser	Plantae	Tracheophyta	Magnoliopsida	Viola	species	рідкісний
+Фіалка Джоя	Viola jooi Janka	Plantae	Tracheophyta	Magnoliopsida	Viola	species	вразливий
+Фіалка кримська	Viola oreades M.Bieb.	Plantae	Tracheophyta	Magnoliopsida	Viola	species	рідкісний
+Вальдштейнія гравілатоподібна	Waldsteinia geoides Willd.	Plantae	Tracheophyta	Magnoliopsida	Waldsteinia	species	вразливий
+Цингерія Біберштейна	Zingeria biebersteiniana (Claus) P. Smirn.	Plantae	Tracheophyta	Magnoliopsida	Zingeria	species	зниклий в природі
+Яловець високий	Juniperus excelsa M.-Bieb.	Plantae	Tracheophyta	Pinopsida	Juniperus	species	вразливий
+Яловець смердючий	Juniperus foetidissima Willd.	Plantae	Tracheophyta	Pinopsida	Juniperus	species	рідкісний
+Модрина польська	Larix polonica Racib.	Plantae	Tracheophyta	Pinopsida	Larix	species	зникаючий
+Сосна Станкевича	Pinus brutia Ten. var. pityusa (Steven) Silba	Plantae	Tracheophyta	Pinopsida	Pinus	species	вразливий
+Сосна кедрова	Pinus cembra L.	Plantae	Tracheophyta	Pinopsida	Pinus	species	вразливий
+Сосна крейдова	Pinus cretacea Kalen.	Plantae	Tracheophyta	Pinopsida	Pinus	species	вразливий
+Тис ягідний	Taxus baccata L.	Plantae	Tracheophyta	Pinopsida	Taxus	species	вразливий
+Адіант венерин волос	Adiantum capillus-veneris L.	Plantae	Tracheophyta	Polypodiopsida	Adiantum	species	зникаючий
+Анограма тонколиста	Anogramma leptophylla (L.) Link	Plantae	Tracheophyta	Polypodiopsida	Anogramma	species	зникаючий
+Аспленій чорний	Asplenium adiantum-nigrum L.	Plantae	Tracheophyta	Polypodiopsida	Asplenium	species	рідкісний
+Аспленій Білло	Asplenium billotii F.W. Schultz.	Plantae	Tracheophyta	Polypodiopsida	Asplenium	species	зникаючий
+Аспленій Гейфлера	Asplenium heufleri Reichard	Plantae	Tracheophyta	Polypodiopsida	Asplenium	species	зникаючий
+Гронянка півмісяцева	Botrychium lunaria (L.) Sw.	Plantae	Tracheophyta	Polypodiopsida	Botrychium	species	вразливий
+Гронянка ромашколиста	Botrychium matricariifolium A. Br. ex Koch	Plantae	Tracheophyta	Polypodiopsida	Botrychium	species	зникаючий
+Гронянка багатороздільна	Botrychium multifidum (S.G. Gmel.) Rupr.	Plantae	Tracheophyta	Polypodiopsida	Botrychium	species	рідкісний
+Гронянка віргінська	Botrychium virginianum (L.) Sw.	Plantae	Tracheophyta	Polypodiopsida	Botrychium	species	зникаючий
+Міхурниця альпійська	Cystopteris alpina (Lam.) Desv.	Plantae	Tracheophyta	Polypodiopsida	Cystopteris	species	рідкісний
+Міхурниця гірська	Cystopteris montana (Lam.) Bernh. ex Desv.	Plantae	Tracheophyta	Polypodiopsida	Cystopteris	species	вразливий
+Міхурниця судетська	Cystopteris sudetica A.Braun & Milde	Plantae	Tracheophyta	Polypodiopsida	Cystopteris	species	зникаючий
+Щитник Віллара	Dryopteris villarii (Bellardi) Woynar ex Schinz & Thell.	Plantae	Tracheophyta	Polypodiopsida	Dryopteris	species	вразливий
+Марсилея чотирилиста	Marsilea quadrifolia L.	Plantae	Tracheophyta	Polypodiopsida	Marsilea	species	вразливий
+Краєкучник верхівковий	Oeosporangium acrosticum (Balb.) L.Saez & Aymerich	Plantae	Tracheophyta	Polypodiopsida	Oeosporangium	species	зникаючий
+Краєкучник персидський	Oeosporangium persicum (Bory) Vis.	Plantae	Tracheophyta	Polypodiopsida	Oeosporangium	species	зникаючий
+Лусківниця марантова	Paragymnopteris marantae (L.) K.H. Shing	Plantae	Tracheophyta	Polypodiopsida	Paragymnopteris	species	зникаючий
+Пілюльниця куленосна	Pilularia globulifera L.	Plantae	Tracheophyta	Polypodiopsida	Pilularia	species	зникаючий
+Пухирник південний	Utricularia australis R.Br.	Plantae	Tracheophyta	Polypodiopsida	Utricularia	species	вразливий
+Пухирник Брема	Utricularia bremii Herr.	Plantae	Tracheophyta	Polypodiopsida	Utricularia	species	зниклий в природі
+Пухирник середній	Utricularia intermedia Hayne	Plantae	Tracheophyta	Polypodiopsida	Utricularia	species	вразливий
+Пухирник малий	Utricularia minor L.	Plantae	Tracheophyta	Polypodiopsida	Utricularia	species	вразливий
+Вудсія альпійська	Woodsia alpina (Bolton) S.F.Gray	Plantae	Tracheophyta	Polypodiopsida	Woodsia	species	зникаючий
+Вудсія ельбська	Woodsia ilvensis (L.) R.Br.	Plantae	Tracheophyta	Polypodiopsida	Woodsia	species	зникаючий
