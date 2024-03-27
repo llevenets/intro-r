@@ -43,10 +43,22 @@
   color: #EE5A24;
   font-weight: bold;
 }
+
 .reveal pre.sourceCode code {
 	font-size: 18px;
 	max-height: 700px;
 }
+
 .reveal pre.cell-output {
 	font-size: 18px;
+}
+
+.reveal .column-output-location {
+  display: flex;
+  align-items: flex-start;
+}
+
+.quarto-figure {
+	position: relative;
+	margin-bottom: 0em;
 }
