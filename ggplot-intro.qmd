@@ -1,0 +1,913 @@
+---
+title: "Getting to know ggplot"
+format: 
+  revealjs:
+    css: custom.css
+    slide-level: 3
+    slide-number: c/t
+    progress: false
+    fig-format: svg
+    fig-width: 4
+    code-copy: true
+execute: 
+  echo: true
+highlight-style: pygments
+knitr: 
+  opts_chunk:
+    comment: "#>"
+    collapse: true
+link-external-icon: true
+---
+
+```{r}
+#| include: false
+library(tidyverse)
+library(patchwork)
+```
+
+```{r}
+#| include: false
+#| cache: true
+penguins <- na.omit(palmerpenguins::penguins)
+```
+
+### Рідлист
+Про `ggplot2` специфічно:
+
+* [ggplot2: Elegant Graphics for Data Analysis, 3e (Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen)](https://ggplot2-book.org/) — докладно про ggplot2 від власне розробника даної бібліотеки 
+* [R Graphics Cookbook, 2nd edition (Winston Chang, 2024)](https://r-graphics.org/) — короткі практичні "рецепти" для вирішення специфічних проблем при побудові графіків за використання `ggplot2` та базової графіки
+
+Про датавіз загалом:
+
+* [Fundamentals of Data Visualization (Claus O. Wilke)](https://clauswilke.com/dataviz/index.html)
+* [Telling Stories with Data, With Applications in R and Python (Rohan Alexander)](https://tellingstorieswithdata.com/)
+
+### Створення та збереження графіків
+Об'єкт класу `gg` ініціюється через виклик команди `ggplot()`, нові шари до об'єкту додаються через оператор `+`  
+```{r}
+#| eval: false
+ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point()
+```
+\
+Як і будь який інший об'єкт у R об'єкт класу `gg` може бути збережений у робочому середовиші через зв'язування з іменем
+```{r}
+#| eval: false
+my_plot <- ggplot(penguins, aes(bill_length_mm, bill_depth_mm)) +
+  geom_point()
+my_plot # при виклику об'єкту буде виконано рендеринг зображення у відповідному вікні
+```
+\
+Отриманий графік можна зберегти на диск через виклик `ggsave()`, за дефолтного параметру аргументу `plot = last_plot()` буде збережено останній графік, рендер якого було виконано. Файл може бути збережено у розширенні `.png`, `.jpeg`, `.pdf`, `.svg`, `.tiff`, `.bmp`, `.eps`, `.ps` та `.wmf`. За одиницю виміру прийнято `in` (дюйм), проте також можуть бути використані `cm`, `mm` або `px`
+```{r}
+#| eval: false
+ggsave("D:/work/plot.png", width = 4.1, height = 5.8) # розмір листу А6 у дюймах
+ggsave("D:/work/plot.jpeg", width = 105, height = 148, units = "mm") # розмір листу А6 у мм
+```
+
+### Основні концепти
+Граматика `ggplot2` ґрунтується на ідеях представлених Леландом Уілкінсоном у ["The Grammar of Graphics" (2005)](https://link.springer.com/book/10.1007/0-387-28695-0) та згодом розвинутих Хєдлі Уікхемом у публікації ["A Layered Grammar of Graphics" (2009)](https://doi.org/10.1198/jcgs.2009.07098)
+
+**Графік складається із двох компонентів: даних — безпосередньо інформації, яку необхідно візуалізувати, та мапи — опису того, як змінні у даних співвідносяться з естетичними атрибутами.** Графік бути описаний у вигляді ієрархії подібних мап. У `ggplot2` представлено п'ять компонентів для мапування:
+
+* **layers** 
+* **scales** 
+* **coord**
+* **facet**
+* **theme**
+
+### Основні концепти
+::: columns
+::: {.column width="70%"}
+Пустий об'єкт класу `gg`
+```{r}
+#| eval: false
+ggplot()
+```
+\
+Об'єкт класу `gg`, що містить у собі інформацію про дані та картування естетичних атрибутів оX та оY
+```{r}
+#| eval: false
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm))
+```
+\
+Наступний шар у ієрархії, `geom_point()`, містить інформацію про геометрію (та статистичну трансформацію), яка має бути застосована для відображення значень. Інформація про дані та значення, які мають бути маповані на геометрію наслідуються від `ggplot()`
+```{r}
+#| eval: false
+ggplot(penguins, aes(bill_length_mm, bill_depth_mm)) +
+  geom_point()
+```
+:::
+
+::: {.column width="30%"}
+```{r}
+#| echo: false
+#| label: "fig.1 ggplot mapping concept"
+#| fig-width: 3
+#| fig-asp: 2
+#| fig-align: center
+#| cache: true
+
+fig1.1 <- ggplot()
+fig1.2 <- ggplot(penguins, aes(bill_length_mm, bill_depth_mm))
+fig1.3 <- ggplot(penguins, aes(bill_length_mm, bill_depth_mm)) + geom_point()
+
+fig1.1 / fig1.2 / fig1.3
+```
+:::
+:::
+
+### Основні концепти
+*Зазвичай* при створенні об'єкту одразу вказуються дані та осі, по яким буде будуватися графік, проте це не є обов'язковим — дані, осі та інші естетичні параметри можуть бути специфіковані у шарах нижчої ієрархії. До того ж ієрархічно нижчі шари можуть мати власну естетичну специфікацію, яка відрізняється від специфікації материнського шару створеного при ініціалізації графіку.
+
+Усі наступні команди призводять до ідентичних за виглядом графіків, хоча *внутрішньо* їх структура є дещо відмінною (що можна перевірити зберігши об'єкти під певними іменами та уважно переглянувши структуру їх листів)
+```{r}
+#| eval: false
+ggplot(penguins, aes(bill_length_mm, bill_depth_mm)) +
+  geom_point()
+
+ggplot(penguins) +
+  geom_point(aes(bill_length_mm, bill_depth_mm))
+
+ggplot() +
+  geom_point(aes(bill_length_mm, bill_depth_mm), penguins) 
+
+# найбільш хворий варіант 
+ggplot(mapping = aes(bill_length_mm, bill_depth_mm)) +
+    geom_point(data = penguins)
+```
+
+### Естетичні атрибути різних шарів
+Функція `aes(x, y, ...)` слугує для конструкцій мап естетичних атрибутів, аргументи до функції подаються у вигляді пар `aesthetic = variable`, де `variable` зазвичай є колонкою певного кадру даних. Перші два аргументи можуть подаватися просто у вигляді `variable`, які у такому випадку будуть використані для конструкції осі X та Y відповідно
+
+Змінну `species` маповано на естетичний атрибут `color`, мапування розповсюджується на усі ієрархічно нижчі рівні
+```{r}
+#| eval: false
+penguins |> 
+  ggplot(aes(bill_length_mm, bill_depth_mm, color = species)) +
+  geom_point() +
+  geom_smooth(method = lm) # lm - linear model
+```
+
+Теж саме, але мапування `species` на `color` розповсюджується лише на рівень шару `geom_point()`
+```{r}
+#| eval: false
+penguins |> 
+  ggplot(aes(bill_length_mm, bill_depth_mm)) +
+  geom_point(aes(color = species)) +
+  geom_smooth(method = lm)
+```
+
+Специфікація параметру `color` знаходиться поза межами функції `aes()` і тому визначає естетику використаної геометрії як такої, без зв'язку з даними 
+```{r}
+#| eval: false
+penguins |> 
+  ggplot(aes(bill_length_mm, bill_depth_mm)) +
+  geom_point(color = "orange") +
+  geom_smooth(method = lm)
+```
+
+### Естетичні атрибути різних шарів
+```{r}
+#| echo: false
+#| label: "fig.2 ggplot aes"
+#| fig-width: 6
+#| fig-asp: 1
+#| fig-align: center
+#| cache: true
+fig2.1 <- penguins |> 
+  ggplot(aes(bill_length_mm, bill_depth_mm, color = species)) +
+  geom_point() +
+  geom_smooth(method = lm) +
+  labs(subtitle = "ggplot(aes(bill_length_mm, bill_depth_mm, color = species))")
+
+fig2.2 <- penguins |> 
+  ggplot(aes(bill_length_mm, bill_depth_mm)) +
+  geom_point(aes(color = species)) +
+  geom_smooth(method = lm) + 
+  labs(subtitle = "geom_point(aes(color = species))")
+
+fig2.3 <- penguins |> 
+  ggplot(aes(bill_length_mm, bill_depth_mm)) +
+  geom_point(color = "orange") +
+  geom_smooth(method = lm) +
+  labs(subtitle = "geom_point(color = \"orange\")")
+
+fig2.1 / fig2.2 / fig2.3 & theme(text = element_text(size = 10), plot.subtitle = element_text(face = "bold"))
+```
+
+### Найчастіше використовувані естетичні атрибути
+Доступні для всіх або більшості геометрій:
+
+* `color` — колір ліній (контурів)
+* `fill` — колір внутрішнього простору
+* `alpha` — прозорість 
+
+* `linetype` — тип ліній
+* `linewidth` — ширина лінії
+* `linejoint` — тип з'єднання ліній
+* `lineend` — тип кінця лінії
+
+* `group` — група
+
+Доступні для поїнтів:
+
+* `size` — розмір
+* `shape` — форма поїнту
+* `stroke` — товщина контуру (заміняє `linewidth`)
+
+### Найчастіше використовувані естетичні атрибути
+::: columns
+
+::: {.column width="65%"}
+```{r}
+#| echo: false
+#| label: "fig.3 line, point and alpha aes"
+#| fig-align: right
+#| fig-width: 5
+#| out-width: "100%"
+#| fig-asp: 1
+#| cache: true
+linetyp <- tibble(
+  y = 1:6,
+  type = factor(
+    1:6,
+    labels = c("solid", "dashed", "dotted", "dotdash", "longdash", "twodash")
+  )
+)
+shape <- tibble(
+  x = rep(1:6, 5),
+  y = rev(rep(1:5, each = 6)),
+  id = c(0:25, rep(NA, 4))
+)
+alph <- tibble(y = seq(0.1, 1, 0.1))
+
+linetyp <- linetyp |> 
+  ggplot() +
+  geom_hline(aes(yintercept = y, linetype = type), linewidth = 1, show.legend = F) +
+  scale_y_continuous(breaks = 1:6, labels = linetyp$type, sec.axis = sec_axis(~., breaks = 1:6)) +
+  scale_linetype_manual(values = linetyp$type) +
+  labs(subtitle = "linetype = ...")
+
+
+shape <- shape |> 
+  ggplot(aes(x, y)) +
+  geom_point(aes(shape = factor(id)), 
+             size = 3, 
+             color = "blue",
+             fill = "orange",
+             show.legend = F) +
+  geom_text(aes(x, y + .5, label = id), size = 3) +
+  scale_shape_manual(values = shape$id) +
+  scale_y_continuous(breaks = NULL) +
+  scale_x_continuous(breaks = NULL) +
+  labs(x = "", y = "", subtitle = "shape = ...") 
+
+alph <- alph |> 
+  ggplot(aes(x = "", y)) +
+    geom_point(
+    color = "orange",
+    size = 5,
+    position = position_nudge(x = -.17)
+  ) +
+  geom_point(
+    aes(alpha = y), 
+    size = 5, 
+    position = position_nudge(x = -.2), 
+    show.legend = FALSE) +
+  geom_path(
+    aes(alpha = y), 
+    linewidth = 3, 
+    position = position_nudge(x = .2), 
+    show.legend = FALSE) +
+  scale_y_continuous(breaks = seq(0.1, 1, 0.1)) +
+  labs(x = "", y = "", subtitle = "alpha = ...") 
+
+
+((linetyp / shape) | alph) & theme_minimal() & theme(panel.grid = element_blank(),
+                                            plot.subtitle = element_text(face = "bold"))
+```
+:::
+::: {.column width="35%"}
+\
+\
+\
+Тип лінії контролюється через текстове або чисельне значення (e.g. `linetype = "solid"` або `linetype = 1`).
+
+Форма контролюється через чисельне значення від 0 до 25 або або кодову позначку, що відповідає певній формі (e.g `shape = 3` або `shape = "+"`). Також можливо використання ASCII-елементів від 32 до 127.
+
+Прозорість встановлюється чисельним значенням, що може приймати значення від 0 до 1
+:::
+
+:::
+
+### Layers
+**layers** — колекція геометричних об'єктів, `geom_*()`, які власне репрезентують візуальну геометрію об'єкту на графіку (point, line, bar, polygon etc), та статистичних трансформації, `stat_*()`, які мають бути проведені над даними, аби представити їх на графіку (count, bin, smooth etc)
+
+Якщо викликати допомогу на будь-яку з доступних геометрій (наприклад `?geom_point`) та подивитися доступні аргументи для функції, можна побачити аргумент `stat` з певним дефолтним значенням. Зворотне є дійсним і для наявних статистичних трансформацій, функції яких мають аргумент `geom` з певним дефолтним значенням (наприклад `?stat_identity`)
+
+::: {#figs-layers layout-ncol=2}
+```{r}
+#| label: "fig4.1"
+#| fig-align: left
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "90%"
+penguins |> 
+ggplot(aes(bill_length_mm, bill_depth_mm)) +
+geom_point(stat = "identity")
+```
+
+```{r}
+#| label: "fig.4.2"
+#| fig-align: left
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "90%"
+penguins |> 
+ggplot(aes(bill_length_mm, bill_depth_mm)) +
+stat_identity(geom = "point")
+```
+:::
+
+### Scales
+`Scales` — відповідають за мапування значень у просторі даних до значень у просторі естетичних атрибутів, а також за зворотне відображення цих зв'язків шляхом створення легенди та осей графіків. Функції для модифікації шкали мають вигляд типу `scale_*()` або `scale_*_*()`. Варіант функції `scale_` існує майже для кожного з можливих атрибутів, проте найчастіше використовуються: 
+
+* `scale_color_*()` — контроль кольору контурів геометрій та ліній 
+* `scale_fill_*()` — контроль кольору внутрішньої області геометрії
+* `scale_shape_*()` — контроль форми для `geom_point`
+
+::: columns
+::: {.column width="40%"}
+\
+```{r}
+#| eval: false
+plt_pengw <- penguins |> 
+ ggplot(
+   aes(bill_length_mm, 
+            bill_depth_mm)
+   ) +
+ geom_point(
+    aes(color = species, 
+      shape = sex)
+    )
+```
+:::
+::: {.column width="60%"}
+```{r}
+#| echo: false
+#| label: "fig.5 color and shape"
+#| fig-width: 4
+#| out-width: "90%"
+#| fig-asp: 0.6
+#| cache: true
+plt_pengw <- penguins |> 
+ ggplot(aes(bill_length_mm, 
+            bill_depth_mm)) +
+ geom_point(
+    aes(
+      color = species, 
+      shape = sex
+      )
+    )
+plt_pengw
+```
+:::
+:::
+
+### Scales (colors)
+Суфікс `_manual()` вказує на те, що функція дозволяє вручну задати значення естетичному атрибуту через аргумент `values`, до якого подається вектор значень. Будь-який варіант `scale_` також одночасно має аргументи для контролю зовнішнього вигляду легенди графіку, що зворотно відображує зв'язок естетики з даними
+```{r}
+pal <- c("#fc427b", "#16a085", "#4834d4") # колір може бути вказаний через ім'я, hex-код
+                                          # виклик функції rgb() або hsv()
+lab <- c("P. adeliae", "P. antarcticus", "P. papua")
+```
+
+::: columns
+::: {.column width="40%"}
+\
+\
+```{r}
+#| eval: false
+plt_pengw + 
+  scale_color_manual(
+    values = pal,
+    labels = lab,
+    name = "Penguin species",
+    guide = guide_legend(
+      position = "top",
+      title.position= "top"
+      )
+  ) +
+  scale_shape_manual(
+    values = c(1, 21),
+    name = "Penguin sex"
+  )
+```
+:::
+::: {.column width="60%"}
+```{r}
+#| echo: false
+#| label: "fig.6 scale_manual color and shape"
+#| fig-width: 4
+#| out-width: "90%"
+#| fig-asp: .8
+plt_pengw + 
+    scale_color_manual(
+    values = pal,
+    labels = lab,
+    name = "Penguin species",
+    guide = guide_legend(
+      position = "top",
+      title.position = "top")
+  ) +
+  scale_shape_manual(
+    values = c(1, 16),
+    name = "Penguin sex", 
+  )
+```
+:::
+:::
+
+### Scales (colors)
+Окрім `color/fill_manual` доступним є набір кольорових пресетів з палітр [ColorBrewer](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3) та [Viridis](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html)
+
+```{r}
+#| echo: false
+#| label: "fig.7 color presets"
+#| fig-asp: .75
+#| fig-width: 6
+#| fig-align: center
+#| cache: true
+
+
+plt_fill <- penguins |> 
+  ggplot(aes(bill_length_mm, bill_depth_mm, fill = species)) +
+  geom_point(shape = 21, color = "black") +
+  scale_y_continuous(breaks = NULL, name = "") +
+  scale_x_continuous(breaks = NULL, name = "") +
+  theme_minimal() +
+  theme(legend.position = "none",
+        plot.subtitle = element_text(face = "bold", size = 8)
+        )
+
+brewer_dark <- plt_fill + 
+  scale_fill_brewer(palette = "Dark2") +
+  labs(subtitle = "scale_fill_brewer(\npalette = \"Dark2\")")
+
+brewer_acc <- plt_fill +
+  scale_fill_brewer(palette = "RdBu") +
+  labs(subtitle = "scale_fill_brewer(\npalette = \"RdBu\")")
+
+brewer_set2 <- plt_fill +
+  scale_fill_brewer(palette = "PuRd") +
+  labs(subtitle = "scale_fill_brewer(\npalette = \"PuRd\")")
+
+viridis_vir <- plt_fill +
+  scale_fill_viridis_d() +
+  labs(subtitle = "scale_fill_viridis_d(\noption = \"viridis\")")
+
+viridis_inf <- plt_fill +
+  scale_fill_viridis_d(option = "inferno") +
+  labs(subtitle = "scale_fill_viridis_d(\noption = \"inferno\")")
+
+viridis_civ <- plt_fill +
+  scale_fill_viridis_d(option = "cividis") +
+  labs(subtitle = "scale_fill_viridis_d(\noption = \"cividis\")")
+
+
+(brewer_dark | brewer_set2 | brewer_acc) /  ( viridis_vir | viridis_inf | viridis_civ)
+```
+
+### Scales (colors)
+`ColorBrewer` першочергово розроблявся для застосування у картографії і має три типи палітр — qualitative, sequential та divering. `Viridis` та його похідні розроблялись як [заміна кольорової мапи "Jet"](https://www.youtube.com/watch?v=xAoljeRJ3lU), їх особливістю є перцептивна однорідність по ходу градієнту. І ті, і інші набори пресетів розроблялися з ідеєю доступності для людей з найбільш розповсюдженими типами колірної сліпоти. 
+
+Інший широко застосований кольоровий пресет, що є інклюзивним щодо людей з порушеннями кольорового зору є **палітра Окабе-Іто**, значення якої продемонстровано нижче, на прикладі датасету `diamonds`
+
+::: {#figs-okabe layout-ncol=2}
+```{r}
+#| echo: false
+#| label: "fig.8.1 Okabe-Ito pal"
+#| out-width: "80%"
+#| fig-asp: 1
+#| fig-align: right
+scales::show_col(c(
+ "#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999"
+))
+```
+
+```{r}
+#| echo: false
+#| label: "fig.8.2 Okabe-Ito diamonds"
+#| fig-width: 4.5
+#| out-width: "100%"
+#| fig-align: left
+#| fig-asp: 0.68
+diamonds |> 
+    ggplot(aes(cut, fill = color)) +
+    geom_bar(color = "#1B1464", position = "dodge") +
+    scale_fill_manual(values = c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")) +
+    theme_minimal() +
+    theme(panel.grid = element_blank())
+```
+:::
+
+### Scales (axis)
+`scale_x_*` та `scale_y_*` дозволяють налаштовувати зовнішній вигляд осі X та Y відповідно
+
+У залежності від типу даних та їх трансформації, можливими варіантами є:
+
+* `discrete` — для дискретних даних
+* `continuous` — для неперервних даних
+* `binned` — для неперервних даних, що розбито на біни
+* `date`, `time` та `datetime` — для даних у форматі дати та часу
+* `log10`, `sqr`, `reverse` — шорткати для лог10, квадратного коріню та реверс-трансформації осі
+
+::: columns
+::: {.column width="40%"}
+\
+```{r}
+#| eval: false
+pengw_mass <- penguins |> 
+    ggplot(
+      aes(species, 
+          body_mass_g, 
+          color = sex)
+      ) +
+    geom_point(
+      shape = 95, 
+      size = 7, 
+      alpha = .5
+      )
+```
+:::
+::: {.column width="60%"}
+```{r}
+#| echo: false
+#| label: "fig.9 axis"
+#| fig-width: 4
+#| out-width: "90%"
+#| fig-asp: 0.6
+#| cache: true
+pengw_mass <- penguins |> 
+  ggplot(aes(species, body_mass_g, color = sex)) +
+  geom_point(shape = 95, size = 7, alpha = .5)
+pengw_mass
+```
+:::
+:::
+
+### Scales (axis)
+`scale_x/y_*` дозволяють контролювати назву осі, назви та кількість окремих засічок на осі, її максимальне та мінімальне значення, її позицію по відношенню до тіла графіку, її статистичну трансформації та наявність додаткової протилежної осі
+
+::: columns
+::: {.column width="40%"}
+\
+```{r}
+#| eval: false
+pengw_mass + 
+ scale_x_discrete(
+   name = "",
+   label = c("P. adeliae", 
+             "P. antarcticus", 
+             "P. papua")
+  ) +
+ scale_y_continuous(
+  name = "body mass, in g",
+  limits = c(2500, 6500),
+  breaks = seq(2000, 6500, 500)
+  )
+```
+:::
+::: {.column width="60%"}
+\
+```{r}
+#| echo: false
+#| label: "fig.10 axis scale"
+#| fig-width: 4
+#| out-width: "90%"
+#| fig-asp: 0.6
+#| cache: true
+pengw_mass + 
+  scale_x_discrete(
+    name = "",
+    label = c("P. adeliae", "P. antarcticus", "P. papua")
+  ) +
+  scale_y_continuous(
+    name = "body mass, in g",
+    limits = c(2500, 6500),
+    breaks = seq(2000, 6500, 500)
+  )
+```
+:::
+:::
+
+### Scales (axis)
+У випадку необхідності трансформації даних для їх кращого відображення, трансформація може бути виконана безпосередньо при передачі даних до функції `aes()`, через `coord_trans()`, через  аргумент `transform` у `scale_x/y_*` або, у окремих випадках, через виклик відповідних `scale_x/y_*`
+
+```{r}
+# дані про ввп різних країн та очікувану тривалість життя за 1992 рік
+gdp <- gapminder::gapminder |> filter(year == 1992) |> 
+  ggplot(aes(gdpPercap, lifeExp)) +
+  geom_point() +
+  geom_smooth(method = lm)
+```
+\
+
+
+::: {#figs-transform layout-ncol=2}
+```{r}
+#| label: "fig.11.1"
+#| fig-width: 4
+#| out-width: "90%"
+#| fig-asp: 0.6
+#| cache: true
+gdp 
+```
+
+```{r}
+#| label: "fig.11.2"
+#| fig-width: 4
+#| out-width: "90%"
+#| fig-asp: 0.6
+#| cache: true
+gdp + scale_x_log10()
+```
+:::
+
+### scales::
+Додатковий пакет `scales` дозволяє більш тонко контролювати позначки на осях
+
+::: columns
+::: {.column width="40%"}
+\
+```{r}
+#| eval: false
+pengw_mass +
+  scale_y_continuous(
+  name = "",
+  labels = scales::label_number(
+    scale = 0.001,
+    suffix = " Kg"
+    )
+  )
+```
+\
+\
+\
+```{r}
+#| eval: false
+gdp + 
+  scale_x_log10(
+  label = scales::label_log(),
+  breaks = scales::trans_breaks(
+    "log10", function(x) 10^x
+    )
+  )
+```
+:::
+::: {.column width="60%"}
+```{r}
+#| echo: false
+#| label: "fig.12.1 scales::"
+#| fig-width: 4
+#| out-width: "75%"
+#| fig-asp: 0.6
+#| cache: true
+pengw_mass +
+  scale_y_continuous(
+    name = "",
+    labels = scales::label_number(
+      scale = 0.001,
+      suffix = " Kg"
+    )
+  )
+```
+
+```{r}
+#| echo: false
+#| label: "fig.12.2 scales::"
+#| fig-width: 4
+#| out-width: "75%"
+#| fig-asp: 0.6
+#| cache: true
+gdp + scale_x_log10(
+  label = scales::label_log(),
+  breaks = scales::trans_breaks(
+    "log10", function(x) 10^x
+    )
+  )
+```
+:::
+:::
+
+### labs()
+Функція `labs()` слугує шорткатом для призначення імен елементам графіку
+
+```{r}
+#| fig-asp: .68
+#| fig-align: center
+pengw_mass +
+    labs(
+        x = "",
+        y = "body mass, in g",
+        title = "Penguins body mass",
+        color = "Penguin sex",
+        subtitle = "separated by species and sex",
+        caption = "Data from package palmerpenguins"
+    )
+```
+
+
+### Coord
+`coord` визначають, як координати даних відображуються на площині зображення
+
+```{r}
+#| echo: false
+#| label: "fig13.1 coords"
+#| fig-width: 7
+#| out-width: "85%"
+#| fig-asp: 0.42
+#| fig-align: center
+#| cache: true
+plt <- penguins |> 
+  ggplot(aes(bill_length_mm, bill_depth_mm)) +
+  geom_point(alpha = .5) +
+  labs(subtitle = "cartesian")
+
+flip <- plt + coord_flip() + labs(subtitle = "coord_flip")
+polar <- plt + coord_polar() + labs(subtitle = "coord_polar")
+radial <- plt + coord_radial() + labs(subtitle = "coord_radial")
+cartesian_lim <- plt + coord_cartesian(xlim = c(40, 50), ylim = c(15, 20)) +
+  labs(subtitle = "coord_cartesian(\nxlim = c(40, 50), \nylim = c(15, 20))")
+trans <- plt + coord_trans(x = "reverse") + labs(subtitle = "coord_trans(\nx = \"reverse\")")
+
+# (cartesian_lim | polar | radial) & theme(plot.subtitle = element_text(face = "bold"))
+(plt | cartesian_lim | flip) & theme(plot.subtitle = element_text(face = "bold"))
+```
+
+### Coord
+Окрім зображених нижче, також є `coord_sf()`, що використовується для базового зображеня даних накладених на географічну мапу
+
+```{r}
+#| echo: false
+#| label: "fig13.2 coords"
+#| fig-width: 7
+#| out-width: "85%"
+#| fig-asp: 0.5
+#| fig-align: center
+(trans | polar | radial) & theme(plot.subtitle = element_text(face = "bold"))
+```
+
+### Facet
+`facet` дозволяє розбити набір даних на окремі сети на основі рівнів певного фактору і зобразити їх у вигляді матриці
+
+* `facet_wrap` — для одного фактору
+
+
+```{r}
+#| label: "fig14.1 facet_wrap"
+#| fig-width: 8
+#| fig-asp: .3
+#| fig-align: center
+plt_pengw +
+  facet_wrap(~island)
+```
+
+### Facet
+
+* `facet_grid` — для комбінації рівнів двох факторів
+
+
+```{r}
+#| label: "fig14.2 facet_grid"
+#| fig-width: 6
+#| fig-asp: .68
+#| fig-align: center
+plt_pengw +
+  facet_grid(year ~ island)
+```
+
+### Themes
+`theme` слугує для тонкого налаштування усіх інших візуальних атрибутів графіку, від розміру шрифту до коліру заднього фону. У `ggplot2` існує 8 готових пресетів
+```{r}
+#| echo: false
+#| label: "fig.15 gg themes"
+#| fig-width: 10
+#| fig-asp: .45
+gray <- plt_pengw + labs(subtitle = "gray")
+classic <- plt_pengw + theme_classic() + labs(subtitle = "classic")
+bw <- plt_pengw + theme_bw() + labs(subtitle = "bw")
+minimal <- plt_pengw + theme_minimal() + labs(subtitle = "minimal")
+linedraw <- plt_pengw + theme_linedraw() + labs(subtitle = "linedraw")
+light <- plt_pengw + theme_light() + labs(subtitle = "light")
+dark <- plt_pengw + theme_dark() + labs(subtitle = "dark")
+void <- plt_pengw + theme_void() + labs(subtitle = "void")
+
+((gray | linedraw | classic | void) /
+  (dark |  bw| light | minimal )) & theme(legend.position = "none",
+                                          plot.subtitle = element_text(face = "bold"))
+```
+
+Можливо завантажити додаткові готові пресети у вигляді бібліотек, наприклад [`ggthemes`](https://jrnold.github.io/ggthemes/) або [`ggdark`](https://github.com/nsgrantham/ggdark)
+
+### Themes
+Глобально призначити тему можливо через `theme_set()`, глобально змінити певний елемент теми можливо через `theme_update()`
+
+Мануально налаштувати кожен окремий компонент теми можливо через звернення до функції `theme()`. Аргументи легенди мають доволі дескриптивні назви і також мають ієрархію наслідування. Так аргумент `text` розповсюджується на усі текстові елементи графіку, `axis.title` на підпис осей, `axis.title.x` лише на підпис осі Х, `axis.title.x.bottom` лише на підпис осі Х, що розташована знизу від тіла графіку. 
+
+Абсолютна більшість аргументів утворює пару з однією із наступних функцій, усередині якої вже встановлюються значення атрибутів елементу (колір, розмір, товшина, тип шрифту, відносне положення і т.д.):
+
+* `element_text()`
+* `element_line()`
+* `element_rect()`
+* `element_blank()`
+
+Комбінація певного аргумент з `element_blank()` прибирає елемент з графіку
+
+### Themes
+Приклад кастомізації теми графіку
+```{r}
+#| eval: false
+plt_pengw +
+  labs(x = "Bill depth, mm",
+       y = "Bill length, mm",
+       color = "Species",
+       shape = "Sex",
+       title = "Palmer penguins dataset") +
+  scale_color_brewer(palette = "BrBG") +
+  theme(
+    text = element_text(color = "#f7f1e3"),
+    panel.background = element_rect(fill = "#34495e"),
+    panel.grid = element_line(color = "#1e272e", linewidth = 1),
+    axis.text  = element_text(color = "#CAD3C8"),
+    axis.line = element_line(color = "#CAD3C8", linewidth = 1),
+    axis.ticks = element_line(color = "#CAD3C8"),
+    legend.background = element_rect(fill = "#1e272e"),
+    legend.position = "bottom",
+    legend.title.position = "top",
+    legend.title = element_text(hjust = .5),
+    plot.background = element_rect(fill = "#1e272e", color = "#1e272e"),
+    plot.title = element_text(color = "#F8EFBA", 
+                              hjust = .5, 
+                              face = "bold", 
+                              family = "serif")
+  )
+
+```
+
+### Themes
+```{r}
+#| echo: false
+#| fig-asp: 1
+#| fig-width: 5
+#| out-width: "85%"
+#| fig-align: center
+plt_pengw +
+  labs(
+    x = "Bill depth, mm",
+    y = "Bill length, mm",
+    color = "Species",
+    shape = "Sex",
+    title = "Palmer penguins dataset") +
+  scale_color_brewer(palette = "BrBG") +
+  theme(
+    text = element_text(color = "#f7f1e3"),
+    panel.background = element_rect(fill = "#34495e"),
+    legend.background = element_rect(fill = "#1e272e"),
+    plot.background = element_rect(fill = "#1e272e", color = "#1e272e"),
+    panel.grid = element_line(color = "#1e272e", linewidth = 1),
+    axis.text  = element_text(color = "#CAD3C8"),
+    axis.line = element_line(color = "#CAD3C8", linewidth = 1),
+    axis.ticks = element_line(color = "#CAD3C8"),
+    legend.position = "bottom",
+    legend.title.position = "top",
+    legend.title = element_text(hjust = .5),
+    plot.title = element_text(color = "#F8EFBA", hjust = .5, face = "bold", family = "serif")
+  )
+
+```
+
+### Додаткові посилання
+
+Щодо R:
+
+* [ggplot2 extensions gallery](https://exts.ggplot2.tidyverse.org/gallery/) — галерея бібліотек-розширень до `ggplot2`
+* [The R Graph Gallery](https://r-graph-gallery.com/) — колекція прикладів графіків створених за допомогою R, по категоріям
+* [R Charts](https://r-charts.com/) — інша колекція прикладів графіків у R, по категоріям
+
+Інші каталоги/галереї/архіви графіків:
+
+* [PolicyViz Data Visualization Catalog](https://policyviz.com/resources/policyviz-data-visualization-catalog/)
+* [The Data Visualisation Catalogue (Severino Ribecca)](https://datavizcatalogue.com/index.html)
+* [Data Viz Project (ferdio agency)](https://datavizproject.com/)
+
+Щодо вибору кольорів:
+
+* [Paul Tol's Notes. INTRODUCTION TO COLOUR SCHEMES](https://personal.sron.nl/~pault/)
+* [DaltonLens. Online colorblindness simulator](https://daltonlens.org/colorblindness-simulator) — можливість перевірити вашу кольорову палітру на читабельність, вичерпний список алгоритмів для симуляції кольорової сліпоти
+* [ColorHexa](https://www.colorhexa.com/) — непоганий онлайн-тул для підбору кольорів
+
+Створення графіків у R по найкращім заповітам Едварда Тафті:
+
+* [Tufte in R (Lukasz Piwek)](http://motioninsocial.com/tufte/)
