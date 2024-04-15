@@ -400,7 +400,7 @@ plt_pengw +
       )
   ) +
   scale_shape_manual(
-    values = c(1, 21),
+    values = c(1, 16),
     name = "Penguin sex"
   )
 ```
@@ -521,7 +521,7 @@ diamonds |>
 * `continuous` — для неперервних даних
 * `binned` — для неперервних даних, що розбито на біни
 * `date`, `time` та `datetime` — для даних у форматі дати та часу
-* `log10`, `sqr`, `reverse` — шорткати для лог10, квадратного коріню та реверс-трансформації осі
+* `log10`, `sqrt`, `reverse` — шорткати для лог10, квадратного коріню та реверс-трансформації осі
 
 ::: columns
 ::: {.column width="40%"}
@@ -711,8 +711,8 @@ pengw_mass +
     labs(
         x = "",
         y = "body mass, in g",
-        title = "Penguins body mass",
         color = "Penguin sex",
+        title = "Penguins body mass",
         subtitle = "separated by species and sex",
         caption = "Data from package palmerpenguins"
     )
