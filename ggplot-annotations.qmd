@@ -1,0 +1,161 @@
+---
+title: "plot annotations"
+format: 
+  revealjs:
+    css: custom.css
+    slide-level: 3
+    slide-number: c/t
+    progress: false
+    fig-format: svg
+    fig-width: 8
+    code-copy: true
+execute: 
+  echo: true
+highlight-style: pygments
+knitr: 
+  opts_chunk:
+    comment: "#>"
+    collapse: true
+link-external-icon: true
+---
+```{r}
+#| include: false
+library(tidyverse)
+library(patchwork)
+```
+
+```{r}
+#| include: false
+#| cache: true
+penguins <- na.omit(palmerpenguins::penguins)
+```
+
+
+### Анотація інтервалів
+Функції `geom_crossbar()`, `geom_errorbar()`, `geom_errorbarh()`, `geom_linerange()` та `geom_pointrange()` замість параметру `y` сприймають параметр `ymin` та `ymax` (або `xmin` та `xmax` у випадку `geom_errorbarh()`)
+
+```{r}
+penguins_mass <- penguins |> group_by(species) |> 
+  summarise(mean_mass = mean(body_mass_g), sd = sd(body_mass_g)) 
+```
+\
+
+::: {#figs-int layout-ncol=2}
+```{r}
+#| fig-width: 4
+#| fig-asp: 0.68
+#| fig-align: center
+#| out-width: "85%"
+penguins_mass |> 
+  ggplot(aes(species, mean_mass)) +
+  geom_col() +
+  geom_linerange(aes(ymin = mean_mass - sd,
+                     ymax = mean_mass + sd))
+```
+
+```{r}
+#| fig-width: 4
+#| fig-asp: 0.68
+#| fig-align: center
+#| out-width: "85%"
+penguins_mass |> 
+  ggplot(aes(species, mean_mass)) +
+  geom_col() +
+  geom_errorbar(aes(ymin = mean_mass - sd,
+                     ymax = mean_mass + sd))
+```
+:::
+
+### Анотація тексту 
+Функції `geom_text()`, `geom_label()` та `annotate(geom = "text", ...)` дозволяють додати текстові позначки на графік. Інколи текст може бути використаний прямо замість поїнтів на графіку розсіяння
+
+```{r}
+mpg |> 
+  ggplot(aes(hwy, displ, color = class)) +
+  geom_text(aes(label = class), check_overlap = TRUE, show.legend = FALSE)
+```
+
+### Анотація тексту
+::: {#figs-text layout-ncol=2}
+```{r}
+#| fig-align: left
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "95%"
+mpg |> 
+  ggplot(aes(hwy, displ, color = class)) +
+  geom_point(alpha = .25, show.legend = FALSE) +
+  geom_text(aes(label = class), 
+            check_overlap = TRUE, 
+            show.legend = FALSE)
+```
+
+```{r}
+#| fig-align: left
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "95%"
+mpg |> 
+  ggplot(aes(hwy, displ, color = class)) +
+  geom_point(alpha = .25, show.legend = FALSE) +
+  annotate("text", x = 35, y = 6,
+           label = "Some cool text\nright here",
+           color = "red")
+```
+:::
+
+### Анотація тексту
+Пакет [`ggrepel`](https://ggrepel.slowkow.com/) надає дві додаткові функції, що створює текстові позначки, які "уникають" одна одну
+
+```{r}
+#| fig-width: 5
+#| fig-asp: 0.68
+#| fig-align: center
+gdp <- gapminder::gapminder |> filter(year == 2007)
+ggplot(gdp, aes(gdpPercap, lifeExp)) +
+  geom_point(color = ifelse(gdp$pop > 100*10^6, "red", "grey25"), 
+             alpha = ifelse(gdp$pop > 100*10^6, 1, 0.25)) +
+  ggrepel::geom_text_repel(aes(label = country), data = gdp[gdp$pop > 100*10^6, ],
+                           box.padding = 0.5)
+```
+
+### Референс лінії
+Функції `geom_hline(yintercept)` та `geom_vline(xintercept)` дозволяють проводити горизонтальні та вертикальні прямі відповідно, які перетинають вісь X або Y у заданій точці. Функція `geom_abline(slope, intercept)` малює пряму за відповідними параметрами.
+
+```{r}
+#| fig-width: 5
+#| fig-asp: .68
+#| fig-align: center
+ggplot(gdp, aes(gdpPercap, lifeExp)) +
+  geom_point(alpha = .25) +
+  geom_hline(yintercept = mean(gdp$lifeExp), color = "red", linetype = 2, linewidth = 1) +
+  annotate("text", x = 33000, y = 64, label = "Avg. global expected lifespan in 2007")
+```
+
+### Усяке
+Еліпс на основі наданих даних
+```{r}
+#| fig-width: 5
+#| fig-asp: 0.68
+penguins |> 
+  ggplot(aes(bill_length_mm, bill_depth_mm, color = species)) +
+  geom_point() +
+  stat_ellipse(linewidth = 1) +
+  scale_color_brewer(palette = "Set2")
+```
+
+### Усяке 
+Стрілочки, що вказують на певні координати
+```{r}
+#| fig-width: 5
+#| fig-asp: 0.68
+penguins |> 
+  ggplot(aes(bill_length_mm, bill_depth_mm, color = species)) +
+  geom_point() +
+  annotate("segment", arrow = arrow(type = "closed", length = unit(.08,"inches")),
+           x = 62, xend = 60,
+           y = 19, yend = 17.5) +
+  annotate("text", x = 60, y = 19.5, label = "Outliner") +
+  scale_color_brewer(palette = "Set2")
+```
+

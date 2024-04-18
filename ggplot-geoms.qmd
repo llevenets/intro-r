@@ -1,0 +1,888 @@
+---
+title: "Main geoms and their application"
+format: 
+  revealjs:
+    css: custom.css
+    slide-level: 3
+    slide-number: c/t
+    progress: false
+    fig-format: svg
+    fig-width: 8
+    code-copy: true
+execute: 
+  echo: true
+highlight-style: pygments
+knitr: 
+  opts_chunk:
+    comment: "#>"
+    collapse: true
+link-external-icon: true
+---
+```{r}
+#| include: false
+library(tidyverse)
+library(patchwork)
+```
+
+```{r}
+#| include: false
+#| cache: true
+penguins <- na.omit(palmerpenguins::penguins)
+```
+
+### П'ять основних геометрій для опису даних
+```{r}
+#| echo: false
+#| label: "five base plot types"
+#| fig-asp: .6
+#| cache: true
+scatter <- penguins |> 
+  ggplot(aes(bill_length_mm, bill_depth_mm)) +
+  geom_point() +
+  labs(subtitle = "Scatterplot: geom_point")
+
+hist <- penguins |> 
+  ggplot(aes(body_mass_g)) +
+  geom_histogram() +
+  labs(subtitle = "Histogram: geom_histogram")
+
+col <- penguins |> 
+  group_by(species) |> 
+  summarise(mean_flipper_length_mm = mean(flipper_length_mm)) |> 
+  ggplot(aes(species, mean_flipper_length_mm)) +
+  geom_col() +
+  labs(subtitle = "Barplot (quality): geom_col")
+
+bar <- penguins |> 
+  ggplot(aes(species)) +
+  geom_bar() +
+  labs(subtitle = "Barplot (quantity): geom_bar")
+
+line <- penguins |> 
+  group_by(species) |> 
+  summarise(mean_body_mass_g = mean(body_mass_g)) |> 
+  ggplot(aes(species, mean_body_mass_g, group = 1)) +
+  geom_line() +
+  labs(subtitle = "Linechart: geom_line")
+
+box <- penguins |> 
+  ggplot(aes(species, body_mass_g)) +
+  geom_boxplot() +
+  labs(subtitle = "Boxplot: geom_boxplot")
+
+(hist | scatter | line) / (bar | col | box) & theme(text = element_text(size = 10), plot.subtitle = element_text(face = "bold"))
+```
+
+### Histograms
+**Використовують для:** демонстрації розподілу *одної неперервної чисельної* змінної
+
+Двома важливими аргументами функції `geom_histogram()` є `binwidth` та `bins` які дозволяють задати ширину біну (ящику) гістограми та їх кількість відповідно (використовується або той або інший аргумент, але не обидва!)
+
+::: {#figs-hist layout-ncol=2}
+```{r}
+#| fig-align: left
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "85%"
+penguins |> 
+  ggplot(aes(body_mass_g)) +
+  geom_histogram(binwidth = 30)
+```
+
+```{r}
+#| fig-align: left
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "85%"
+penguins |> 
+  ggplot(aes(body_mass_g)) +
+  geom_histogram(bins = 30)
+```
+:::
+Маніпулювати шириною бінів також можливо через аргумент `breaks`, що дозволяє задати проміжок від і до, завдяки чому можливо наприклад отримати гістограму з бінами різної ширини
+
+### Histogram-related
+::: columns
+::: {.column width="60%"}
+Спорідненими до гістограм є:
+
+* **Frequency polygons** з `geom_freqpoly()` — повний аналог гістограми, що використовує іншу геометрію для візуального відображеня виконаної статистичної трансформації
+* **KDE** з `geom_density()` або `stat_density()` — ядрова оцінка густини розподілу, "гладенька" версія гістограми. Підходить для відображення чисельних значень, які походять з *неперервного* розподілу. Графік густини розподілу часто можна побачити комбінованим з килимковим графіком (rug plot)
+* **ECDF** з `stat_ecdf()` — розрахована функція кумулятивної щільності, альтернативний варіант зображення розподілу, на відміну від інших трьох також сприймає категоріальні змінні
+
+`geom_histogram()` та `geom_freqpoly()` використовують `stat_bin()` для статистичної трансформації даних
+:::
+
+::: {.column .absolute width="40%" top="-50" right="0"}
+```{r}
+#| echo: false
+#| label: "histogram-related plot types"
+#| fig-width: 4
+#| out-width: "75%"
+#| fig-asp: 2.5
+#| fig-align: center
+#| cache: true
+
+fpoly <- penguins |> 
+  ggplot(aes(body_mass_g)) +
+  geom_freqpoly() +
+  labs(subtitle = "Frequency polygon")
+
+kde <- penguins |> 
+  ggplot(aes(body_mass_g)) +
+  geom_density() +
+  labs(subtitle = "Density")
+
+kde_rug <- penguins |> 
+  ggplot(aes(body_mass_g)) +
+  geom_density() +
+  geom_rug() +
+  labs(subtitle = "Density with rug")
+
+ecdf <- penguins |> 
+  ggplot(aes(body_mass_g)) +
+  stat_ecdf() +
+  labs(subtitle = "ECDF")
+
+(fpoly / kde / kde_rug / ecdf) & theme(plot.subtitle = element_text(face = "bold"))
+```
+:::
+:::
+
+### Barplots
+**Використовують для:** демонстрації відношень рівнів категоріальної змінної до сукупної статистичної оцінки чисельної змінної, демонстрації розподілу рівнів категоріальної змінної
+
+Дефолтна поведінка `geom_bar()` є подібною до `geom_histogram()`, функція приймає специфікацію одної осі для категоріальної змінної, і внутрішньо викликає `stat_count()`
+
+Функція `geom_col()` натомість приймає специфікацію для обох осей — категоріальної та чисельної. Кожному рівню категоріальної змінної має відповідати одне єдине чисельне значення.
+
+```{r}
+#| cache: true
+penguins_count <- penguins |> group_by(species) |> count()
+```
+\
+
+::: {#figs-bar layout-ncol=2}
+```{r}
+#| fig-align: center
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "85%"
+penguins |> 
+  ggplot(aes(species)) +
+  geom_bar()
+```
+
+```{r}
+#| fig-align: center
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "85%"
+penguins_count |> 
+  ggplot(aes(species, n)) +
+  geom_col()
+```
+:::
+
+### Barplots
+Обравши інше значення аргументу `stat` функцію `geom_bar()` можливо змусити приймати специфікацію для оX та oY одночасно. При `stat = "identity"` функція буде поводити себе як `geom_col()`, проте можливо використання і інших трансформації, зокрема `stat = "summary"` дозволяє розрахувати певний статистичний підсумок безпосередньо при створенні графіку
+
+\
+\
+```{r}
+#| cache: true
+penguins_mass <- penguins |> group_by(species) |> summarise(mean_mass = mean(body_mass_g))
+```
+\
+
+::: {#figs-bar-mean layout-ncol=2}
+```{r}
+#| fig-align: center
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "85%"
+penguins |> 
+  ggplot(aes(species, body_mass_g)) +
+  geom_bar(stat = "summary", fun = "mean")
+```
+
+```{r}
+#| fig-align: center
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "85%"
+penguins_mass |> 
+  ggplot(aes(species, mean_mass)) +
+  geom_col()
+```
+:::
+
+### Параметр позиції
+
+::: columns
+::: {.column width="50%"}
+Естетичний параметр `position` визначає розташування окремих елементів геометрій по відношенню один до одного. Найчастіше використовується з барплотами та гістограмами, але може застосовуватися і до інших геометрій.
+
+Позиція може бути задана через вказання її назви, e.g. `position = "dodge"` або через виклик відповідної функції, e.g. `position = position_dodge()`.
+Окрім представлених справа варіантів також є варіанти `idendtity`, `dodge2`, `jitter`, `jitterdodge` та `nudge`. 
+
+Варіант `jitter` додає рандомний шум до координат розташування геометрії, варіант `nudge` дозволяє мануально зсунути геометрію на певну фіксовану дистанцію.
+:::
+
+::: {.column .absolute top="-40" right="0" width="50%"}
+```{r}
+#| label: "position par"
+#| echo: false
+#| fig-width: 4
+#| out-width: "75%"
+#| fig-asp: 2
+#| fig-align: center
+#| cache: true
+
+penguins$species <- fct_relevel(penguins$species, "Adelie", after = 2L)
+
+stack <- penguins |> 
+  ggplot(aes(factor(year), fill = species)) +
+  geom_bar(color = "white") +
+  labs(x = "", subtitle = "position = \"stack\"")
+
+fill <- penguins |> 
+  ggplot(aes(factor(year), fill = species)) +
+  geom_bar(position = "fill", color = "white") +
+  labs(x = "", subtitle = "position = \"fill\"")
+
+dodge <- penguins |> 
+  ggplot(aes(factor(year), fill = species)) +
+  geom_bar(position = "dodge", color = "white") +
+  labs(x = "", subtitle = "position = \"dodge\"")
+
+((stack / fill / dodge) & scale_fill_brewer(palette = "Set2")) & theme(plot.subtitle = element_text(face = "bold"))
+
+penguins$species <- fct_relevel(penguins$species, "Adelie", after = 0L)
+```
+:::
+:::
+
+### Barplot-related
+При зміні евклідової системи координат на полярну або радіальну можливо отримати різноманітні циркулярні діаграми. Пайчарт та донатчарт є повними аналогами стеку і слугують для відображення відношення частини до цілого. Радіальний, циркулярний та чарт Розе можуть, натомість, відображати будь який статистичний підсумок
+
+```{r}
+#| label: "piecharts/circular barplots"
+#| echo: false
+#| fig-align: center
+#| cache: true
+
+penguins_count$species <- fct_relevel(penguins_count$species, "Adelie", after = 2L)
+
+stack <- penguins_count |> 
+  ggplot(aes(x = n, y = "", fill = species)) +
+  geom_col(position = "stack", color = "white", linewidth = 1) +
+  labs(x = "", y = "", subtitle = "Stacked bar") +
+  scale_y_discrete(labels = NULL) +
+  theme_minimal() +
+  theme(panel.grid = element_blank())
+  
+pie <- penguins_count |> 
+  ggplot(aes(x = "", y = n, fill = species)) +
+  geom_col(color = "white", width = 1, show.legend = FALSE, linewidth = 1) +
+  labs(x = "", y = "", subtitle = "Pie chart") +
+  coord_polar(theta = "y") +
+  theme_void()
+
+donut <- penguins_count |> 
+  ggplot(aes(x = "", y = n, fill = species)) +
+  geom_col(color = "white", width = 1, show.legend = FALSE, linewidth = 1) +
+  labs(x = "", y = "", subtitle = "Donut chart") +
+  coord_radial(inner.radius = .5, theta = "y", expand = FALSE) +
+  theme_void()
+
+radial <- penguins_count |> 
+  ggplot(aes(species, n, fill = species)) +
+  geom_col(color = "white", width = 1, show.legend = FALSE) +
+  labs(x = "", y = "", subtitle = "Radial bar") +
+  coord_radial(inner.radius = .2, theta = "y") +
+  scale_x_discrete(labels = NULL) +
+  theme_minimal()
+
+circular <- penguins_count |> 
+  ggplot(aes(species, n, fill = species)) +
+  geom_col(width = .2, show.legend = FALSE) +
+  labs(x = "", y = "", subtitle = "Circular bar") +
+  scale_x_discrete(labels = NULL) +
+  coord_radial(inner.radius = .1, r_axis_inside = TRUE) +
+  theme_minimal()
+
+rose <- penguins_count |> 
+  ggplot(aes(species, n, fill = species)) +
+  geom_col(color = "white", width = 1, show.legend = FALSE, linewidth = 1) +
+  labs(x = "", y = "", subtitle = "Nightingale Rose") +
+  coord_polar(theta = "x", start = 0) +
+  scale_x_discrete(labels = NULL) +
+  scale_y_continuous(labels = NULL) +
+  theme_minimal()
+
+((stack | pie | donut) / (radial | circular | rose)) + plot_layout(guides = "collect") & scale_fill_brewer(palette = "Set2") &
+  theme(plot.subtitle = element_text(face = "bold"),
+        legend.position = "bottom")
+```
+
+### Barplot-related
+Іншими, візуально "легшими", альтернативами барплотам є дотплот Клівленда та "льодяниковий" чарт, що у `ggplot2` використовують `geom_point()` та `geom_segment()` або `geom_linerange()`. Підвидом даних графіків також є так званий dummbell-графік, що використовується для демонстрації певних логічних пар значень
+\
+\
+
+```{r}
+#| label: "dotplots"
+#| fig-width: 10
+#| fig-asp: 0.35
+#| fig-align: center
+#| echo: false
+
+penguins_mass <- penguins |> 
+  group_by(species) |> 
+  summarise(body_mass_g = mean(body_mass_g))
+
+penguins_mass_by <- penguins |> 
+  group_by(species, sex) |> 
+  summarise(body_mass_g = mean(body_mass_g))
+
+cleveland <- penguins_mass |> 
+  ggplot(aes(body_mass_g, species)) +
+  geom_point(shape = 1,  size = 2, stroke = 1.5, color = "#EE5A24") +
+  labs(x = "Mean body mass, g", y = "", subtitle = "Cleveland dotplot") +
+  xlim(c(0, max(penguins_mass$body_mass_g + 100))) +
+  theme_bw() +
+  theme(panel.grid = element_blank(),
+        panel.grid.major.y = element_line(linetype = "dashed",  color = "grey75"))
+
+lollipop <- penguins_mass |> 
+  ggplot(aes(body_mass_g, species)) +
+  geom_hline(
+    data = tibble(),
+    aes(yintercept = seq(0, 3.5, 0.5)),
+    color = "grey85"
+    ) +
+  geom_segment(aes(xend = 0, y = species), linewidth = .8, color = "#006266") +
+  geom_point(shape = 21, size = 5, stroke = 1, color = "white", fill = "#EE5A24") +
+  labs(x = "Mean body mass, g", y = "", subtitle = "Lollipop chart") +
+  xlim(c(0, max(penguins_mass$body_mass_g + 100))) +
+  theme_minimal() +
+  theme(panel.grid.minor = element_blank())
+
+dummbell <- penguins_mass_by |> 
+  ggplot(aes(body_mass_g, species)) +
+  geom_segment(
+    data = tibble(),
+    aes(
+      x = filter(penguins_mass_by, sex == "male")$body_mass_g,
+      xend = filter(penguins_mass_by, sex == "female")$body_mass_g,
+      y = filter(penguins_mass_by, sex == "male")$species,
+      yend = filter(penguins_mass_by, sex == "female")$species
+    ),
+    color = "grey80",
+    linewidth = 4
+  ) +
+  geom_point(
+    aes(fill = sex),
+    shape = 21,
+    size = 5,
+    stroke = 1,
+    color = "white"
+  ) +
+  labs(x = "Mean body mass, g", y = "", subtitle = "Dummbell plot") +
+  scale_fill_manual(values = c("violet", "limegreen")) +
+  theme_minimal() +
+  theme(panel.grid.minor = element_blank())
+  
+(cleveland | lollipop | dummbell) & theme(plot.subtitle = element_text(face = "bold"))
+```
+
+
+### Scatterplots
+**Використовують для:** демонстрації відносин між двома (зазвичай) неперервними чисельними змінними
+
+Основна проблема при використанні графіків розсіяння є так званий overplotting — перекриття значень на графіку один одним. Аби уникнути оверплотингу можливо вдатися до модифікації параметру форми, прозорості або позиції
+
+```{r}
+#| cache: true
+set.seed(18475)
+dsmall <-  sample_n(diamonds, 1000)
+```
+\
+
+
+::: {#figs-scatter layout-ncol=2}
+```{r}
+#| fig-align: center
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "85%"
+dsmall |> 
+  ggplot(aes(carat, price)) +
+  geom_point()
+```
+
+```{r}
+#| fig-align: center
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "85%"
+dsmall |> 
+  ggplot(aes(carat, price)) +
+  geom_point(shape = 20, alpha = .1)
+```
+:::
+
+### Scatterplot-related
+Також для уникнення оверплотингу можливо вдатися до використання 2d бінів/гістограм
+
+```{r}
+#| label: "2d bins"
+#| echo: false
+#| fig-width: 10
+#| fig-asp: 0.65
+#| fig-align: center
+#| cache: true
+
+hex <- dsmall |> 
+  ggplot(aes(carat, price)) +
+  geom_hex() +
+  labs(subtitle = "hex") +
+  scale_fill_viridis_c()
+
+bin2d <- dsmall |> 
+  ggplot(aes(carat, price)) +
+  geom_bin2d() +
+  labs(subtitle = "bin2d") +
+  scale_fill_viridis_c()
+
+density2d <- dsmall |> 
+  ggplot(aes(carat, price)) +
+  stat_density2d(
+    aes(size = after_stat(density),
+        # alpha = after_stat(density)
+        ),
+    geom = "point",
+    shape = 20,
+    alpha = .5,
+    n = 30,
+    contour = FALSE
+  ) +
+  labs(subtitle = "density2d, geom = \"point\"")
+
+density2d_c <- dsmall |> 
+  ggplot(aes(x, y)) +
+  geom_point(alpha = .1, shape = 20) +
+  stat_density2d(color = "red") +
+  labs(subtitle = "density2d over points")
+
+density2d_f <- dsmall |> 
+  ggplot(aes(x, y)) +
+  stat_density2d_filled() +
+  labs(subtitle = "density2d_filled")
+
+density_r <- dsmall |> 
+  ggplot(aes(x, y)) +
+  stat_density2d_filled(
+    aes(fill = after_stat(density)),
+    geom = "raster",
+    contour = FALSE
+  ) +
+  labs(subtitle = "density2d_filled, geom=\"raster\"") +
+  scale_fill_viridis_c()
+  
+
+((bin2d | hex | density2d) / (density2d_c | density2d_f | density_r)) & theme_minimal() & theme(plot.subtitle = element_text(face = "bold"), legend.position = "none")
+```
+
+### Jitterplot
+Джитеринг — додавання випадкових шумів малих значень до координат поїнтів на графіку, також один із способів боротьби з оверплотингом. Дозволяє підвищити читабельність графіків у випадку коли значна частина даних має близько-ідентичні значення, проте одночасно знижує точність відображення цих даних на графіку
+\
+\
+
+::: {#figs-jitter_c layout-ncol=2}
+```{r}
+#| fig-align: center
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "85%"
+mpg |> 
+  ggplot(aes(displ, hwy)) +
+  geom_point(alpha = .25)
+```
+
+```{r}
+#| fig-align: center
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "85%"
+mpg |> 
+  ggplot(aes(displ, hwy)) +
+  geom_jitter(alpha = .25)
+```
+:::
+
+Того ж самого можливо досягти через вказання `position = position_jitter()` у `geom_point()`
+
+### Jitterplot
+Якщо одна з осей мапована на дискретні або категоріальні дані, то джитеринг дозволяє створювати т.к. стріпчарти, що можуть виступати альтернативою або доповненням до боксплотів
+\
+\
+
+::: {#figs-jitter_d layout-ncol=2}
+```{r}
+#| fig-align: center
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "85%"
+dsmall |> 
+   ggplot(aes(cut, carat)) +
+  geom_point(alpha = .15)
+```
+
+```{r}
+#| fig-align: center
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "85%"
+dsmall |> 
+  ggplot(aes(cut, carat)) +
+  geom_jitter(alpha = .15, width = .2)
+```
+:::
+
+### Bubblechart
+Баблчарт є варіантом графіка розсіяння у якому третя чисельна змінна є мапованою на естетику розміру поїнта. Співвідношення між розмірами поїнтів додатково може бути контрольоване через шар `scale_size()`
+
+На графіку нижче популяція країни є мапованою на розмір поїнту, e.g. `geom_point(aes(size = pop))`
+
+```{r}
+#| echo: false
+
+gapminder::gapminder |> filter(year == 2007) |> 
+  ggplot(aes(gdpPercap, lifeExp, fill = continent)) +
+  geom_point(aes(size = pop*10^-6), alpha = .5, shape = 21) +
+  scale_fill_viridis_d(option = "turbo",  
+                       guide = guide_legend(override.aes = list(size = 3))) +
+  scale_size(range = c(1, 15), name = "population in millions") +
+  theme_minimal()
+
+```
+
+### Curve fit over points
+Функція `geom/stat_smooth()` або `geom_line(stat = "smooth")` дозволяє продемонструвати наявні тренди у даних за допомогою неперервної математичної функції. Окрім лінійної моделі з методів також є доступними генералізована лінійна модель (`glm`), генералізована адитивна модель (`gam`) та локальна поліноміальна регресія (`loess`)
+\
+\
+
+::: {#figs-smooth layout-ncol=2}
+```{r}
+#| fig-align: center
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "95%"
+mpg |> 
+  ggplot(aes(displ, hwy)) +
+  geom_point(alpha = .25) +
+  geom_smooth(method = lm)
+```
+
+```{r}
+#| fig-align: center
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "65%"
+mpg |> 
+  ggplot(aes(displ, hwy)) +
+  geom_point(alpha = .25) +
+  geom_smooth(method = lm, formula = y ~ poly(x, 2))
+```
+:::
+
+### Linecharts
+**Використовують для:** демонстрації часових рядів та наявних трендів у даних
+\
+\
+
+::: {#figs-linechart layout-ncol=2}
+```{r}
+#| fig-align: center
+#| fig-width: 4.5
+#| fig-asp: .68
+#| out-width: "95%"
+penguins |> group_by(species, year) |> 
+  summarise(mass = mean(body_mass_g)) |> 
+  ggplot(aes(factor(year), mass, 
+             color = species)) +
+  geom_line(aes(group = species)) +
+  geom_point() +
+  theme(legend.position = "top")
+```
+
+```{r}
+#| fig-align: center
+#| fig-width: 4.5
+#| fig-asp: .68
+#| out-width: "95%"
+dsmall |> group_by(cut) |> 
+  summarise(carat = mean(carat)) |> 
+  ggplot(aes(cut, carat,
+             color = cut)) +
+  geom_line(aes(group = 1)) +
+  geom_point() +
+  theme(legend.position = "top")
+```
+:::
+
+
+
+### Linecharts 
+Окрім `geom_line()` також є `geom_step()`, яка малює ступінчатий графік та `geom_path()`, яка поєднує спостереження у тому порядку, у якому вони є представлені у даних
+\
+
+```{r}
+econ <- economics |> filter(between(date, as.Date("2008-01-01"), as.Date("2008-12-01")))
+```
+\
+
+::: {#figs-linechart_econ layout-ncol=2}
+```{r}
+#| fig-align: center
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "95%"
+econ |> 
+  ggplot(aes(date, unemploy)) +
+  geom_line(arrow = arrow())
+```
+
+```{r}
+#| fig-align: center
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "95%"
+econ |> 
+  ggplot(aes(date, unemploy)) +
+  geom_step()
+```
+:::
+
+### Linecharts
+Приклад з `geom_path()`, графік демонструє зв'язок рівня особистих заощаджень американців (psavert, заощадження як відсоток від наявного особистого доходу) та медіанної тривалості безробіття у тижнях (uempmed) по роках
+
+```{r}
+#| fig-align: center
+#| fig-width: 5
+#| fig-asp: 0.6
+economics |> 
+    ggplot(aes(uempmed, psavert)) +
+    geom_path(aes(color = date), lineend = "round") +
+    scale_color_viridis_c(trans = "date")
+```
+
+### Boxplots
+**Використовуються для:** демонстрації розподілу та відношень між чисельною та категоріальною змінною
+
+Коробкові графіки/діаграми розмаху/"ящики з вусами" демонструють розподіл статистичної вибірки через візуалізацію квантилів
+
+```{r}
+summary(penguins$body_mass_g)
+```
+\
+
+::: {#figs-box layout-ncol=2}
+```{r}
+#| fig-align: center
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "85%"
+penguins |> 
+  ggplot(aes(body_mass_g)) +
+  geom_density(fill = "white") 
+```
+
+```{r}
+#| fig-align: center
+#| fig-width: 4
+#| fig-asp: .68
+#| out-width: "85%"
+penguins |> 
+  ggplot(aes(body_mass_g)) +
+  geom_boxplot()
+
+```
+:::
+
+### Boxplot-related
+Одним із недоліків боксплотів є те, що вони формально приховують "реальну" форму розподілу значень. Їх альтернативами є графіки-"скрипки" (`geom_violin()`), стріпчарти (`geom_point()`) та різні варіанти дотплотів (`geom_dotplot()` або функції з пакету [`ggbeeswarm`](https://github.com/eclarke/ggbeeswarm))
+
+```{r}
+#| label: "boxplot-related plot types"
+#| echo: false
+#| fig-align: center
+#| fig-width: 8.5
+#| cache: true
+
+box <- penguins |> 
+  ggplot(aes(species, body_mass_g)) +
+  geom_boxplot(aes(fill = species), varwidth = TRUE) +
+  labs(x = "", y = "Body mass, g", subtitle = "Boxplot, varwidth = TRUE") 
+
+violin <- penguins |> 
+  ggplot(aes(species, body_mass_g)) +
+  geom_violin(aes(fill = species)) +
+  labs(x = "", y = "Body mass, g", subtitle = "Violin")
+
+boxviolin <- penguins |> 
+  ggplot(aes(species, body_mass_g)) +
+  geom_violin(aes(fill = species), color = NA) +
+  geom_boxplot(fill = "white", width = 0.15, linewidth = 0.8) +
+  labs(x = "", y = "Body mass, g", subtitle = "Violin with box")
+
+strip_p <- penguins |> 
+  ggplot(aes(species, body_mass_g)) +
+  geom_point(
+    aes(color = species), 
+    position = position_jitter(width = .25, height = 0),
+    alpha = .85,
+    shape = 20
+    ) +
+  stat_summary(
+    fun = median,
+    geom = "point", 
+    shape = 95,
+    size = 15, 
+    color = "#3d3d3d"
+  ) + 
+  labs(x = "", y = "Body mass, g", subtitle = "Stripchart with points")
+
+strip_s <- penguins |> 
+  ggplot(aes(species, body_mass_g)) +
+  geom_point(
+    aes(color = species), 
+    alpha = .5,
+    shape = 95,
+    size = 10
+  ) +
+  stat_summary(
+    fun = mean,
+    geom = "pointrange", 
+    fun.min = function(body_mass_g) quantile(body_mass_g, 0.25),
+    fun.max = function(body_mass_g) quantile(body_mass_g, 0.75),
+    color = "#3d3d3d",
+    size = 0.3
+  ) +
+  labs(x = "", y = "Body mass, g", subtitle = "Stripchart with strips")
+
+beeswarm <- penguins |> 
+  ggplot(aes(species, body_mass_g)) +
+  ggbeeswarm::geom_beeswarm(
+    aes(color = species),
+    cex = 1.8,
+    shape = 20
+    ) +
+  labs(x = "", y = "Body mass, g", subtitle = "Beeswarm")
+
+((box | violin | boxviolin) / (strip_p | strip_s | beeswarm)) & scale_fill_brewer(palette = "Set2") & scale_color_brewer(palette = "Set2") & theme_minimal() & theme(plot.subtitle = element_text(face = "bold"), legend.position = "none")
+```
+
+### Boxplot-related
+Риджлайн графіки з [`ggridges`](https://cran.r-project.org/web/packages/ggridges/vignettes/introduction.html) для одночасної демонстрації розподілів рівнів категоріальної змінної без використання фасетингу
+
+```{r}
+#| fig-align: center
+#| output-location: slide
+#| fig-asp: 0.8
+#| fig-width: 8
+
+penguins |> 
+ ggplot(aes(body_mass_g, y = species)) +
+   ggridges::geom_density_ridges(
+     aes(fill = species, color = species), 
+     scale = 1, alpha = .75,
+     jittered_points = TRUE, 
+     position = "raincloud", 
+     show.legend = FALSE
+     ) +
+  scale_fill_brewer(palette = "Set2") +
+  scale_color_brewer(palette = "Dark2") +
+  labs(x = "Penguin body mass, in g", y = "", 
+       title = "Raincloud plot", subtitle = "created with ggridges") +
+  theme_minimal(base_size = 16) +
+  theme(panel.grid = element_blank(),
+        plot.title = element_text(face = "bold"))
+  
+```
+\
+
+Також щодо цього рекомендую переглянути можливості, що надаються пакетами [`gghalves`](https://erocoar.github.io/gghalves/) та [`ggdist`](https://mjskay.github.io/ggdist/)
+
+### Quick summary
+Функція `stat_summary` дозволяє швидко створювати графіки, що відображують певний статистичний підсумок. Має декілька можливих готових параметрів для аргументу `fun.data`, що повертає три значення для побудови графіку:
+
+* `"mean_se"` — середнє зі стандартною похибкою
+* `"mean_sdl"` — середнє зі стандартним відхиленням
+* `"mean_cl_normal"` — середнє з 95% інтервалами достовірності для нормального розподілу
+* `"mean_cl_boot"` — середнє з 95% інтервалами достовірності на основі бутстрепу
+* `"median_hilow"` — медіана, 2.5 та 97.5 перцентиль
+
+Можливо також викликати власну функцію через аргумент `fun`, або набір з трьох аргументів `fun`, `fun.max`, `fun.min`. Дефолтно використовує геометрію `pointrange`, що потребує трьох значень
+
+### Quick summary
+
+```{r}
+#| fig-align: center
+#| fig-width: 8
+#| fig-asp: .45
+#| out-width: "85%"
+dsmall |> 
+    ggplot(aes(color, price, fill = cut)) +
+    stat_summary(
+      fun.data = "mean_se",
+      position = position_dodge(width = .65),
+      shape = 21
+      )
+```
+
+### Quick summary
+Приклад побудови барплотів з анотацією стандартного відхилення у вибірці через `stat_summary` 
+
+```{r}
+#| fig-align: center
+#| fig-width: 6
+#| fig-asp: .5
+#| out-width: "85%"
+penguins |> 
+    ggplot(aes(species, body_mass_g, group = sex)) +
+    stat_summary(aes(fill = sex),
+                 fun = "mean",
+                 geom = "bar",
+                 position = position_dodge(width = 0.95)) +
+    stat_summary(fun.data = "mean_sdl",
+                 geom = "errorbar",
+                 width = .25,
+                 position = position_dodge(width = 0.95))
+```
+
+
+### Pairwise plots
+Функція `ggpairs` з додаткового пакету [`GGally`](https://ggobi.github.io/ggally/), дозволяє створити парний графік аналогічний `pairs` з базового графічного пакету R. Докладніше про налаштування [до документації](https://ggobi.github.io/ggally/articles/ggpairs.html)
+
+```{r}
+#| fig-width: 8
+#| fig-asp: 0.8
+#| fig-align: center
+#| output-location: slide
+#| out-width: "80%"
+penguins |> 
+    GGally::ggpairs(
+        columns = 3:7,
+        lower = list(
+            mapping = aes(color = species, fill = species, alpha = .85)
+        ),
+        upper = list(
+            mapping = aes(color = species)
+        )
+    ) +
+    scale_color_brewer(palette = "Set2") +
+    scale_fill_brewer(palette = "Pastel2")
+```

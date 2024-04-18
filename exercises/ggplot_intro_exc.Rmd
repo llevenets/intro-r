@@ -1,0 +1,283 @@
+---
+title: "ggplot-intro additional stuff"
+output:
+  html_document:
+    code_folding: hide
+    highlight: pygments
+    df_print: paged
+    toc: true
+    toc_float: true
+    toc_depth: 5
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(dev = "svg", fig.width = 4.5, fig.height = 3.05)
+```
+
+```{r, class.source='fold-show'}
+library(ggplot2)
+penguins <- na.omit(palmerpenguins::penguins)
+```
+
+### aes()
+#### Додаткові естетичні атрибути
+Мапування даних на додаткові естетичні атрибути окрім осі XY та додатковий контроль над виглядом геометричних елементів графіку
+```{r, collapse=TRUE}
+penguins |>
+  ggplot(aes(bill_length_mm, bill_depth_mm)) +
+  geom_point(
+    aes(fill = species),
+    color = "black",
+    size = 2,
+    shape = 21,
+    alpha = .5
+  ) +
+  geom_smooth(
+    aes(linetype = species),
+    color = "red",
+    fill = "powderblue",
+    method = lm
+  )
+```
+
+#### Створення групи даних
+Створення групи даних без безпосереднього зв'язку з певною естетичною шкалою (зверніть увагу, як легенда на графіку нижче відрізняється від легенди на графіку вище)
+```{r, collapse=TRUE}
+penguins |>
+  ggplot(aes(bill_length_mm, bill_depth_mm)) +
+  geom_point(
+    aes(fill = species),
+    color = "black",
+    size = 2,
+    shape = 21,
+    alpha = .5
+  ) +
+  geom_smooth(
+    aes(group = species),
+    color = "red",
+    fill = "powderblue",
+    method = lm
+  )
+```
+
+#### Пригнічення легенди
+Один з можливих варіантів контролю відображення легенди атрибутів графіку є зміна значення логічного аргументу `show.legend`
+```{r, collapse=TRUE}
+penguins |>
+  ggplot(aes(bill_length_mm, bill_depth_mm)) +
+  geom_point(
+    aes(fill = species),
+    color = "black",
+    size = 2,
+    shape = 21,
+    alpha = .5,
+    show.legend = TRUE
+  ) +
+  geom_smooth(
+    aes(linetype = species),
+    color = "red",
+    fill = "powderblue",
+    method = lm,
+    show.legend = FALSE
+  )
+```
+
+Варіант без легенди зовсім
+```{r, collapse=TRUE, fig.width=3.5}
+penguins |>
+  ggplot(aes(bill_length_mm, bill_depth_mm)) +
+  geom_point(
+    aes(fill = species),
+    color = "black",
+    size = 2,
+    shape = 21,
+    alpha = .5,
+    show.legend = FALSE
+  ) +
+  geom_smooth(
+    aes(linetype = species),
+    color = "red",
+    method = lm,
+    fill = "powderblue",
+    show.legend = FALSE
+  )
+```
+
+#### Нестандартна форма поїнтів
+При використанні значень від 32 до 127, поїнт буде зображено за допомогою символу ASCII з відповідним чисельним кодом
+```{r}
+penguins |> 
+  ggplot(aes(bill_length_mm, bill_depth_mm, color = species)) +
+  geom_point(shape = 63, size = 3) # 63 відповідає знаку ? у таблиці ASCII
+```
+
+Формально, можливо також використовувати Unicode-символи
+```{r}
+penguins |> 
+  ggplot(aes(bill_length_mm, bill_depth_mm, color = species)) +
+  geom_point(shape = "\u2665", size = 5, alpha = .5) # ♥
+```
+
+### scales
+#### Палітри для неперервних значень
+`Viridis` з самого початку розроблявся як кольорова мапа, тому з його використанням щодо неперервних чисельних значень не виникає проблем. Функція `scale_*_viridis_c()` створює неперервний градієнт
+```{r}
+penguins |> 
+  ggplot(aes(bill_length_mm, bill_depth_mm, color = body_mass_g)) +
+  geom_point(size = 2) +
+  scale_color_viridis_c(option = "B")
+```
+
+Функція `scale_*_vridis_b()` створює рівновіддалені біни і присвоює їм кольори
+```{r}
+penguins |> 
+  ggplot(aes(bill_length_mm, bill_depth_mm, color = body_mass_g)) +
+  geom_point(size = 2) +
+  scale_color_viridis_b(option = "B")
+```
+
+Пресети з `ColorBrewer` можливо використати для неперервних значень через виклик функції `scale_*_distiller()`, що створює неперервний градієнт 
+```{r}
+penguins |> 
+    ggplot(aes(bill_length_mm, bill_depth_mm, fill = body_mass_g)) +
+    geom_point(size = 2, shape = 21) +
+    scale_fill_distiller(palette = "RdBu")
+```
+
+Або через `scale_*_fermenter()`, що розбиває значення на окремі рівновіддалені біни і присвоює їм кольори
+```{r}
+penguins |> 
+    ggplot(aes(bill_length_mm, bill_depth_mm, fill = body_mass_g)) +
+    geom_point(size = 2, shape = 21) +
+    scale_fill_fermenter(palette = "RdBu")
+```
+
+Мануально значення градієнтів можуть бути задані через `scale_*_gradient()`, `_gradient2()` та `_gradientn()`.
+```{r}
+penguins |> 
+    ggplot(aes(bill_length_mm, bill_depth_mm, color = body_mass_g)) +
+    geom_point(size = 2) +
+    scale_color_gradient(low = "orange", high = "seagreen")
+```
+
+Приклад зі `scale_fill_gradient2()`
+```{r}
+penguins |> 
+    ggplot(aes(bill_length_mm, bill_depth_mm, fill = body_mass_g)) +
+    geom_point(size = 2, shape = 21) +
+    scale_fill_gradient2(
+      low = "hotpink", 
+      mid = "wheat", 
+      high = "limegreen",
+      midpoint = 4500
+      )
+```
+
+Бінінг значень по кольорам може бути створенний за допомогою `scale_*_steps()`, `_steps2()` та `_stepsn()` за тим же принципом 
+
+#### Дуже довгі підписи на осях
+```{r, class.source='fold-show'}
+labs <- c("Pygoscelis adeliae", "Pygoscelis antarcticus", "Pygoscelis papua")
+```
+
+Що робити, якщо підписи позначок на осях є занадто довгими і тому перекривають одна одну, а зменшення розміру шрифту не є варіантом?
+
+```{r, class.source='fold-show'}
+penguins |> 
+  ggplot(aes(species, body_mass_g, fill = sex)) +
+  geom_boxplot() +
+  scale_x_discrete(
+    name = "",
+    labels = labs
+  )
+```
+
+1. Реверсувати ось X та Y (можливо не дуже гарно виглядає з боксплотом, але зазвичай гарний вибір для барплота)
+```{r, fig.width=5}
+# це також можливо зробити через виклик coord_flip()
+penguins |> 
+  ggplot(aes(body_mass_g, species, fill = sex)) +
+  geom_boxplot() +
+  scale_y_discrete(
+    name = "",
+    labels = labs
+  ) 
+```
+
+2. Розмістити підписи на декількох рядках
+```{r}
+penguins |> 
+  ggplot(aes(species, body_mass_g, fill = sex)) +
+  geom_boxplot() +
+  scale_x_discrete(
+    name = "",
+    labels = sub(" ", "\n", labs) # пробіл між словами замінено на esc-послідовність
+  )                              # яка позначає початок нового рядку
+```
+
+3. Розмістити надписи під кутом
+```{r, fig.height=4}
+penguins |> 
+  ggplot(aes(species, body_mass_g, fill = sex)) +
+  geom_boxplot() +
+  scale_x_discrete(
+    name = "",
+    labels = labs,
+    guide = guide_axis(angle = 45)
+  )
+```
+
+4. Збільшити кількість рядків, які мають бути використані для відображення підписів
+```{r}
+penguins |> 
+  ggplot(aes(species, body_mass_g, fill = sex)) +
+  geom_boxplot() +
+  scale_x_discrete(
+    name = "",
+    labels = labs,
+    guide = guide_axis(n.dodge = 2)
+  )
+```
+
+#### Лог засічки на осях 
+При використанні лог-трансформації доцільним може бути відповідне зображення логарифмічної шкали на осі
+
+```{r, class.source='fold-show', collapse=TRUE}
+gapminder::gapminder |> # це просто бібліотека з датасетом
+  subset(year == 1992) |> 
+  ggplot(aes(gdpPercap, lifeExp)) +
+  geom_point() +
+  geom_smooth(method = lm) +
+  scale_x_log10(
+    breaks = scales::breaks_log(),
+    labels = scales::label_currency(accuracy = 1)
+  )
+```
+
+Досягається через аргумент `guide` (або додатковий шар `guides()`)
+```{r, collapse=TRUE}
+gapminder::gapminder |> 
+  subset(year == 1992) |> 
+  ggplot(aes(gdpPercap, lifeExp)) +
+  geom_point() +
+  geom_smooth(method = lm) +
+  scale_x_log10(
+    breaks = scales::breaks_log(),
+    labels = scales::label_currency(accuracy = 1),
+    guide = "axis_logticks"
+  )
+```
+
+Замість `guide` = "axis_logticks" можливо викликати `guide_axis_logticks()`, що дає додаткові можливості для налаштування параметрів
+
+```{r, collapse=TRUE}
+gapminder::gapminder |> 
+    subset(year == 2002) |> 
+    ggplot(aes(gdpPercap, lifeExp)) +
+    geom_point() +
+    geom_smooth(method = lm) +
+    scale_x_log10(
+        labels = scales::label_currency(accuracy = 1),
+        guide = guide_axis_logticks(long = -2.25, mid = -1.5, short = -0.75)
+    )
+```
+
